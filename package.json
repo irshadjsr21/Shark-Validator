@@ -8,11 +8,13 @@
   "license": "ISC",
   "scripts": {
     "build": "babel lib --out-dir dist",
-    "dev:build": "babel lib --watch --out-dir dist"
+    "dev:build": "babel lib --watch --out-dir dist",
+    "test": "mocha"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/preset-env": "^7.8.7",
-    "@babel/core": "^7.8.7"
+    "@babel/core": "^7.8.7",
+    "mocha": "^7.1.1"
   }
 }
