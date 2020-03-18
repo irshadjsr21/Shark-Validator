@@ -7,6 +7,7 @@
   "author": "Md. Irshad Ansari",
   "license": "ISC",
   "scripts": {
+    "prepublish": "npm run build && npm run test",
     "build": "babel lib --out-dir dist",
     "dev:build": "babel lib --watch --out-dir dist",
     "test": "mocha"
