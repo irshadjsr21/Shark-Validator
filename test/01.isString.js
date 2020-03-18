@@ -3,10 +3,10 @@ const { Validator, RuleSet } = require('../dist');
 const { isString } = require('../dist/rules');
 
 const schema = new Validator({
-  name: new RuleSet('name', [new isString()]),
-  username: new RuleSet('username', [new isString()]),
-  email: new RuleSet('email', [new isString()]),
-  password: new RuleSet('password', [new isString()]),
+  name: RuleSet.create([new isString()]),
+  username: RuleSet.create([new isString()]),
+  email: RuleSet.create([new isString()]),
+  password: RuleSet.create([new isString()]),
 });
 
 describe('isString', () => {

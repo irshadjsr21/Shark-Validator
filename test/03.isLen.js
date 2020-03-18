@@ -3,14 +3,12 @@ const { Validator, RuleSet } = require('../dist');
 const { isLen } = require('../dist/rules');
 
 const schema = new Validator({
-  name: new RuleSet('name', [new isLen({ eq: 5 })]),
-  yearOfBirth: new RuleSet('year', [new isLen({ eq: 4 })]),
-  username: new RuleSet('username', [new isLen({ min: 3 })]),
-  email: new RuleSet('email', [new isLen({ max: 10 })]),
-  password: new RuleSet('password', [new isLen({ min: 8, max: 10 })]),
-  confirmPassword: new RuleSet('Confirm Password', [
-    new isLen({ min: 8, max: 10 }),
-  ]),
+  name: RuleSet.create([new isLen({ eq: 5 })]),
+  yearOfBirth: RuleSet.create([new isLen({ eq: 4 })]),
+  username: RuleSet.create([new isLen({ min: 3 })]),
+  email: RuleSet.create([new isLen({ max: 10 })]),
+  password: RuleSet.create([new isLen({ min: 8, max: 10 })]),
+  confirmPassword: RuleSet.create([new isLen({ min: 8, max: 10 })]),
 });
 
 describe('isLen', () => {

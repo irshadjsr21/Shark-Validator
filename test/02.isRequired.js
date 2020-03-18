@@ -3,9 +3,9 @@ const { Validator, RuleSet } = require('../dist');
 const { isRequired } = require('../dist/rules');
 
 const schema = new Validator({
-  name: new RuleSet('name', [new isRequired()]),
-  email: new RuleSet('email', [new isRequired()]),
-  password: new RuleSet('password', [new isRequired()]),
+  name: RuleSet.create([new isRequired()]),
+  email: RuleSet.create([new isRequired()]),
+  password: RuleSet.create([new isRequired()]),
 });
 
 describe('isRequired', () => {
@@ -49,7 +49,6 @@ describe('isRequired', () => {
       assert.equal(errorArray[0].validator, 'isRequired');
       assert.equal(errorArray[0].value, '');
     });
-
   });
 
   describe('With valid strings', () => {
