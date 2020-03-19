@@ -1,6 +1,5 @@
 const assert = require('assert');
-const { Validator, RuleSet } = require('../lib');
-const { isString } = require('../lib/rules');
+const { Validator, RuleSet, isString } = require('../lib');
 
 const schema = new Validator({
   name: RuleSet.create([new isString()]),
