@@ -1,6 +1,6 @@
 const assert = require('assert');
-const { Validator, RuleSet } = require('../dist');
-const { isLen } = require('../dist/rules');
+const { Validator, RuleSet } = require('../lib');
+const { isLen } = require('../lib/rules');
 
 const schema = new Validator({
   name: RuleSet.create([new isLen({ eq: 5 })]),
