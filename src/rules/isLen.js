@@ -2,7 +2,7 @@ import Rule from './Rule';
 
 export default class isLen extends Rule {
   /**
-   * Checkes length of string value
+   * Checks length of string value
    * @param {Object} options Options for `isLen`
    * @param {Number} options.eq Length should be equal to `eq`
    * @param {Number} options.min Length should be min `min`
