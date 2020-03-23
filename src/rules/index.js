@@ -1,6 +1,4 @@
-import Rule from './Rule';
-import isString from './isString';
-import isRequired from './isRequired';
-import isLen from './isLen';
-
-export { isString, isRequired, isLen, Rule };
+export { default as Rule } from './Rule';
+export { default as isString } from './isString';
+export { default as isRequired } from './isRequired';
+export { default as isLen } from './isLen';

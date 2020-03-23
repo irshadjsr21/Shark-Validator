@@ -1,5 +1,3 @@
-import RuleSet from './RuleSet';
-import Validator from './Validator';
-import { isLen, isRequired, isString, Rule } from './rules';
-
-export { Validator, RuleSet, Rule, isLen, isRequired, isString };
+export { default as Validator } from './Validator';
+export { default as RuleSet } from './RuleSet';
+export * from './rules';

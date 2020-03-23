@@ -1,6 +1,6 @@
 {
   "name": "shark-validator",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A simple schema validator",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -11,7 +11,8 @@
     "build": "npm run build:cjs && npm run build:es",
     "build:cjs": "babel --env-name cjs src --out-dir lib",
     "build:es": "babel --env-name es src --out-dir es",
-    "test": "mocha"
+    "test": "mocha",
+    "pretest": "npm run build"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
