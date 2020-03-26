@@ -5,3 +5,4 @@ export { default as isLen } from './isLen';
 export { default as isIn } from './isIn';
 export { default as isNumber } from './isNumber';
 export { default as toNumber } from './toNumber';
+export { default as isInt } from './isInt';
