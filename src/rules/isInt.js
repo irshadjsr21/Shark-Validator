@@ -2,7 +2,7 @@ import Rule from './Rule';
 
 export default class isInt extends Rule {
   /**
-   * Checks if the value is a number
+   * Checks if the value is an integer
    * @param {Object} options Options for `isInt`
    * @param {Number} options.min Number should be min to `min`
    * @param {Number} options.max Number should be max to `max`
