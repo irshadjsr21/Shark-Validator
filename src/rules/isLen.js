@@ -7,6 +7,7 @@ export default class isLen extends Rule {
    * @param {Number} options.eq Length should be equal to `eq`
    * @param {Number} options.min Length should be min `min`
    * @param {Number} options.max Length should be max to `max`
+   * @param {String} options.message Custom error message if test fails
    */
   constructor(options) {
     super('isLen');
@@ -25,9 +26,15 @@ export default class isLen extends Rule {
         throw new TypeError(`\`${key}\` key in options should be an integer.`);
       }
     }
+
+    if (options.message !== undefined && typeof options.message !== 'string') {
+      throw new Error('`message` key in `options` should be a string.');
+    }
+
     this.min = options.min;
     this.max = options.max;
     this.eq = options.eq;
+    this.message = options.message;
   }
 
   validate(value, label) {
@@ -43,10 +50,12 @@ export default class isLen extends Rule {
       if (this.eq !== undefined && len !== this.eq) {
         return {
           value,
-          error: this.formatMessage(
-            "'%name%' should be %eq% characters long.",
-            data,
-          ),
+          error: this.message
+            ? this.formatMessage(this.message, data)
+            : this.formatMessage(
+                "'%name%' should be %eq% characters long.",
+                data,
+              ),
         };
       }
 
@@ -57,30 +66,36 @@ export default class isLen extends Rule {
       ) {
         return {
           value,
-          error: this.formatMessage(
-            "'%name%' should be a between %min% - %max% characters.",
-            data,
-          ),
+          error: this.message
+            ? this.formatMessage(this.message, data)
+            : this.formatMessage(
+                "'%name%' should be a between %min% - %max% characters.",
+                data,
+              ),
         };
       }
 
       if (this.min !== undefined && len < this.min) {
         return {
           value,
-          error: this.formatMessage(
-            "'%name%' should not be less than %min% characters.",
-            data,
-          ),
+          error: this.message
+            ? this.formatMessage(this.message, data)
+            : this.formatMessage(
+                "'%name%' should not be less than %min% characters.",
+                data,
+              ),
         };
       }
 
       if (this.max !== undefined && len > this.max) {
         return {
           value,
-          error: this.formatMessage(
-            "'%name%' should not be greater than %max% characters.",
-            data,
-          ),
+          error: this.message
+            ? this.formatMessage(this.message, data)
+            : this.formatMessage(
+                "'%name%' should not be greater than %max% characters.",
+                data,
+              ),
         };
       }
     }

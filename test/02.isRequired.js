@@ -5,6 +5,10 @@ const schema = new Validator({
   name: RuleSet.create([new isRequired()]),
   email: RuleSet.create([new isRequired()]),
   password: RuleSet.create([new isRequired()]),
+  confirmPassword: RuleSet.create(
+    [new isRequired({ message: '%name% is to be present.' })],
+    'Confirm password',
+  ),
 });
 
 describe('isRequired', () => {
@@ -50,6 +54,16 @@ describe('isRequired', () => {
       assert.equal(errorArray[0].validator, 'isRequired');
       assert.equal(errorArray[0].value, '');
     });
+
+    it('Should return custom message on error', () => {
+      const errorArray = result.confirmPassword;
+      assert.equal(Array.isArray(errorArray), true);
+      assert.equal(errorArray.length, 1);
+      assert.equal(typeof errorArray[0], 'object');
+      assert.equal(errorArray[0].validator, 'isRequired');
+      assert.equal(errorArray[0].value, null);
+      assert.equal(errorArray[0].error, 'Confirm password is to be present.');
+    });
   });
 
   describe('With valid strings', () => {
@@ -59,6 +73,7 @@ describe('isRequired', () => {
         name: 'irshad',
         email: 'irshad@gmail.com',
         password: '12345678',
+        confirmPassword: '12345678',
       });
       result = data.errors;
     });

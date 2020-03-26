@@ -5,6 +5,14 @@ const schema = new Validator({
   id: RuleSet.create([new toNumber()]),
   age: RuleSet.create([new toNumber()]),
   yearOfBirth: RuleSet.create([new toNumber()]),
+  monthOfBirth: RuleSet.create(
+    [
+      new toNumber({
+        message: '%name% should be a number.',
+      }),
+    ],
+    'Month of birth',
+  ),
 });
 
 describe('toNumber', () => {
@@ -15,6 +23,7 @@ describe('toNumber', () => {
         id: '201a4',
         age: '~10',
         yearOfBirth: '20181.01a',
+        monthOfBirth: 'Jan'
       });
       errors = data.errors;
     });
@@ -50,6 +59,16 @@ describe('toNumber', () => {
       assert.equal(errorArray[0].validator, 'toNumber');
       assert.equal(errorArray[0].value, '20181.01a');
     });
+
+    it('Should return custom message on error', () => {
+      const errorArray = errors.monthOfBirth;
+      assert.equal(Array.isArray(errorArray), true);
+      assert.equal(errorArray.length, 1);
+      assert.equal(typeof errorArray[0], 'object');
+      assert.equal(errorArray[0].validator, 'toNumber');
+      assert.equal(errorArray[0].value, 'Jan');
+      assert.equal(errorArray[0].error, 'Month of birth should be a number.');
+    });
   });
 
   describe('With valid values', () => {
@@ -59,6 +78,7 @@ describe('toNumber', () => {
         id: '10.12',
         age: 1.0,
         yearOfBirth: '2018',
+        monthOfBirth: '5'
       });
       errors = data.errors;
       values = data.values;

@@ -9,6 +9,16 @@ const schema = new Validator({
   dateOfBirth: RuleSet.create([new isNumber({ max: 31 })]),
   score: RuleSet.create([new isNumber({ min: 0, max: 10.5 })]),
   avgScore: RuleSet.create([new isNumber({ min: 0, max: 100.77 })]),
+  maxScore: RuleSet.create(
+    [
+      new isNumber({
+        min: 0,
+        max: 100.77,
+        message: '%name% should be in the range of %min% to %max%',
+      }),
+    ],
+    'Max Score',
+  ),
 });
 
 describe('isNumber', () => {
@@ -23,6 +33,7 @@ describe('isNumber', () => {
         dateOfBirth: '55',
         score: '-10',
         avgScore: '150',
+        maxScore: '187',
       });
       result = data.errors;
     });
@@ -94,6 +105,16 @@ describe('isNumber', () => {
       assert.equal(errorArray[0].validator, 'isNumber');
       assert.equal(errorArray[0].value, '150');
     });
+
+    it('Should return custom message on error', () => {
+      const errorArray = result.maxScore;
+      assert.equal(Array.isArray(errorArray), true);
+      assert.equal(errorArray.length, 1);
+      assert.equal(typeof errorArray[0], 'object');
+      assert.equal(errorArray[0].validator, 'isNumber');
+      assert.equal(errorArray[0].value, '187');
+      assert.equal(errorArray[0].error, 'Max Score should be in the range of 0 to 100.77');
+    });
   });
 
   describe('With valid values', () => {
@@ -107,6 +128,7 @@ describe('isNumber', () => {
         dateOfBirth: '30',
         score: '10.15',
         avgScore: '50.65',
+        maxScore: '64.01',
       });
       result = data.errors;
     });

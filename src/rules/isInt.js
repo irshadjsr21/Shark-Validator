@@ -6,12 +6,14 @@ export default class isInt extends Rule {
    * @param {Object} options Options for `isInt`
    * @param {Number} options.min Number should be min to `min`
    * @param {Number} options.max Number should be max to `max`
+   * @param {String} options.message Custom error message if test fails
    */
   constructor(options) {
     super('isInt');
 
     this.min = undefined;
     this.max = undefined;
+    this.message = undefined;
     if (options !== undefined && typeof options !== 'object') {
       throw new TypeError('`options` should be an object.');
     }
@@ -26,8 +28,16 @@ export default class isInt extends Rule {
         }
       }
 
+      if (
+        options.message !== undefined &&
+        typeof options.message !== 'string'
+      ) {
+        throw new Error('`message` key in `options` should be a string.');
+      }
+
       this.min = options.min;
       this.max = options.max;
+      this.message = options.message;
     }
   }
 
@@ -41,7 +51,9 @@ export default class isInt extends Rule {
     if (isNaN(value)) {
       return {
         value,
-        error: this.formatMessage("'%name%' should be an integer.", data),
+        error: this.message
+          ? this.formatMessage(this.message, data)
+          : this.formatMessage("'%name%' should be an integer.", data),
       };
     }
 
@@ -50,7 +62,9 @@ export default class isInt extends Rule {
     if (!Number.isInteger(num)) {
       return {
         value,
-        error: this.formatMessage("'%name%' should be an integer.", data),
+        error: this.message
+          ? this.formatMessage(this.message, data)
+          : this.formatMessage("'%name%' should be an integer.", data),
       };
     }
 
@@ -61,30 +75,33 @@ export default class isInt extends Rule {
     ) {
       return {
         value,
-        error: this.formatMessage(
-          "'%name%' should be a between %min% - %max%.",
-          data,
-        ),
+        error: this.message
+          ? this.formatMessage(this.message, data)
+          : this.formatMessage(
+              "'%name%' should be a between %min% - %max%.",
+              data,
+            ),
       };
     }
 
     if (this.min !== undefined && num < this.min) {
       return {
         value,
-        error: this.formatMessage(
-          "'%name%' should not be less than %min%.",
-          data,
-        ),
+        error: this.message
+          ? this.formatMessage(this.message, data)
+          : this.formatMessage("'%name%' should not be less than %min%.", data),
       };
     }
 
     if (this.max !== undefined && num > this.max) {
       return {
         value,
-        error: this.formatMessage(
-          "'%name%' should not be greater than %max%.",
-          data,
-        ),
+        error: this.message
+          ? this.formatMessage(this.message, data)
+          : this.formatMessage(
+              "'%name%' should not be greater than %max%.",
+              data,
+            ),
       };
     }
 

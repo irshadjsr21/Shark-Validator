@@ -5,6 +5,10 @@ const schema = new Validator({
   name: RuleSet.create([new isIn({ in: ['irshad', 'ansari'] })]),
   yearOfBirth: RuleSet.create([new isIn({ in: [2018, 2019] })]),
   username: RuleSet.create([new isIn({ in: ['irshad'] })]),
+  gender: RuleSet.create(
+    [new isIn({ in: ['M', 'F'], message: '%name% can only be %in%.' })],
+    'Gender',
+  ),
 });
 
 describe('isIn', () => {
@@ -15,6 +19,7 @@ describe('isIn', () => {
         name: 'irsh',
         yearOfBirth: '20181',
         username: 'ir',
+        gender: 'MALE',
       });
       result = data.errors;
     });
@@ -50,6 +55,16 @@ describe('isIn', () => {
       assert.equal(errorArray[0].validator, 'isIn');
       assert.equal(errorArray[0].value, 'ir');
     });
+
+    it('Should return custom message on error', () => {
+      const errorArray = result.gender;
+      assert.equal(Array.isArray(errorArray), true);
+      assert.equal(errorArray.length, 1);
+      assert.equal(typeof errorArray[0], 'object');
+      assert.equal(errorArray[0].validator, 'isIn');
+      assert.equal(errorArray[0].value, 'MALE');
+      assert.equal(errorArray[0].error, 'Gender can only be M, F.');
+    });
   });
 
   describe('With valid values', () => {
@@ -59,6 +74,7 @@ describe('isIn', () => {
         name: 'irshad',
         yearOfBirth: 2018,
         username: 'irshad',
+        gender: 'M',
       });
       result = data.errors;
     });

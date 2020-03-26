@@ -8,6 +8,10 @@ const schema = new Validator({
   email: RuleSet.create([new isLen({ max: 10 })]),
   password: RuleSet.create([new isLen({ min: 8, max: 10 })]),
   confirmPassword: RuleSet.create([new isLen({ min: 8, max: 10 })]),
+  gender: RuleSet.create(
+    [new isLen({ eq: 1, message: '%name% should only have %eq% charecter.' })],
+    'Gender',
+  ),
 });
 
 describe('isLen', () => {
@@ -21,6 +25,7 @@ describe('isLen', () => {
         email: 'irshad@gmail.com',
         password: '1234567',
         confirmPassword: '12345678910',
+        gender: 'MALE',
       });
       result = data.errors;
     });
@@ -83,6 +88,16 @@ describe('isLen', () => {
       assert.equal(errorArray[0].validator, 'isLen');
       assert.equal(errorArray[0].value, '12345678910');
     });
+
+    it('Should return custom message on error', () => {
+      const errorArray = result.gender;
+      assert.equal(Array.isArray(errorArray), true);
+      assert.equal(errorArray.length, 1);
+      assert.equal(typeof errorArray[0], 'object');
+      assert.equal(errorArray[0].validator, 'isLen');
+      assert.equal(errorArray[0].value, 'MALE');
+      assert.equal(errorArray[0].error, 'Gender should only have 1 charecter.');
+    });
   });
 
   describe('With valid values', () => {
@@ -95,6 +110,7 @@ describe('isLen', () => {
         email: 'irs@mil.in',
         password: '12345678',
         confirmPassword: '123456789',
+        gender: 'M',
       });
       result = data.errors;
     });

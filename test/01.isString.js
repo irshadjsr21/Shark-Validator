@@ -6,6 +6,10 @@ const schema = new Validator({
   username: RuleSet.create([new isString()]),
   email: RuleSet.create([new isString()]),
   password: RuleSet.create([new isString()]),
+  confirmPassword: RuleSet.create(
+    [new isString({ message: '%name% should be a string.' })],
+    'Confirm password',
+  ),
 });
 
 describe('isString', () => {
@@ -17,6 +21,7 @@ describe('isString', () => {
         username: undefined,
         email: {},
         password: [],
+        confirmPassword: null,
       });
       result = data.errors;
     });
@@ -61,6 +66,16 @@ describe('isString', () => {
       assert.equal(errorArray[0].validator, 'isString');
       assert.deepEqual(errorArray[0].value, []);
     });
+
+    it('Should return custom message on error', () => {
+      const errorArray = result.confirmPassword;
+      assert.equal(Array.isArray(errorArray), true);
+      assert.equal(errorArray.length, 1);
+      assert.equal(typeof errorArray[0], 'object');
+      assert.equal(errorArray[0].validator, 'isString');
+      assert.equal(errorArray[0].value, null);
+      assert.equal(errorArray[0].error, 'Confirm password should be a string.');
+    });
   });
 
   describe('With strings', () => {
@@ -71,6 +86,7 @@ describe('isString', () => {
         username: '',
         email: '',
         password: '',
+        confirmPassword: '',
       });
       result = data.errors;
     });
