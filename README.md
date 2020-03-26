@@ -3,12 +3,16 @@
 ## Overview
 A tree shakable validator which for both `Nodejs` and `Browser`.
 
+## Installation
+```
+npm install shark-validator
+```
+
 ## Example usage
 Create a schema for validation and import only the required Rules.
 
 ```js
-const { Validator, RuleSet } = require('shark-validator');
-const { isRequired, isString, isLen } = require('shark-validator/rules');
+const { Validator, RuleSet, isRequired, isString, isLen } = require('shark-validator');
 
 const schema = new Validator({
   name: RuleSet.create([new isString(), new isRequired()]),
@@ -20,11 +24,11 @@ const schema = new Validator({
 Validate values using the created schema
 
 ```js
-const values = {
+const valuesToCheck = {
   name: 'Dan',
   email: 'dan@daninc.com',
   password: '123456'
 };
 
-schema.validate(values) // Returns error object if error otherwise return `null`
+const { values, errors } = schema.validate(valuesToCheck);
 ```
