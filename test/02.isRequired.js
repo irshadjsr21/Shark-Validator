@@ -20,6 +20,7 @@ describe('isRequired', () => {
 
     it('Should return error', () => {
       assert.equal(typeof result, 'object');
+      assert.notEqual(result, null);
     });
 
     it('Should return error on null', () => {
