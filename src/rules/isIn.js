@@ -34,12 +34,12 @@ export default class isIn extends Rule {
     );
 
     if (
-      (typeof value !== 'string' && typeof value !== 'number' ) ||
+      (typeof value !== 'string' && typeof value !== 'number') ||
       !this.in.includes(value)
     ) {
-      return errorMsg;
+      return { value, error: errorMsg };
     }
 
-    return null;
+    return { value, error: null };
   }
 }

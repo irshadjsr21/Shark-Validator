@@ -35,21 +35,23 @@ export default class RuleSet {
   /**
    * Validates the `value` and returns an array of errors if any,
    * othewise returns `null`.
-   * @param {any} value Value to be validated
+   * @param {any} valueToCheck Value to be validated
    * @param {String} key Key of the value being checked
    */
-  validate(value, key) {
+  validate(valueToCheck, key) {
     const errors = [];
+    let modifiedValue = valueToCheck;
     for (const rule of this.__rules) {
       if (!(rule instanceof Rule)) {
         throw new TypeError('Rule should be an instance of `Rule` class.');
       }
-      const error = rule.validate(value, this.__label || key);
+      const { value, error } = rule.validate(modifiedValue, this.__label || key);
+      modifiedValue = value;
       if (error) errors.push({ error, validator: rule.__name, value });
     }
 
-    if (errors.length > 0) return errors;
-    return null;
+    if (errors.length > 0) return { value: modifiedValue, errors };
+    return { value: modifiedValue, errors: null };
   }
 
   /**

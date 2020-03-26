@@ -14,10 +14,13 @@ export default class isRequired extends Rule {
       value === undefined ||
       (typeof value === 'string' && value === '')
     ) {
-      return this.formatMessage("'%name%' should not be empty.", {
-        name: label,
-      });
+      return {
+        value,
+        error: this.formatMessage("'%name%' should not be empty.", {
+          name: label,
+        }),
+      };
     }
-    return null;
+    return { value, error: null };
   }
 }

@@ -41,10 +41,13 @@ export default class isLen extends Rule {
       };
 
       if (this.eq !== undefined && len !== this.eq) {
-        return this.formatMessage(
-          "'%name%' should be %eq% characters long.",
-          data,
-        );
+        return {
+          value,
+          error: this.formatMessage(
+            "'%name%' should be %eq% characters long.",
+            data,
+          ),
+        };
       }
 
       if (
@@ -52,26 +55,35 @@ export default class isLen extends Rule {
         this.max !== undefined &&
         (len > this.max || len < this.min)
       ) {
-        return this.formatMessage(
-          "'%name%' should be a between %min% - %max% characters.",
-          data,
-        );
+        return {
+          value,
+          error: this.formatMessage(
+            "'%name%' should be a between %min% - %max% characters.",
+            data,
+          ),
+        };
       }
 
       if (this.min !== undefined && len < this.min) {
-        return this.formatMessage(
-          "'%name%' should not be less than %min% characters.",
-          data,
-        );
+        return {
+          value,
+          error: this.formatMessage(
+            "'%name%' should not be less than %min% characters.",
+            data,
+          ),
+        };
       }
 
       if (this.max !== undefined && len > this.max) {
-        return this.formatMessage(
-          "'%name%' should not be greater than %max% characters.",
-          data,
-        );
+        return {
+          value,
+          error: this.formatMessage(
+            "'%name%' should not be greater than %max% characters.",
+            data,
+          ),
+        };
       }
     }
-    return null;
+    return { value, error: null };
   }
 }

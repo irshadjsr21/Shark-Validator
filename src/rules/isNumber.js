@@ -39,7 +39,10 @@ export default class isNumber extends Rule {
     };
 
     if (isNaN(value)) {
-      return this.formatMessage("'%name%' should be a number.", data);
+      return {
+        value,
+        error: this.formatMessage("'%name%' should be a number.", data),
+      };
     }
 
     const num = Number.parseFloat(value);
@@ -49,26 +52,35 @@ export default class isNumber extends Rule {
       this.max !== undefined &&
       (num > this.max || num < this.min)
     ) {
-      return this.formatMessage(
-        "'%name%' should be a between %min% - %max%.",
-        data,
-      );
+      return {
+        value,
+        error: this.formatMessage(
+          "'%name%' should be a between %min% - %max%.",
+          data,
+        ),
+      };
     }
 
     if (this.min !== undefined && num < this.min) {
-      return this.formatMessage(
-        "'%name%' should not be less than %min%.",
-        data,
-      );
+      return {
+        value,
+        error: this.formatMessage(
+          "'%name%' should not be less than %min%.",
+          data,
+        ),
+      };
     }
 
     if (this.max !== undefined && num > this.max) {
-      return this.formatMessage(
-        "'%name%' should not be greater than %max%.",
-        data,
-      );
+      return {
+        value,
+        error: this.formatMessage(
+          "'%name%' should not be greater than %max%.",
+          data,
+        ),
+      };
     }
 
-    return null;
+    return { value, error: null };
   }
 }

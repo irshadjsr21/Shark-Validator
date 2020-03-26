@@ -7,7 +7,7 @@ const schema = new Validator({
   yearOfBirth: RuleSet.create([new isNumber()]),
   monthOfBirth: RuleSet.create([new isNumber({ min: 6 })]),
   dateOfBirth: RuleSet.create([new isNumber({ max: 31 })]),
-  score: RuleSet.create([new isNumber({ min: 0, max: 10.50 })]),
+  score: RuleSet.create([new isNumber({ min: 0, max: 10.5 })]),
   avgScore: RuleSet.create([new isNumber({ min: 0, max: 100.77 })]),
 });
 
@@ -15,7 +15,7 @@ describe('isNumber', () => {
   describe('With error values', () => {
     let result;
     before(() => {
-      result = schema.validate({
+      const data = schema.validate({
         id: '201a4',
         age: '~10',
         yearOfBirth: '20181.01a',
@@ -24,6 +24,7 @@ describe('isNumber', () => {
         score: '-10',
         avgScore: '150',
       });
+      result = data.errors;
     });
 
     it('Should return error', () => {
@@ -98,7 +99,7 @@ describe('isNumber', () => {
   describe('With valid values', () => {
     let result;
     before(() => {
-      result = schema.validate({
+      const data = schema.validate({
         id: '10.12',
         age: 1.0,
         yearOfBirth: 2018,
@@ -107,6 +108,7 @@ describe('isNumber', () => {
         score: '10.15',
         avgScore: '50.65',
       });
+      result = data.errors;
     });
 
     it('Should not return error', () => {

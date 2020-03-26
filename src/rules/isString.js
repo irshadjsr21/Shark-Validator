@@ -10,8 +10,13 @@ export default class isString extends Rule {
 
   validate(value, label) {
     if (typeof value !== 'string') {
-      return this.formatMessage("'%name%' should be a string.", { name: label });
+      return {
+        value,
+        error: this.formatMessage("'%name%' should be a string.", {
+          name: label,
+        }),
+      };
     }
-    return null;
+    return { value, error: null };
   }
 }

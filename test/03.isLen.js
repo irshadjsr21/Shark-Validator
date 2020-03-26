@@ -14,7 +14,7 @@ describe('isLen', () => {
   describe('With error values', () => {
     let result;
     before(() => {
-      result = schema.validate({
+      const data = schema.validate({
         name: 'irsh',
         yearOfBirth: '20181',
         username: 'ir',
@@ -22,6 +22,7 @@ describe('isLen', () => {
         password: '1234567',
         confirmPassword: '12345678910',
       });
+      result = data.errors;
     });
 
     it('Should return error', () => {
@@ -87,7 +88,7 @@ describe('isLen', () => {
   describe('With valid values', () => {
     let result;
     before(() => {
-      result = schema.validate({
+      const data = schema.validate({
         name: 'irsha',
         yearOfBirth: '2018',
         username: 'irs',
@@ -95,6 +96,7 @@ describe('isLen', () => {
         password: '12345678',
         confirmPassword: '123456789',
       });
+      result = data.errors;
     });
 
     it('Should not return error', () => {

@@ -11,11 +11,12 @@ describe('isRequired', () => {
   describe('With null, undefined and empty string', () => {
     let result;
     before(() => {
-      result = schema.validate({
+      const data = schema.validate({
         name: null,
         email: undefined,
         password: '',
       });
+      result = data.errors;
     });
 
     it('Should return error', () => {
@@ -54,11 +55,12 @@ describe('isRequired', () => {
   describe('With valid strings', () => {
     let result;
     before(() => {
-      result = schema.validate({
+      const data = schema.validate({
         name: 'irshad',
         email: 'irshad@gmail.com',
         password: '12345678',
       });
+      result = data.errors;
     });
 
     it('Should not return error', () => {

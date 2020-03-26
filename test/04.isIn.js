@@ -11,11 +11,12 @@ describe('isIn', () => {
   describe('With error values', () => {
     let result;
     before(() => {
-      result = schema.validate({
+      const data = schema.validate({
         name: 'irsh',
         yearOfBirth: '20181',
         username: 'ir',
       });
+      result = data.errors;
     });
 
     it('Should return error', () => {
@@ -54,11 +55,12 @@ describe('isIn', () => {
   describe('With valid values', () => {
     let result;
     before(() => {
-      result = schema.validate({
+      const data = schema.validate({
         name: 'irshad',
         yearOfBirth: 2018,
         username: 'irshad',
       });
+      result = data.errors;
     });
 
     it('Should not return error', () => {

@@ -20,15 +20,15 @@ export default class Validator {
   /**
    * Validates the values and returns error object if any,
    * otherwise return `null`
-   * @param {Object} values Object of values to be checked.
+   * @param {Object} valuesToCheck Object of values to be checked.
    */
-  validate(values) {
-    if (!values || typeof values !== 'object') {
-      throw new TypeError('`values` should be an object.');
+  validate(valuesToCheck) {
+    if (!valuesToCheck || typeof valuesToCheck !== 'object') {
+      throw new TypeError('`valuesToCheck` should be an object.');
     }
 
-    const errors = {};
-
+    const allErrors = {};
+    const modifiedValues = {};
     for (const key in this.__ruleSets) {
       const ruleSet = this.__ruleSets[key];
       if (!(ruleSet instanceof RuleSet)) {
@@ -36,13 +36,19 @@ export default class Validator {
           'RuleSet should be an instance of `RuleSet` class.',
         );
       }
-      const error = ruleSet.validate(values[key], key);
-      if (error) {
-        errors[key] = error;
+      const { value, errors: currentErrors } = ruleSet.validate(
+        valuesToCheck[key],
+        key,
+      );
+      modifiedValues[key] = value;
+      if (currentErrors) {
+        allErrors[key] = currentErrors;
       }
     }
 
-    if (Object.keys(errors).length > 0) return errors;
-    return null;
+    if (Object.keys(allErrors).length > 0)
+      return { values: modifiedValues, errors: allErrors };
+
+    return { values: modifiedValues, errors: null };
   }
 }

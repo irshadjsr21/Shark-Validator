@@ -12,12 +12,13 @@ describe('isString', () => {
   describe('With null, undefined, object and array', () => {
     let result;
     before(() => {
-      result = schema.validate({
+      const data = schema.validate({
         name: null,
         username: undefined,
         email: {},
         password: [],
       });
+      result = data.errors;
     });
 
     it('Should return error', () => {
@@ -65,12 +66,13 @@ describe('isString', () => {
   describe('With strings', () => {
     let result;
     before(() => {
-      result = schema.validate({
+      const data = schema.validate({
         name: '',
         username: '',
         email: '',
         password: '',
       });
+      result = data.errors;
     });
 
     it('Should not return error', () => {
