@@ -40,28 +40,32 @@ export default class isLen extends Rule {
         eq: this.eq,
       };
 
-      if (this.eq && len !== this.eq) {
+      if (this.eq !== undefined && len !== this.eq) {
         return this.formatMessage(
           "'%name%' should be %eq% characters long.",
           data,
         );
       }
 
-      if (this.min && this.max && (len > this.max || len < this.min)) {
+      if (
+        this.min !== undefined &&
+        this.max !== undefined &&
+        (len > this.max || len < this.min)
+      ) {
         return this.formatMessage(
           "'%name%' should be a between %min% - %max% characters.",
           data,
         );
       }
 
-      if (this.min && len < this.min) {
+      if (this.min !== undefined && len < this.min) {
         return this.formatMessage(
           "'%name%' should not be less than %min% characters.",
           data,
         );
       }
 
-      if (this.max && len > this.max) {
+      if (this.max !== undefined && len > this.max) {
         return this.formatMessage(
           "'%name%' should not be greater than %max% characters.",
           data,
