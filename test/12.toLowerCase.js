@@ -6,7 +6,7 @@ const schema = new Validator({
   password: RuleSet.create([new toLowerCase()]),
 });
 
-describe('toLowerCase', () => {
+describe('12. toLowerCase', () => {
   let values, errors;
   before(() => {
     const data = schema.validate({

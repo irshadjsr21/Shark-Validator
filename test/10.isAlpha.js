@@ -11,7 +11,7 @@ const schema = new Validator({
   ),
 });
 
-describe('isAlpha', () => {
+describe('10. isAlpha', () => {
   describe('With invalid values', () => {
     let result;
     before(() => {

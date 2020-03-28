@@ -14,7 +14,7 @@ const schema = new Validator({
   ),
 });
 
-describe('isLen', () => {
+describe('03. isLen', () => {
   describe('With error values', () => {
     let result;
     before(() => {

@@ -14,7 +14,7 @@ const schema = new Validator({
   ),
 });
 
-describe('matchRegex', () => {
+describe('09. matchRegex', () => {
   describe('With error values', () => {
     let result;
     before(() => {
