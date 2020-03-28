@@ -14,4 +14,5 @@ export {
   isAlpha,
   isAlphaNum,
   toLowerCase,
+  toUpperCase,
 } from './rules';
