@@ -13,4 +13,5 @@ export {
   matchRegex,
   isAlpha,
   isAlphaNum,
+  toLowerCase,
 } from './rules';

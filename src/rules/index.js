@@ -10,3 +10,4 @@ export { default as toInt } from './toInt';
 export { default as matchRegex } from './matchRegex';
 export { default as isAlpha } from './isAlpha';
 export { default as isAlphaNum } from './isAlphaNum';
+export { default as toLowerCase } from './toLowerCase';
