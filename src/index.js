@@ -11,4 +11,5 @@ export {
   isInt,
   toInt,
   matchRegex,
+  isAlpha
 } from './rules';

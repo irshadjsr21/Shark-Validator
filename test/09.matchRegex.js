@@ -15,7 +15,7 @@ const schema = new Validator({
 });
 
 describe('matchRegex', () => {
-  describe('With null, undefined and empty string', () => {
+  describe('With error values', () => {
     let result;
     before(() => {
       const data = schema.validate({
@@ -53,7 +53,7 @@ describe('matchRegex', () => {
     });
   });
 
-  describe('With valid strings', () => {
+  describe('With valid values', () => {
     let result;
     before(() => {
       const data = schema.validate({
