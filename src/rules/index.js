@@ -7,3 +7,4 @@ export { default as isNumber } from './isNumber';
 export { default as toNumber } from './toNumber';
 export { default as isInt } from './isInt';
 export { default as toInt } from './toInt';
+export { default as matchRegex } from './matchRegex';

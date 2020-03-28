@@ -10,4 +10,5 @@ export {
   toNumber,
   isInt,
   toInt,
+  matchRegex,
 } from './rules';
