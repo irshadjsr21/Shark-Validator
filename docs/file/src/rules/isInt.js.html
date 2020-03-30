@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/rules/isInt.js | shark-validator</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="A simple schema validator"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="shark-validator"><meta property="twitter:description" content="A simple schema validator"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/irshadjsr21/Shark-Validator.git"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/RuleSet.js~RuleSet.html">RuleSet</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Validator.js~Validator.html">Validator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-validationError">validationError</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#rules">rules</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/rules/Rule.js~Rule.html">Rule</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/rules/isAlpha.js~isAlpha.html">isAlpha</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/rules/isAlphaNum.js~isAlphaNum.html">isAlphaNum</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/rules/isIn.js~isIn.html">isIn</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/rules/isInt.js~isInt.html">isInt</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/rules/isLen.js~isLen.html">isLen</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/rules/isNumber.js~isNumber.html">isNumber</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/rules/isRequired.js~isRequired.html">isRequired</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/rules/isString.js~isString.html">isString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/rules/matchRegex.js~matchRegex.html">matchRegex</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/rules/toInt.js~toInt.html">toInt</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/rules/toLowerCase.js~toLowerCase.html">toLowerCase</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/rules/toNumber.js~toNumber.html">toNumber</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/rules/toUpperCase.js~toUpperCase.html">toUpperCase</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/rules/isInt.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import Rule from &apos;./Rule&apos;;
+
+/**
+ * Checks if the value is an integer
+ */
+export default class isInt extends Rule {
+  /**
+   * @ignore
+   */
+  message;
+
+  /**
+   * @ignore
+   */
+  min;
+
+  /**
+   * @ignore
+   */
+  max;
+
+  /**
+   * Checks if the value is an integer
+   * @param {Object} options Options for `isInt`
+   * @param {Number} options.min Number should be min to `min`
+   * @param {Number} options.max Number should be max to `max`
+   * @param {String} options.message Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)
+   */
+  constructor(options) {
+    super(&apos;isInt&apos;);
+
+    this.min = undefined;
+    this.max = undefined;
+    this.message = undefined;
+    if (options !== undefined &amp;&amp; typeof options !== &apos;object&apos;) {
+      throw new TypeError(&apos;`options` should be an object.&apos;);
+    }
+
+    if (options !== undefined) {
+      const keys = [&apos;min&apos;, &apos;max&apos;];
+      for (const key of keys) {
+        if (options[key] !== undefined &amp;&amp; typeof options[key] !== &apos;number&apos;) {
+          throw new TypeError(
+            `\`${key}\` key in options should be an integer.`,
+          );
+        }
+      }
+
+      if (
+        options.message !== undefined &amp;&amp;
+        typeof options.message !== &apos;string&apos;
+      ) {
+        throw new Error(&apos;`message` key in `options` should be a string.&apos;);
+      }
+
+      this.min = options.min;
+      this.max = options.max;
+      this.message = options.message;
+    }
+  }
+
+  /**
+   * Validate the `value` and return the error `string` if there are any
+   * otherwise return `null`.
+   * @param {any} value The value to be checked.
+   * @param {String} label Name or Label of the value being checked.
+   * @returns {{ value: any, error: String }} Value and error string.
+   */
+  validate(value, label) {
+    const data = {
+      name: label,
+      min: this.min,
+      max: this.max,
+    };
+
+    if (isNaN(value)) {
+      return {
+        value,
+        error: this.message
+          ? this.formatMessage(this.message, data)
+          : this.formatMessage(&quot;&apos;%name%&apos; should be an integer.&quot;, data),
+      };
+    }
+
+    const num = Number.parseFloat(value);
+
+    if (!Number.isInteger(num)) {
+      return {
+        value,
+        error: this.message
+          ? this.formatMessage(this.message, data)
+          : this.formatMessage(&quot;&apos;%name%&apos; should be an integer.&quot;, data),
+      };
+    }
+
+    if (
+      this.min !== undefined &amp;&amp;
+      this.max !== undefined &amp;&amp;
+      (num &gt; this.max || num &lt; this.min)
+    ) {
+      return {
+        value,
+        error: this.message
+          ? this.formatMessage(this.message, data)
+          : this.formatMessage(
+              &quot;&apos;%name%&apos; should be a between %min% - %max%.&quot;,
+              data,
+            ),
+      };
+    }
+
+    if (this.min !== undefined &amp;&amp; num &lt; this.min) {
+      return {
+        value,
+        error: this.message
+          ? this.formatMessage(this.message, data)
+          : this.formatMessage(&quot;&apos;%name%&apos; should not be less than %min%.&quot;, data),
+      };
+    }
+
+    if (this.max !== undefined &amp;&amp; num &gt; this.max) {
+      return {
+        value,
+        error: this.message
+          ? this.formatMessage(this.message, data)
+          : this.formatMessage(
+              &quot;&apos;%name%&apos; should not be greater than %max%.&quot;,
+              data,
+            ),
+      };
+    }
+
+    return { value, error: null };
+  }
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

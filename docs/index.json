@@ -1,0 +1,3050 @@
+[
+  {
+    "__docId__": 1,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Infinity",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 2,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~NaN",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 3,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~undefined",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 4,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~null",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 5,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 6,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 7,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 8,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 9,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 10,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 11,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Symbol",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 12,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Error",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 13,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~EvalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 14,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~InternalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 15,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RangeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 16,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ReferenceError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 17,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~SyntaxError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 18,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~TypeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 19,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~URIError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 20,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 21,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 22,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Date",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 23,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~String",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 24,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~string",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 25,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RegExp",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 26,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 27,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 28,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 29,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8ClampedArray",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 30,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 31,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 32,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 33,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 34,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 35,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float64Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 36,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Map",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 37,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Set",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakMap",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakSet",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ArrayBuffer",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~DataView",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~JSON",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Promise",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Generator",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~GeneratorFunction",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Reflect",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Proxy",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 48,
+    "kind": "file",
+    "name": "src/RuleSet.js",
+    "content": "import { Rule } from './rules';\n\n/**\n * Vaidation error object.\n * @typedef {Object} validationError\n * @property {String} error - Error string\n * @property {String} validator - Name of validator (`Rule`) where the error occured\n * @property {Any} value - Value which caused the `Rule` to fail\n */\n\n/**\n * Creates a set of rules for a single key.\n */\nclass RuleSet {\n  /**\n   * @ignore\n   * @private\n   */\n  __rules;\n\n  /**\n   * @ignore\n   * @private\n   */\n  __label;\n\n  /**\n   * Create a ruleset for a particular `key` or `value`.\n   * @param {Array<Rule>} arrayOfRules Array of `Rule` objects\n   * @param {String} label The name or label of the value being checked\n   */\n  constructor(arrayOfRules, label) {\n    if (label && typeof label !== 'string') {\n      throw new TypeError('`label` should be a string.');\n    }\n\n    if (!arrayOfRules || !Array.isArray(arrayOfRules)) {\n      throw new TypeError('`arrayOfRules` should be an array.');\n    }\n\n    if (arrayOfRules.length <= 0) {\n      throw new TypeError('`arrayOfRules` should not be empty.');\n    }\n\n    this.__rules = [...arrayOfRules];\n    this.__label = label;\n  }\n\n  /**\n   * Validates the `value` and returns an array of errors if any,\n   * othewise returns `null`.\n   *\n   * @param {any} valueToCheck Value to be validated\n   * @param {String} key Key of the value being checked\n   * @returns {validationError[]} An object containing `value` and `errors` if any\n   */\n  validate(valueToCheck, key) {\n    const errors = [];\n    let modifiedValue = valueToCheck;\n    for (const rule of this.__rules) {\n      if (!(rule instanceof Rule)) {\n        throw new TypeError('Rule should be an instance of `Rule` class.');\n      }\n      const { value, error } = rule.validate(\n        modifiedValue,\n        this.__label || key,\n      );\n      modifiedValue = value;\n      if (error) errors.push({ error, validator: rule.__name, value });\n    }\n\n    if (errors.length > 0) return { value: modifiedValue, errors };\n    return { value: modifiedValue, errors: null };\n  }\n\n  /**\n   * Create a ruleset for a particular `key` or `value`.\n   * Can be used as an alternative to the constructor.\n   * @param {Array} arrayOfRules Array of `Rule` objects\n   * @param {String} label The name or label of the value being checked\n   * @returns {RuleSet} A new `RuleSet` object\n   */\n  static create(arrayOfRules, label) {\n    return new RuleSet(arrayOfRules, label);\n  }\n}\n\nexport default RuleSet;\n",
+    "static": true,
+    "longname": "/home/irshad/Documents/Code/MyCode/NPM/shark-validate/src/RuleSet.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "typedef",
+    "name": "validationError",
+    "memberof": "src/RuleSet.js",
+    "static": true,
+    "longname": "src/RuleSet.js~validationError",
+    "access": "public",
+    "description": "Vaidation error object.",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "error",
+        "description": "Error string"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "validator",
+        "description": "Name of validator (`Rule`) where the error occured"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "value",
+        "description": "Value which caused the `Rule` to fail"
+      }
+    ],
+    "type": {
+      "types": [
+        "Object"
+      ],
+      "optional": false,
+      "name": "validationError"
+    }
+  },
+  {
+    "__docId__": 50,
+    "kind": "class",
+    "name": "RuleSet",
+    "memberof": "src/RuleSet.js",
+    "static": true,
+    "longname": "src/RuleSet.js~RuleSet",
+    "access": "public",
+    "export": true,
+    "importPath": "shark-validator/lib/RuleSet.js",
+    "importStyle": "RuleSet",
+    "description": "Creates a set of rules for a single key.",
+    "lineNumber": 14,
+    "interface": false
+  },
+  {
+    "__docId__": 51,
+    "kind": "member",
+    "name": "__rules",
+    "memberof": "src/RuleSet.js~RuleSet",
+    "static": false,
+    "longname": "src/RuleSet.js~RuleSet#__rules",
+    "access": "private",
+    "description": "",
+    "lineNumber": 19,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 52,
+    "kind": "member",
+    "name": "__label",
+    "memberof": "src/RuleSet.js~RuleSet",
+    "static": false,
+    "longname": "src/RuleSet.js~RuleSet#__label",
+    "access": "private",
+    "description": "",
+    "lineNumber": 25,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 53,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/RuleSet.js~RuleSet",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/RuleSet.js~RuleSet#constructor",
+    "access": "public",
+    "description": "Create a ruleset for a particular `key` or `value`.",
+    "lineNumber": 32,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Array<Rule>"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "arrayOfRules",
+        "description": "Array of `Rule` objects"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "label",
+        "description": "The name or label of the value being checked"
+      }
+    ]
+  },
+  {
+    "__docId__": 56,
+    "kind": "method",
+    "name": "validate",
+    "memberof": "src/RuleSet.js~RuleSet",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/RuleSet.js~RuleSet#validate",
+    "access": "public",
+    "description": "Validates the `value` and returns an array of errors if any,\nothewise returns `null`.",
+    "lineNumber": 57,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{validationError[]} An object containing `value` and `errors` if any"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "valueToCheck",
+        "description": "Value to be validated"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "key",
+        "description": "Key of the value being checked"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "validationError[]"
+      ],
+      "spread": false,
+      "description": "An object containing `value` and `errors` if any"
+    }
+  },
+  {
+    "__docId__": 57,
+    "kind": "method",
+    "name": "create",
+    "memberof": "src/RuleSet.js~RuleSet",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/RuleSet.js~RuleSet.create",
+    "access": "public",
+    "description": "Create a ruleset for a particular `key` or `value`.\nCan be used as an alternative to the constructor.",
+    "lineNumber": 83,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{RuleSet} A new `RuleSet` object"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "arrayOfRules",
+        "description": "Array of `Rule` objects"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "label",
+        "description": "The name or label of the value being checked"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "RuleSet"
+      ],
+      "spread": false,
+      "description": "A new `RuleSet` object"
+    }
+  },
+  {
+    "__docId__": 58,
+    "kind": "file",
+    "name": "src/Validator.js",
+    "content": "import RuleSet from './RuleSet';\n\n/**\n * Creates a Validator.\n */\nexport default class Validator {\n  /**\n   * @ignore\n   * @private\n   */\n  __ruleSets;\n\n  /**\n   * Creates a validator schema.\n   * @param {Object<RuleSet>} objectOfRuleSet Set of `RuleSet`. `key` should match with the `key` of object being validated.\n   */\n  constructor(objectOfRuleSet) {\n    if (!objectOfRuleSet || typeof objectOfRuleSet !== 'object') {\n      throw new TypeError('`objectOfRuleSet` should be an object.');\n    }\n\n    if (Object.keys(objectOfRuleSet).length <= 0) {\n      throw new TypeError('`objectOfRuleSet` should not be empty.');\n    }\n\n    this.__ruleSets = { ...objectOfRuleSet };\n  }\n\n  /**\n   * Validates the `values` passed and returns `error` object if any,\n   * otherwise return `null` along with `values`.\n   * @param {Object} valuesToCheck Object of values to be checked.\n   * @returns {{values: Object, errors: Object<validationError>}} Object containing `values` and `errors`\n   */\n  validate(valuesToCheck) {\n    if (!valuesToCheck || typeof valuesToCheck !== 'object') {\n      throw new TypeError('`valuesToCheck` should be an object.');\n    }\n\n    const allErrors = {};\n    const modifiedValues = {};\n    for (const key in this.__ruleSets) {\n      const ruleSet = this.__ruleSets[key];\n      if (!(ruleSet instanceof RuleSet)) {\n        throw new TypeError(\n          'RuleSet should be an instance of `RuleSet` class.',\n        );\n      }\n      const { value, errors: currentErrors } = ruleSet.validate(\n        valuesToCheck[key],\n        key,\n      );\n      modifiedValues[key] = value;\n      if (currentErrors) {\n        allErrors[key] = currentErrors;\n      }\n    }\n\n    if (Object.keys(allErrors).length > 0)\n      return { values: modifiedValues, errors: allErrors };\n\n    return { values: modifiedValues, errors: null };\n  }\n}\n",
+    "static": true,
+    "longname": "/home/irshad/Documents/Code/MyCode/NPM/shark-validate/src/Validator.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 59,
+    "kind": "class",
+    "name": "Validator",
+    "memberof": "src/Validator.js",
+    "static": true,
+    "longname": "src/Validator.js~Validator",
+    "access": "public",
+    "export": true,
+    "importPath": "shark-validator/lib/Validator.js",
+    "importStyle": "Validator",
+    "description": "Creates a Validator.",
+    "lineNumber": 6,
+    "interface": false
+  },
+  {
+    "__docId__": 60,
+    "kind": "member",
+    "name": "__ruleSets",
+    "memberof": "src/Validator.js~Validator",
+    "static": false,
+    "longname": "src/Validator.js~Validator#__ruleSets",
+    "access": "private",
+    "description": "",
+    "lineNumber": 11,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 61,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/Validator.js~Validator",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Validator.js~Validator#constructor",
+    "access": "public",
+    "description": "Creates a validator schema.",
+    "lineNumber": 17,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object<RuleSet>"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "objectOfRuleSet",
+        "description": "Set of `RuleSet`. `key` should match with the `key` of object being validated."
+      }
+    ]
+  },
+  {
+    "__docId__": 63,
+    "kind": "method",
+    "name": "validate",
+    "memberof": "src/Validator.js~Validator",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Validator.js~Validator#validate",
+    "access": "public",
+    "description": "Validates the `values` passed and returns `error` object if any,\notherwise return `null` along with `values`.",
+    "lineNumber": 35,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{{values: Object, errors: Object<validationError>}} Object containing `values` and `errors`"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "valuesToCheck",
+        "description": "Object of values to be checked."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "{values: Object, errors: Object<validationError>}"
+      ],
+      "spread": false,
+      "description": "Object containing `values` and `errors`"
+    }
+  },
+  {
+    "__docId__": 64,
+    "kind": "file",
+    "name": "src/index.js",
+    "content": "export { default as Validator } from './Validator';\nexport { default as RuleSet } from './RuleSet';\nexport {\n  Rule,\n  isLen,\n  isString,\n  isRequired,\n  isIn,\n  isNumber,\n  toNumber,\n  isInt,\n  toInt,\n  matchRegex,\n  isAlpha,\n  isAlphaNum,\n  toLowerCase,\n  toUpperCase,\n} from './rules';\n",
+    "static": true,
+    "longname": "/home/irshad/Documents/Code/MyCode/NPM/shark-validate/src/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 65,
+    "kind": "file",
+    "name": "src/rules/Rule.js",
+    "content": "/**\n * Rule class should be extended in order to create any rule.\n * @abstract\n */\nexport default class Rule {\n  /**\n   * @private\n   * @type {String} Name of the `Rule`\n   */\n  __name;\n\n  /**\n   * `Rule` is an abstract class which must be extended in order to\n   * create a Rule. The subclass must have a `validate` function.\n   * @param {String} name Name of the Rule being defined.\n   */\n  constructor(name) {\n    if (!name || typeof name !== 'string') {\n      throw new Error('`name` is required in `Rule` class constructor.');\n    }\n\n    this.__name = name;\n\n    if (this.constructor === Rule) {\n      throw new TypeError(\n        'Abstract class \"Rule\" cannot be instantiated directly.',\n      );\n    }\n\n    if (this.validate === undefined) {\n      throw new TypeError(\n        'Classes extending the `Rule` must have `validate` function.',\n      );\n    }\n  }\n\n  /**\n   * @abstract\n   * Validate the `value` and return the error `string` if there are any\n   * otherwise return `null`.\n   * @param {any} value The value to be checked.\n   * @param {String} label Name or Label of the value being checked.\n   * @returns {{ value: any, error: String }} Value and error string.\n   */\n  validate(value, label) {}\n\n  /**\n   * This formats the formatter string and includes the variables in it\n   * from `values` object.\n   * The variable key must be surrounded by `%` char.\n   * \n   * @param {String} formatter The format string.\n   * @param {Object} values Object containing `key` and `value` pairs used in formatter `string`.\n   * @returns {String} Returns formatted string\n   * \n   * @example\n   * const formattedString = formatMessage('%name% should not be empty.', { name: 'Email' });\n   * // Returns 'Email should not be empty.'\n   * \n   * @example\n   * // If the message contains actual `%` symbol, it should be prefixed with `-`.\n   * \n   * const formattedString = formatMessage('%name% should be greater than 90-%.', { name: 'Marks' });\n   * // Returns 'Marks should be greater than 90%.'\n   */\n  formatMessage(formatter, values) {\n    let __values = values;\n    if (!__values) __values = {};\n    if (typeof __values !== 'object') {\n      throw new TypeError('`values` should be an object.');\n    }\n\n    if (!formatter || typeof formatter !== 'string') {\n      throw new TypeError('`formatter` should be a string.');\n    }\n\n    let newString = '';\n    let key = '';\n    let isBuildingKey = false;\n\n    for (let i = 0; i < formatter.length; i++) {\n      const char = formatter.charAt(i);\n      switch (char) {\n        case '-':\n          if (i + 1 < formatter.length && formatter.charAt(i + 1) === '%') {\n            newString += '%';\n            i++;\n          } else {\n            newString += '-';\n          }\n          break;\n        case '%':\n          isBuildingKey = !isBuildingKey;\n          if (isBuildingKey) {\n            key = '';\n          } else {\n            let value = __values[key];\n            if (value === null || value === undefined) {\n              throw new Error(`Value of \\`${key}\\` is not present.`);\n            }\n            newString += value;\n          }\n          break;\n        default:\n          if (isBuildingKey) {\n            key += char;\n          } else {\n            newString += char;\n          }\n      }\n    }\n\n    if (isBuildingKey) {\n      throw new Error('Invalid pairs of `%` in `formatter`.');\n    }\n\n    return newString;\n  }\n}\n",
+    "static": true,
+    "longname": "/home/irshad/Documents/Code/MyCode/NPM/shark-validate/src/rules/Rule.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 66,
+    "kind": "class",
+    "name": "Rule",
+    "memberof": "src/rules/Rule.js",
+    "static": true,
+    "longname": "src/rules/Rule.js~Rule",
+    "access": "public",
+    "export": true,
+    "importPath": "shark-validator/lib/rules/Rule.js",
+    "importStyle": "Rule",
+    "description": "Rule class should be extended in order to create any rule.",
+    "lineNumber": 5,
+    "abstract": true,
+    "interface": false
+  },
+  {
+    "__docId__": 67,
+    "kind": "member",
+    "name": "__name",
+    "memberof": "src/rules/Rule.js~Rule",
+    "static": false,
+    "longname": "src/rules/Rule.js~Rule#__name",
+    "access": "private",
+    "description": "",
+    "lineNumber": 10,
+    "type": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 68,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/rules/Rule.js~Rule",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rules/Rule.js~Rule#constructor",
+    "access": "public",
+    "description": "`Rule` is an abstract class which must be extended in order to\ncreate a Rule. The subclass must have a `validate` function.",
+    "lineNumber": 17,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "name",
+        "description": "Name of the Rule being defined."
+      }
+    ]
+  },
+  {
+    "__docId__": 70,
+    "kind": "method",
+    "name": "validate",
+    "memberof": "src/rules/Rule.js~Rule",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rules/Rule.js~Rule#validate",
+    "access": "public",
+    "description": "",
+    "lineNumber": 45,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{{ value: any, error: String }} Value and error string."
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "value",
+        "description": "The value to be checked."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "label",
+        "description": "Name or Label of the value being checked."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "{ value: any, error: String }"
+      ],
+      "spread": false,
+      "description": "Value and error string."
+    },
+    "abstract": true
+  },
+  {
+    "__docId__": 71,
+    "kind": "method",
+    "name": "formatMessage",
+    "memberof": "src/rules/Rule.js~Rule",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rules/Rule.js~Rule#formatMessage",
+    "access": "public",
+    "description": "This formats the formatter string and includes the variables in it\nfrom `values` object.\nThe variable key must be surrounded by `%` char.",
+    "examples": [
+      "const formattedString = formatMessage('%name% should not be empty.', { name: 'Email' });\n// Returns 'Email should not be empty.'",
+      "// If the message contains actual `%` symbol, it should be prefixed with `-`.\n\nconst formattedString = formatMessage('%name% should be greater than 90-%.', { name: 'Marks' });\n// Returns 'Marks should be greater than 90%.'"
+    ],
+    "lineNumber": 66,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{String} Returns formatted string"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "formatter",
+        "description": "The format string."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "values",
+        "description": "Object containing `key` and `value` pairs used in formatter `string`."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": "Returns formatted string"
+    }
+  },
+  {
+    "__docId__": 72,
+    "kind": "file",
+    "name": "src/rules/index.js",
+    "content": "export { default as Rule } from './Rule';\nexport { default as isString } from './isString';\nexport { default as isRequired } from './isRequired';\nexport { default as isLen } from './isLen';\nexport { default as isIn } from './isIn';\nexport { default as isNumber } from './isNumber';\nexport { default as toNumber } from './toNumber';\nexport { default as isInt } from './isInt';\nexport { default as toInt } from './toInt';\nexport { default as matchRegex } from './matchRegex';\nexport { default as isAlpha } from './isAlpha';\nexport { default as isAlphaNum } from './isAlphaNum';\nexport { default as toLowerCase } from './toLowerCase';\nexport { default as toUpperCase } from './toUpperCase';\n",
+    "static": true,
+    "longname": "/home/irshad/Documents/Code/MyCode/NPM/shark-validate/src/rules/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 73,
+    "kind": "file",
+    "name": "src/rules/isAlpha.js",
+    "content": "import Rule from './Rule';\n\n/**\n * Checks if the value contains only Alphabets.\n */\nexport default class isAlpha extends Rule {\n  /**\n   * @ignore\n   */\n  message;\n\n  /**\n   * @ignore\n   */\n  allowSpaces;\n\n  /**\n   * @ignore\n   */\n  regex;\n\n  /**\n   * Checks if the value contains only Alphabets.\n   * @param {Object} options Options for `isAlpha`\n   * @param {Boolean} options.allowSpaces If `true`, it allows spaces\n   * @param {String} options.message Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)\n   */\n  constructor(options) {\n    super('isAlpha');\n    let allowedString = 'a-z';\n    this.message = undefined;\n    this.allowSpaces = false;\n\n    if (options !== undefined && typeof options !== 'object') {\n      throw new TypeError('`options` should be an object.');\n    }\n\n    if (options !== undefined) {\n      if (\n        options.message !== undefined &&\n        typeof options.message !== 'string'\n      ) {\n        throw new Error('`message` key in `options` should be a string.');\n      }\n\n      if (\n        options.allowSpaces !== undefined &&\n        typeof options.allowSpaces !== 'boolean'\n      ) {\n        throw new Error('`allowSpaces` key in `options` should be a boolean.');\n      }\n      this.message = options.message;\n      this.allowSpaces = options.allowSpaces;\n      if (this.allowSpaces) {\n        allowedString += '\\\\s';\n      }\n    }\n\n    this.regex = new RegExp(`^[${allowedString}]*$`, 'i');\n  }\n\n  /**\n   * Validate the `value` and return the error `string` if there are any\n   * otherwise return `null`.\n   * @param {any} value The value to be checked.\n   * @param {String} label Name or Label of the value being checked.\n   * @returns {{ value: any, error: String }} Value and error string.\n   */\n  validate(value, label) {\n    if (typeof value === 'string') {\n      const data = {\n        name: label,\n      };\n\n      if (!this.regex.test(value))\n        return {\n          value,\n          error: this.message\n            ? this.formatMessage(this.message, data)\n            : this.formatMessage(\n                \"'%name%' should contain only alphabets.\",\n                data,\n              ),\n        };\n    }\n    return { value, error: null };\n  }\n}\n",
+    "static": true,
+    "longname": "/home/irshad/Documents/Code/MyCode/NPM/shark-validate/src/rules/isAlpha.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 74,
+    "kind": "class",
+    "name": "isAlpha",
+    "memberof": "src/rules/isAlpha.js",
+    "static": true,
+    "longname": "src/rules/isAlpha.js~isAlpha",
+    "access": "public",
+    "export": true,
+    "importPath": "shark-validator/lib/rules/isAlpha.js",
+    "importStyle": "isAlpha",
+    "description": "Checks if the value contains only Alphabets.",
+    "lineNumber": 6,
+    "interface": false,
+    "extends": [
+      "src/rules/Rule.js~Rule"
+    ]
+  },
+  {
+    "__docId__": 75,
+    "kind": "member",
+    "name": "message",
+    "memberof": "src/rules/isAlpha.js~isAlpha",
+    "static": false,
+    "longname": "src/rules/isAlpha.js~isAlpha#message",
+    "access": "public",
+    "description": "",
+    "lineNumber": 10,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 76,
+    "kind": "member",
+    "name": "allowSpaces",
+    "memberof": "src/rules/isAlpha.js~isAlpha",
+    "static": false,
+    "longname": "src/rules/isAlpha.js~isAlpha#allowSpaces",
+    "access": "public",
+    "description": "",
+    "lineNumber": 15,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 77,
+    "kind": "member",
+    "name": "regex",
+    "memberof": "src/rules/isAlpha.js~isAlpha",
+    "static": false,
+    "longname": "src/rules/isAlpha.js~isAlpha#regex",
+    "access": "public",
+    "description": "",
+    "lineNumber": 20,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 78,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/rules/isAlpha.js~isAlpha",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rules/isAlpha.js~isAlpha#constructor",
+    "access": "public",
+    "description": "Checks if the value contains only Alphabets.",
+    "lineNumber": 28,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options for `isAlpha`"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.allowSpaces",
+        "description": "If `true`, it allows spaces"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.message",
+        "description": "Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)"
+      }
+    ]
+  },
+  {
+    "__docId__": 84,
+    "kind": "method",
+    "name": "validate",
+    "memberof": "src/rules/isAlpha.js~isAlpha",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rules/isAlpha.js~isAlpha#validate",
+    "access": "public",
+    "description": "Validate the `value` and return the error `string` if there are any\notherwise return `null`.",
+    "lineNumber": 69,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{{ value: any, error: String }} Value and error string."
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "value",
+        "description": "The value to be checked."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "label",
+        "description": "Name or Label of the value being checked."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "{ value: any, error: String }"
+      ],
+      "spread": false,
+      "description": "Value and error string."
+    }
+  },
+  {
+    "__docId__": 85,
+    "kind": "file",
+    "name": "src/rules/isAlphaNum.js",
+    "content": "import Rule from './Rule';\n\n/**\n * Checks if the value contains only Alphabets and numbers.\n */\nexport default class isAlphaNum extends Rule {\n  /**\n   * @ignore\n   */\n  message;\n\n  /**\n   * @ignore\n   */\n  allowSpaces;\n\n  /**\n   * @ignore\n   */\n  regex;\n\n  /**\n   * Checks if the value contains only Alphabets and numbers.\n   * @param {Object} options Options for `isAlphaNum`\n   * @param {Boolean} options.allowSpaces If `true`, it allows spaces\n   * @param {String} options.message Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)\n   */\n  constructor(options) {\n    super('isAlphaNum');\n    let allowedString = 'a-z0-9';\n    this.message = undefined;\n    this.allowSpaces = false;\n\n    if (options !== undefined && typeof options !== 'object') {\n      throw new TypeError('`options` should be an object.');\n    }\n\n    if (options !== undefined) {\n      if (\n        options.message !== undefined &&\n        typeof options.message !== 'string'\n      ) {\n        throw new Error('`message` key in `options` should be a string.');\n      }\n\n      if (\n        options.allowSpaces !== undefined &&\n        typeof options.allowSpaces !== 'boolean'\n      ) {\n        throw new Error('`allowSpaces` key in `options` should be a boolean.');\n      }\n      this.message = options.message;\n      this.allowSpaces = options.allowSpaces;\n      if (this.allowSpaces) {\n        allowedString += '\\\\s';\n      }\n    }\n\n    this.regex = new RegExp(`^[${allowedString}]*$`, 'i');\n  }\n\n  /**\n   * Validate the `value` and return the error `string` if there are any\n   * otherwise return `null`.\n   * @param {any} value The value to be checked.\n   * @param {String} label Name or Label of the value being checked.\n   * @returns {{ value: any, error: String }} Value and error string.\n   */\n  validate(value, label) {\n    if (typeof value === 'string') {\n      const data = {\n        name: label,\n      };\n\n      if (!this.regex.test(value))\n        return {\n          value,\n          error: this.message\n            ? this.formatMessage(this.message, data)\n            : this.formatMessage(\n                \"'%name%' should contain only alphabets and numbers.\",\n                data,\n              ),\n        };\n    }\n    return { value, error: null };\n  }\n}\n",
+    "static": true,
+    "longname": "/home/irshad/Documents/Code/MyCode/NPM/shark-validate/src/rules/isAlphaNum.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 86,
+    "kind": "class",
+    "name": "isAlphaNum",
+    "memberof": "src/rules/isAlphaNum.js",
+    "static": true,
+    "longname": "src/rules/isAlphaNum.js~isAlphaNum",
+    "access": "public",
+    "export": true,
+    "importPath": "shark-validator/lib/rules/isAlphaNum.js",
+    "importStyle": "isAlphaNum",
+    "description": "Checks if the value contains only Alphabets and numbers.",
+    "lineNumber": 6,
+    "interface": false,
+    "extends": [
+      "src/rules/Rule.js~Rule"
+    ]
+  },
+  {
+    "__docId__": 87,
+    "kind": "member",
+    "name": "message",
+    "memberof": "src/rules/isAlphaNum.js~isAlphaNum",
+    "static": false,
+    "longname": "src/rules/isAlphaNum.js~isAlphaNum#message",
+    "access": "public",
+    "description": "",
+    "lineNumber": 10,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 88,
+    "kind": "member",
+    "name": "allowSpaces",
+    "memberof": "src/rules/isAlphaNum.js~isAlphaNum",
+    "static": false,
+    "longname": "src/rules/isAlphaNum.js~isAlphaNum#allowSpaces",
+    "access": "public",
+    "description": "",
+    "lineNumber": 15,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 89,
+    "kind": "member",
+    "name": "regex",
+    "memberof": "src/rules/isAlphaNum.js~isAlphaNum",
+    "static": false,
+    "longname": "src/rules/isAlphaNum.js~isAlphaNum#regex",
+    "access": "public",
+    "description": "",
+    "lineNumber": 20,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 90,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/rules/isAlphaNum.js~isAlphaNum",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rules/isAlphaNum.js~isAlphaNum#constructor",
+    "access": "public",
+    "description": "Checks if the value contains only Alphabets and numbers.",
+    "lineNumber": 28,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options for `isAlphaNum`"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.allowSpaces",
+        "description": "If `true`, it allows spaces"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.message",
+        "description": "Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)"
+      }
+    ]
+  },
+  {
+    "__docId__": 96,
+    "kind": "method",
+    "name": "validate",
+    "memberof": "src/rules/isAlphaNum.js~isAlphaNum",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rules/isAlphaNum.js~isAlphaNum#validate",
+    "access": "public",
+    "description": "Validate the `value` and return the error `string` if there are any\notherwise return `null`.",
+    "lineNumber": 69,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{{ value: any, error: String }} Value and error string."
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "value",
+        "description": "The value to be checked."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "label",
+        "description": "Name or Label of the value being checked."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "{ value: any, error: String }"
+      ],
+      "spread": false,
+      "description": "Value and error string."
+    }
+  },
+  {
+    "__docId__": 97,
+    "kind": "file",
+    "name": "src/rules/isIn.js",
+    "content": "import Rule from './Rule';\n\n/**\n * Checks if the value is in the given array (works for number and strings) (is type sensitive)\n */\nexport default class isIn extends Rule {\n  /**\n   * @ignore\n   */\n  message;\n\n  /**\n   * @ignore\n   */\n  in;\n\n  /**\n   * Checks if the value is in the given array (works for number and strings) (is type sensitive)\n   * @param {Object} options Options for `isIn`\n   * @param {Array} options.in Array containing possible values\n   * @param {String} options.message Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)\n   */\n  constructor(options) {\n    super('isIn');\n    if (!options || typeof options !== 'object') {\n      throw new TypeError('`options` should be an object.');\n    }\n\n    if (Object.keys(options).length <= 0) {\n      throw new Error('`options` should have `in` key.');\n    }\n\n    if (!options.in || !Array.isArray(options.in)) {\n      throw new Error('`in` key in `options` should be an array.');\n    }\n\n    if (options.message !== undefined && typeof options.message !== 'string') {\n      throw new Error('`message` key in `options` should be a string.');\n    }\n\n    this.in = options.in;\n    this.message = options.message;\n  }\n\n  /**\n   * Validate the `value` and return the error `string` if there are any\n   * otherwise return `null`.\n   * @param {any} value The value to be checked.\n   * @param {String} label Name or Label of the value being checked.\n   * @returns {{ value: any, error: String }} Value and error string.\n   */\n  validate(value, label) {\n    const data = {\n      name: label,\n      in: this.in.join(', '),\n    };\n    const errorMsg = this.message\n      ? this.formatMessage(this.message, data)\n      : this.formatMessage(\"'%name%' should be one of '%in%'.\", data);\n\n    if (\n      (typeof value !== 'string' && typeof value !== 'number') ||\n      !this.in.includes(value)\n    ) {\n      return { value, error: errorMsg };\n    }\n\n    return { value, error: null };\n  }\n}\n",
+    "static": true,
+    "longname": "/home/irshad/Documents/Code/MyCode/NPM/shark-validate/src/rules/isIn.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 98,
+    "kind": "class",
+    "name": "isIn",
+    "memberof": "src/rules/isIn.js",
+    "static": true,
+    "longname": "src/rules/isIn.js~isIn",
+    "access": "public",
+    "export": true,
+    "importPath": "shark-validator/lib/rules/isIn.js",
+    "importStyle": "isIn",
+    "description": "Checks if the value is in the given array (works for number and strings) (is type sensitive)",
+    "lineNumber": 6,
+    "interface": false,
+    "extends": [
+      "src/rules/Rule.js~Rule"
+    ]
+  },
+  {
+    "__docId__": 99,
+    "kind": "member",
+    "name": "message",
+    "memberof": "src/rules/isIn.js~isIn",
+    "static": false,
+    "longname": "src/rules/isIn.js~isIn#message",
+    "access": "public",
+    "description": "",
+    "lineNumber": 10,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 100,
+    "kind": "member",
+    "name": "in",
+    "memberof": "src/rules/isIn.js~isIn",
+    "static": false,
+    "longname": "src/rules/isIn.js~isIn#in",
+    "access": "public",
+    "description": "",
+    "lineNumber": 15,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 101,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/rules/isIn.js~isIn",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rules/isIn.js~isIn#constructor",
+    "access": "public",
+    "description": "Checks if the value is in the given array (works for number and strings) (is type sensitive)",
+    "lineNumber": 23,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options for `isIn`"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.in",
+        "description": "Array containing possible values"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.message",
+        "description": "Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)"
+      }
+    ]
+  },
+  {
+    "__docId__": 104,
+    "kind": "method",
+    "name": "validate",
+    "memberof": "src/rules/isIn.js~isIn",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rules/isIn.js~isIn#validate",
+    "access": "public",
+    "description": "Validate the `value` and return the error `string` if there are any\notherwise return `null`.",
+    "lineNumber": 52,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{{ value: any, error: String }} Value and error string."
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "value",
+        "description": "The value to be checked."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "label",
+        "description": "Name or Label of the value being checked."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "{ value: any, error: String }"
+      ],
+      "spread": false,
+      "description": "Value and error string."
+    }
+  },
+  {
+    "__docId__": 105,
+    "kind": "file",
+    "name": "src/rules/isInt.js",
+    "content": "import Rule from './Rule';\n\n/**\n * Checks if the value is an integer\n */\nexport default class isInt extends Rule {\n  /**\n   * @ignore\n   */\n  message;\n\n  /**\n   * @ignore\n   */\n  min;\n\n  /**\n   * @ignore\n   */\n  max;\n\n  /**\n   * Checks if the value is an integer\n   * @param {Object} options Options for `isInt`\n   * @param {Number} options.min Number should be min to `min`\n   * @param {Number} options.max Number should be max to `max`\n   * @param {String} options.message Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)\n   */\n  constructor(options) {\n    super('isInt');\n\n    this.min = undefined;\n    this.max = undefined;\n    this.message = undefined;\n    if (options !== undefined && typeof options !== 'object') {\n      throw new TypeError('`options` should be an object.');\n    }\n\n    if (options !== undefined) {\n      const keys = ['min', 'max'];\n      for (const key of keys) {\n        if (options[key] !== undefined && typeof options[key] !== 'number') {\n          throw new TypeError(\n            `\\`${key}\\` key in options should be an integer.`,\n          );\n        }\n      }\n\n      if (\n        options.message !== undefined &&\n        typeof options.message !== 'string'\n      ) {\n        throw new Error('`message` key in `options` should be a string.');\n      }\n\n      this.min = options.min;\n      this.max = options.max;\n      this.message = options.message;\n    }\n  }\n\n  /**\n   * Validate the `value` and return the error `string` if there are any\n   * otherwise return `null`.\n   * @param {any} value The value to be checked.\n   * @param {String} label Name or Label of the value being checked.\n   * @returns {{ value: any, error: String }} Value and error string.\n   */\n  validate(value, label) {\n    const data = {\n      name: label,\n      min: this.min,\n      max: this.max,\n    };\n\n    if (isNaN(value)) {\n      return {\n        value,\n        error: this.message\n          ? this.formatMessage(this.message, data)\n          : this.formatMessage(\"'%name%' should be an integer.\", data),\n      };\n    }\n\n    const num = Number.parseFloat(value);\n\n    if (!Number.isInteger(num)) {\n      return {\n        value,\n        error: this.message\n          ? this.formatMessage(this.message, data)\n          : this.formatMessage(\"'%name%' should be an integer.\", data),\n      };\n    }\n\n    if (\n      this.min !== undefined &&\n      this.max !== undefined &&\n      (num > this.max || num < this.min)\n    ) {\n      return {\n        value,\n        error: this.message\n          ? this.formatMessage(this.message, data)\n          : this.formatMessage(\n              \"'%name%' should be a between %min% - %max%.\",\n              data,\n            ),\n      };\n    }\n\n    if (this.min !== undefined && num < this.min) {\n      return {\n        value,\n        error: this.message\n          ? this.formatMessage(this.message, data)\n          : this.formatMessage(\"'%name%' should not be less than %min%.\", data),\n      };\n    }\n\n    if (this.max !== undefined && num > this.max) {\n      return {\n        value,\n        error: this.message\n          ? this.formatMessage(this.message, data)\n          : this.formatMessage(\n              \"'%name%' should not be greater than %max%.\",\n              data,\n            ),\n      };\n    }\n\n    return { value, error: null };\n  }\n}\n",
+    "static": true,
+    "longname": "/home/irshad/Documents/Code/MyCode/NPM/shark-validate/src/rules/isInt.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 106,
+    "kind": "class",
+    "name": "isInt",
+    "memberof": "src/rules/isInt.js",
+    "static": true,
+    "longname": "src/rules/isInt.js~isInt",
+    "access": "public",
+    "export": true,
+    "importPath": "shark-validator/lib/rules/isInt.js",
+    "importStyle": "isInt",
+    "description": "Checks if the value is an integer",
+    "lineNumber": 6,
+    "interface": false,
+    "extends": [
+      "src/rules/Rule.js~Rule"
+    ]
+  },
+  {
+    "__docId__": 107,
+    "kind": "member",
+    "name": "message",
+    "memberof": "src/rules/isInt.js~isInt",
+    "static": false,
+    "longname": "src/rules/isInt.js~isInt#message",
+    "access": "public",
+    "description": "",
+    "lineNumber": 10,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 108,
+    "kind": "member",
+    "name": "min",
+    "memberof": "src/rules/isInt.js~isInt",
+    "static": false,
+    "longname": "src/rules/isInt.js~isInt#min",
+    "access": "public",
+    "description": "",
+    "lineNumber": 15,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 109,
+    "kind": "member",
+    "name": "max",
+    "memberof": "src/rules/isInt.js~isInt",
+    "static": false,
+    "longname": "src/rules/isInt.js~isInt#max",
+    "access": "public",
+    "description": "",
+    "lineNumber": 20,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 110,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/rules/isInt.js~isInt",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rules/isInt.js~isInt#constructor",
+    "access": "public",
+    "description": "Checks if the value is an integer",
+    "lineNumber": 29,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options for `isInt`"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.min",
+        "description": "Number should be min to `min`"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.max",
+        "description": "Number should be max to `max`"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.message",
+        "description": "Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)"
+      }
+    ]
+  },
+  {
+    "__docId__": 117,
+    "kind": "method",
+    "name": "validate",
+    "memberof": "src/rules/isInt.js~isInt",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rules/isInt.js~isInt#validate",
+    "access": "public",
+    "description": "Validate the `value` and return the error `string` if there are any\notherwise return `null`.",
+    "lineNumber": 69,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{{ value: any, error: String }} Value and error string."
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "value",
+        "description": "The value to be checked."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "label",
+        "description": "Name or Label of the value being checked."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "{ value: any, error: String }"
+      ],
+      "spread": false,
+      "description": "Value and error string."
+    }
+  },
+  {
+    "__docId__": 118,
+    "kind": "file",
+    "name": "src/rules/isLen.js",
+    "content": "import Rule from './Rule';\n\n/**\n * Checks length of string value\n */\nexport default class isLen extends Rule {\n  /**\n   * @ignore\n   */\n  message;\n\n  /**\n   * @ignore\n   */\n  min;\n\n  /**\n   * @ignore\n   */\n  max;\n\n  /**\n   * @ignore\n   */\n  eq;\n\n  /**\n   * Checks length of string value\n   * @param {Object} options Options for `isLen`\n   * @param {Number} options.eq Length should be equal to `eq`\n   * @param {Number} options.min Length should be min `min`\n   * @param {Number} options.max Length should be max to `max`\n   * @param {String} options.message Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)\n   */\n  constructor(options) {\n    super('isLen');\n    if (!options || typeof options !== 'object') {\n      throw new TypeError('`options` should be an object.');\n    }\n\n    if (Object.keys(options).length <= 0) {\n      throw new Error(\n        '`options` should have atleast one of `min`, `max` or `eq` key.',\n      );\n    }\n    const keys = ['min', 'max', 'eq'];\n    for (const key of keys) {\n      if (options[key] !== undefined && typeof options[key] !== 'number') {\n        throw new TypeError(`\\`${key}\\` key in options should be an integer.`);\n      }\n    }\n\n    if (options.message !== undefined && typeof options.message !== 'string') {\n      throw new Error('`message` key in `options` should be a string.');\n    }\n\n    this.min = options.min;\n    this.max = options.max;\n    this.eq = options.eq;\n    this.message = options.message;\n  }\n\n  /**\n   * Validate the `value` and return the error `string` if there are any\n   * otherwise return `null`.\n   * @param {any} value The value to be checked.\n   * @param {String} label Name or Label of the value being checked.\n   * @returns {{ value: any, error: String }} Value and error string.\n   */\n  validate(value, label) {\n    if (typeof value === 'string') {\n      const len = value.length;\n      const data = {\n        name: label,\n        min: this.min,\n        max: this.max,\n        eq: this.eq,\n      };\n\n      if (this.eq !== undefined && len !== this.eq) {\n        return {\n          value,\n          error: this.message\n            ? this.formatMessage(this.message, data)\n            : this.formatMessage(\n                \"'%name%' should be %eq% characters long.\",\n                data,\n              ),\n        };\n      }\n\n      if (\n        this.min !== undefined &&\n        this.max !== undefined &&\n        (len > this.max || len < this.min)\n      ) {\n        return {\n          value,\n          error: this.message\n            ? this.formatMessage(this.message, data)\n            : this.formatMessage(\n                \"'%name%' should be a between %min% - %max% characters.\",\n                data,\n              ),\n        };\n      }\n\n      if (this.min !== undefined && len < this.min) {\n        return {\n          value,\n          error: this.message\n            ? this.formatMessage(this.message, data)\n            : this.formatMessage(\n                \"'%name%' should not be less than %min% characters.\",\n                data,\n              ),\n        };\n      }\n\n      if (this.max !== undefined && len > this.max) {\n        return {\n          value,\n          error: this.message\n            ? this.formatMessage(this.message, data)\n            : this.formatMessage(\n                \"'%name%' should not be greater than %max% characters.\",\n                data,\n              ),\n        };\n      }\n    }\n    return { value, error: null };\n  }\n}\n",
+    "static": true,
+    "longname": "/home/irshad/Documents/Code/MyCode/NPM/shark-validate/src/rules/isLen.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 119,
+    "kind": "class",
+    "name": "isLen",
+    "memberof": "src/rules/isLen.js",
+    "static": true,
+    "longname": "src/rules/isLen.js~isLen",
+    "access": "public",
+    "export": true,
+    "importPath": "shark-validator/lib/rules/isLen.js",
+    "importStyle": "isLen",
+    "description": "Checks length of string value",
+    "lineNumber": 6,
+    "interface": false,
+    "extends": [
+      "src/rules/Rule.js~Rule"
+    ]
+  },
+  {
+    "__docId__": 120,
+    "kind": "member",
+    "name": "message",
+    "memberof": "src/rules/isLen.js~isLen",
+    "static": false,
+    "longname": "src/rules/isLen.js~isLen#message",
+    "access": "public",
+    "description": "",
+    "lineNumber": 10,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 121,
+    "kind": "member",
+    "name": "min",
+    "memberof": "src/rules/isLen.js~isLen",
+    "static": false,
+    "longname": "src/rules/isLen.js~isLen#min",
+    "access": "public",
+    "description": "",
+    "lineNumber": 15,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 122,
+    "kind": "member",
+    "name": "max",
+    "memberof": "src/rules/isLen.js~isLen",
+    "static": false,
+    "longname": "src/rules/isLen.js~isLen#max",
+    "access": "public",
+    "description": "",
+    "lineNumber": 20,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 123,
+    "kind": "member",
+    "name": "eq",
+    "memberof": "src/rules/isLen.js~isLen",
+    "static": false,
+    "longname": "src/rules/isLen.js~isLen#eq",
+    "access": "public",
+    "description": "",
+    "lineNumber": 25,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 124,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/rules/isLen.js~isLen",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rules/isLen.js~isLen#constructor",
+    "access": "public",
+    "description": "Checks length of string value",
+    "lineNumber": 35,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options for `isLen`"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.eq",
+        "description": "Length should be equal to `eq`"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.min",
+        "description": "Length should be min `min`"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.max",
+        "description": "Length should be max to `max`"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.message",
+        "description": "Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)"
+      }
+    ]
+  },
+  {
+    "__docId__": 129,
+    "kind": "method",
+    "name": "validate",
+    "memberof": "src/rules/isLen.js~isLen",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rules/isLen.js~isLen#validate",
+    "access": "public",
+    "description": "Validate the `value` and return the error `string` if there are any\notherwise return `null`.",
+    "lineNumber": 70,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{{ value: any, error: String }} Value and error string."
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "value",
+        "description": "The value to be checked."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "label",
+        "description": "Name or Label of the value being checked."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "{ value: any, error: String }"
+      ],
+      "spread": false,
+      "description": "Value and error string."
+    }
+  },
+  {
+    "__docId__": 130,
+    "kind": "file",
+    "name": "src/rules/isNumber.js",
+    "content": "import Rule from './Rule';\n\n/**\n * Checks if the value is a number\n */\nexport default class isNumber extends Rule {\n  /**\n   * @ignore\n   */\n  message;\n\n  /**\n   * @ignore\n   */\n  min;\n\n  /**\n   * @ignore\n   */\n  max;\n\n  /**\n   * Checks if the value is a number\n   * @param {Object} options Options for `isNumber`\n   * @param {Number} options.min Number should be min to `min`\n   * @param {Number} options.max Number should be max to `max`\n   * @param {String} options.message Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)\n   */\n  constructor(options) {\n    super('isNumber');\n\n    this.min = undefined;\n    this.max = undefined;\n    this.message = undefined;\n    if (options !== undefined && typeof options !== 'object') {\n      throw new TypeError('`options` should be an object.');\n    }\n\n    if (options !== undefined) {\n      const keys = ['min', 'max'];\n      for (const key of keys) {\n        if (options[key] !== undefined && typeof options[key] !== 'number') {\n          throw new TypeError(\n            `\\`${key}\\` key in options should be an integer.`,\n          );\n        }\n      }\n\n      if (\n        options.message !== undefined &&\n        typeof options.message !== 'string'\n      ) {\n        throw new Error('`message` key in `options` should be a string.');\n      }\n\n      this.min = options.min;\n      this.max = options.max;\n      this.message = options.message;\n    }\n  }\n\n  /**\n   * Validate the `value` and return the error `string` if there are any\n   * otherwise return `null`.\n   * @param {any} value The value to be checked.\n   * @param {String} label Name or Label of the value being checked.\n   * @returns {{ value: any, error: String }} Value and error string.\n   */\n  validate(value, label) {\n    const data = {\n      name: label,\n      min: this.min,\n      max: this.max,\n    };\n\n    if (isNaN(value)) {\n      return {\n        value,\n        error: this.message\n          ? this.formatMessage(this.message, data)\n          : this.formatMessage(\"'%name%' should be a number.\", data),\n      };\n    }\n\n    const num = Number.parseFloat(value);\n\n    if (\n      this.min !== undefined &&\n      this.max !== undefined &&\n      (num > this.max || num < this.min)\n    ) {\n      return {\n        value,\n        error: this.message\n          ? this.formatMessage(this.message, data)\n          : this.formatMessage(\n              \"'%name%' should be a between %min% - %max%.\",\n              data,\n            ),\n      };\n    }\n\n    if (this.min !== undefined && num < this.min) {\n      return {\n        value,\n        error: this.message\n          ? this.formatMessage(this.message, data)\n          : this.formatMessage(\"'%name%' should not be less than %min%.\", data),\n      };\n    }\n\n    if (this.max !== undefined && num > this.max) {\n      return {\n        value,\n        error: this.message\n          ? this.formatMessage(this.message, data)\n          : this.formatMessage(\n              \"'%name%' should not be greater than %max%.\",\n              data,\n            ),\n      };\n    }\n\n    return { value, error: null };\n  }\n}\n",
+    "static": true,
+    "longname": "/home/irshad/Documents/Code/MyCode/NPM/shark-validate/src/rules/isNumber.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 131,
+    "kind": "class",
+    "name": "isNumber",
+    "memberof": "src/rules/isNumber.js",
+    "static": true,
+    "longname": "src/rules/isNumber.js~isNumber",
+    "access": "public",
+    "export": true,
+    "importPath": "shark-validator/lib/rules/isNumber.js",
+    "importStyle": "isNumber",
+    "description": "Checks if the value is a number",
+    "lineNumber": 6,
+    "interface": false,
+    "extends": [
+      "src/rules/Rule.js~Rule"
+    ]
+  },
+  {
+    "__docId__": 132,
+    "kind": "member",
+    "name": "message",
+    "memberof": "src/rules/isNumber.js~isNumber",
+    "static": false,
+    "longname": "src/rules/isNumber.js~isNumber#message",
+    "access": "public",
+    "description": "",
+    "lineNumber": 10,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 133,
+    "kind": "member",
+    "name": "min",
+    "memberof": "src/rules/isNumber.js~isNumber",
+    "static": false,
+    "longname": "src/rules/isNumber.js~isNumber#min",
+    "access": "public",
+    "description": "",
+    "lineNumber": 15,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 134,
+    "kind": "member",
+    "name": "max",
+    "memberof": "src/rules/isNumber.js~isNumber",
+    "static": false,
+    "longname": "src/rules/isNumber.js~isNumber#max",
+    "access": "public",
+    "description": "",
+    "lineNumber": 20,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 135,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/rules/isNumber.js~isNumber",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rules/isNumber.js~isNumber#constructor",
+    "access": "public",
+    "description": "Checks if the value is a number",
+    "lineNumber": 29,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options for `isNumber`"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.min",
+        "description": "Number should be min to `min`"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.max",
+        "description": "Number should be max to `max`"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.message",
+        "description": "Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)"
+      }
+    ]
+  },
+  {
+    "__docId__": 142,
+    "kind": "method",
+    "name": "validate",
+    "memberof": "src/rules/isNumber.js~isNumber",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rules/isNumber.js~isNumber#validate",
+    "access": "public",
+    "description": "Validate the `value` and return the error `string` if there are any\notherwise return `null`.",
+    "lineNumber": 69,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{{ value: any, error: String }} Value and error string."
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "value",
+        "description": "The value to be checked."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "label",
+        "description": "Name or Label of the value being checked."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "{ value: any, error: String }"
+      ],
+      "spread": false,
+      "description": "Value and error string."
+    }
+  },
+  {
+    "__docId__": 143,
+    "kind": "file",
+    "name": "src/rules/isRequired.js",
+    "content": "import Rule from './Rule';\n\n/**\n * Requires the field to be non empty.\n */\nexport default class isRequired extends Rule {\n  /**\n   * @ignore\n   */\n  message;\n\n  /**\n   * Requires the field to be non empty.\n   * @param {Object} options Options for `isRequired`\n   * @param {String} options.message Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)\n   *\n   */\n  constructor(options) {\n    super('isRequired');\n\n    this.message = undefined;\n    if (options !== undefined && typeof options !== 'object') {\n      throw new TypeError('`options` should be an object.');\n    }\n\n    if (options !== undefined) {\n      if (\n        options.message !== undefined &&\n        typeof options.message !== 'string'\n      ) {\n        throw new Error('`message` key in `options` should be a string.');\n      }\n\n      this.message = options.message;\n    }\n  }\n\n  /**\n   * Validate the `value` and return the error `string` if there are any\n   * otherwise return `null`.\n   * @param {any} value The value to be checked.\n   * @param {String} label Name or Label of the value being checked.\n   * @returns {{ value: any, error: String }} Value and error string.\n   */\n  validate(value, label) {\n    if (\n      value === null ||\n      value === undefined ||\n      (typeof value === 'string' && value === '')\n    ) {\n      const data = {\n        name: label,\n      };\n      return {\n        value,\n        error: this.message\n          ? this.formatMessage(this.message, data)\n          : this.formatMessage(\"'%name%' should not be empty.\", data),\n      };\n    }\n    return { value, error: null };\n  }\n}\n",
+    "static": true,
+    "longname": "/home/irshad/Documents/Code/MyCode/NPM/shark-validate/src/rules/isRequired.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 144,
+    "kind": "class",
+    "name": "isRequired",
+    "memberof": "src/rules/isRequired.js",
+    "static": true,
+    "longname": "src/rules/isRequired.js~isRequired",
+    "access": "public",
+    "export": true,
+    "importPath": "shark-validator/lib/rules/isRequired.js",
+    "importStyle": "isRequired",
+    "description": "Requires the field to be non empty.",
+    "lineNumber": 6,
+    "interface": false,
+    "extends": [
+      "src/rules/Rule.js~Rule"
+    ]
+  },
+  {
+    "__docId__": 145,
+    "kind": "member",
+    "name": "message",
+    "memberof": "src/rules/isRequired.js~isRequired",
+    "static": false,
+    "longname": "src/rules/isRequired.js~isRequired#message",
+    "access": "public",
+    "description": "",
+    "lineNumber": 10,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 146,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/rules/isRequired.js~isRequired",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rules/isRequired.js~isRequired#constructor",
+    "access": "public",
+    "description": "Requires the field to be non empty.",
+    "lineNumber": 18,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options for `isRequired`"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.message",
+        "description": "Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)"
+      }
+    ]
+  },
+  {
+    "__docId__": 149,
+    "kind": "method",
+    "name": "validate",
+    "memberof": "src/rules/isRequired.js~isRequired",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rules/isRequired.js~isRequired#validate",
+    "access": "public",
+    "description": "Validate the `value` and return the error `string` if there are any\notherwise return `null`.",
+    "lineNumber": 45,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{{ value: any, error: String }} Value and error string."
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "value",
+        "description": "The value to be checked."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "label",
+        "description": "Name or Label of the value being checked."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "{ value: any, error: String }"
+      ],
+      "spread": false,
+      "description": "Value and error string."
+    }
+  },
+  {
+    "__docId__": 150,
+    "kind": "file",
+    "name": "src/rules/isString.js",
+    "content": "import Rule from './Rule';\n\n/**\n * Required the field to be a `string`\n */\nexport default class isString extends Rule {\n  /**\n   * @ignore\n   */\n  message;\n\n  /**\n   * Required the field to be a `string`\n   * @param {Object} options Options for `isString`\n   * @param {String} options.message Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)\n   */\n  constructor(options) {\n    super('isString');\n\n    this.message = undefined;\n    if (options !== undefined && typeof options !== 'object') {\n      throw new TypeError('`options` should be an object.');\n    }\n\n    if (options !== undefined) {\n      if (\n        options.message !== undefined &&\n        typeof options.message !== 'string'\n      ) {\n        throw new Error('`message` key in `options` should be a string.');\n      }\n\n      this.message = options.message;\n    }\n  }\n\n  /**\n   * Validate the `value` and return the error `string` if there are any\n   * otherwise return `null`.\n   * @param {any} value The value to be checked.\n   * @param {String} label Name or Label of the value being checked.\n   * @returns {{ value: any, error: String }} Value and error string.\n   */\n  validate(value, label) {\n    if (typeof value !== 'string') {\n      const data = {\n        name: label,\n      };\n\n      return {\n        value,\n        error: this.message\n          ? this.formatMessage(this.message, data)\n          : this.formatMessage(\"'%name%' should be a string.\", data),\n      };\n    }\n    return { value, error: null };\n  }\n}\n",
+    "static": true,
+    "longname": "/home/irshad/Documents/Code/MyCode/NPM/shark-validate/src/rules/isString.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 151,
+    "kind": "class",
+    "name": "isString",
+    "memberof": "src/rules/isString.js",
+    "static": true,
+    "longname": "src/rules/isString.js~isString",
+    "access": "public",
+    "export": true,
+    "importPath": "shark-validator/lib/rules/isString.js",
+    "importStyle": "isString",
+    "description": "Required the field to be a `string`",
+    "lineNumber": 6,
+    "interface": false,
+    "extends": [
+      "src/rules/Rule.js~Rule"
+    ]
+  },
+  {
+    "__docId__": 152,
+    "kind": "member",
+    "name": "message",
+    "memberof": "src/rules/isString.js~isString",
+    "static": false,
+    "longname": "src/rules/isString.js~isString#message",
+    "access": "public",
+    "description": "",
+    "lineNumber": 10,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 153,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/rules/isString.js~isString",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rules/isString.js~isString#constructor",
+    "access": "public",
+    "description": "Required the field to be a `string`",
+    "lineNumber": 17,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options for `isString`"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.message",
+        "description": "Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)"
+      }
+    ]
+  },
+  {
+    "__docId__": 156,
+    "kind": "method",
+    "name": "validate",
+    "memberof": "src/rules/isString.js~isString",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rules/isString.js~isString#validate",
+    "access": "public",
+    "description": "Validate the `value` and return the error `string` if there are any\notherwise return `null`.",
+    "lineNumber": 44,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{{ value: any, error: String }} Value and error string."
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "value",
+        "description": "The value to be checked."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "label",
+        "description": "Name or Label of the value being checked."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "{ value: any, error: String }"
+      ],
+      "spread": false,
+      "description": "Value and error string."
+    }
+  },
+  {
+    "__docId__": 157,
+    "kind": "file",
+    "name": "src/rules/matchRegex.js",
+    "content": "import Rule from './Rule';\n\n/**\n * Checks if the value matches the regular expression.\n */\nexport default class matchRegex extends Rule {\n  /**\n   * @ignore\n   */\n  message;\n\n  /**\n   * @ignore\n   */\n  regex;\n\n  /**\n   * Checks if the value matches the regular expression.\n   * @param {Object} options Options for `matchRegex`\n   * @param {RegExp} options.regex Regex expression\n   * @param {String} options.message Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)\n   */\n  constructor(options) {\n    super('matchRegex');\n\n    this.message = undefined;\n\n    if (options === undefined) {\n      throw new TypeError('`options` is required.');\n    }\n\n    if (typeof options !== 'object') {\n      throw new TypeError('`options` should be an object.');\n    }\n    if (\n      typeof options.regex !== 'object' ||\n      !(options.regex instanceof RegExp)\n    ) {\n      throw new Error(\n        '`regex` key in should be an instance of `RegExp` class.',\n      );\n    }\n\n    if (options.message !== undefined && typeof options.message !== 'string') {\n      throw new Error('`message` key in `options` should be a string.');\n    }\n\n    this.message = options.message;\n    this.regex = options.regex;\n  }\n\n  /**\n   * Validate the `value` and return the error `string` if there are any\n   * otherwise return `null`.\n   * @param {any} value The value to be checked.\n   * @param {String} label Name or Label of the value being checked.\n   * @returns {{ value: any, error: String }} Value and error string.\n   */\n  validate(value, label) {\n    if (typeof value === 'string') {\n      const data = {\n        name: label,\n        regex: this.regex.source,\n      };\n\n      if (!this.regex.test(value))\n        return {\n          value,\n          error: this.message\n            ? this.formatMessage(this.message, data)\n            : this.formatMessage(\n                \"'%name%' should match the regex '%regex%'.\",\n                data,\n              ),\n        };\n    }\n    return { value, error: null };\n  }\n}\n",
+    "static": true,
+    "longname": "/home/irshad/Documents/Code/MyCode/NPM/shark-validate/src/rules/matchRegex.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 158,
+    "kind": "class",
+    "name": "matchRegex",
+    "memberof": "src/rules/matchRegex.js",
+    "static": true,
+    "longname": "src/rules/matchRegex.js~matchRegex",
+    "access": "public",
+    "export": true,
+    "importPath": "shark-validator/lib/rules/matchRegex.js",
+    "importStyle": "matchRegex",
+    "description": "Checks if the value matches the regular expression.",
+    "lineNumber": 6,
+    "interface": false,
+    "extends": [
+      "src/rules/Rule.js~Rule"
+    ]
+  },
+  {
+    "__docId__": 159,
+    "kind": "member",
+    "name": "message",
+    "memberof": "src/rules/matchRegex.js~matchRegex",
+    "static": false,
+    "longname": "src/rules/matchRegex.js~matchRegex#message",
+    "access": "public",
+    "description": "",
+    "lineNumber": 10,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 160,
+    "kind": "member",
+    "name": "regex",
+    "memberof": "src/rules/matchRegex.js~matchRegex",
+    "static": false,
+    "longname": "src/rules/matchRegex.js~matchRegex#regex",
+    "access": "public",
+    "description": "",
+    "lineNumber": 15,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 161,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/rules/matchRegex.js~matchRegex",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rules/matchRegex.js~matchRegex#constructor",
+    "access": "public",
+    "description": "Checks if the value matches the regular expression.",
+    "lineNumber": 23,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options for `matchRegex`"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "RegExp"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.regex",
+        "description": "Regex expression"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.message",
+        "description": "Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)"
+      }
+    ]
+  },
+  {
+    "__docId__": 165,
+    "kind": "method",
+    "name": "validate",
+    "memberof": "src/rules/matchRegex.js~matchRegex",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rules/matchRegex.js~matchRegex#validate",
+    "access": "public",
+    "description": "Validate the `value` and return the error `string` if there are any\notherwise return `null`.",
+    "lineNumber": 59,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{{ value: any, error: String }} Value and error string."
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "value",
+        "description": "The value to be checked."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "label",
+        "description": "Name or Label of the value being checked."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "{ value: any, error: String }"
+      ],
+      "spread": false,
+      "description": "Value and error string."
+    }
+  },
+  {
+    "__docId__": 166,
+    "kind": "file",
+    "name": "src/rules/toInt.js",
+    "content": "import Rule from './Rule';\n\n/**\n * Converts the value to an integer and throws error if it cannot be converted\n */\nexport default class toInt extends Rule {\n  /**\n   * @ignore\n   */\n  message;\n\n  /**\n   * Converts the value to an integer and throws error if it cannot be converted\n   * @param {Object} options Options for `toInt`\n   * @param {String} options.message Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)\n   */\n  constructor(options) {\n    super('toInt');\n\n    this.message = undefined;\n    if (options !== undefined && typeof options !== 'object') {\n      throw new TypeError('`options` should be an object.');\n    }\n\n    if (options !== undefined) {\n      if (\n        options.message !== undefined &&\n        typeof options.message !== 'string'\n      ) {\n        throw new Error('`message` key in `options` should be a string.');\n      }\n\n      this.message = options.message;\n    }\n  }\n\n  /**\n   * Validate the `value` and return the error `string` if there are any\n   * otherwise return `null`.\n   * @param {any} value The value to be checked.\n   * @param {String} label Name or Label of the value being checked.\n   * @returns {{ value: any, error: String }} Value and error string.\n   */\n  validate(value, label) {\n    const data = {\n      name: label,\n    };\n\n    if (isNaN(value)) {\n      return {\n        value,\n        error: this.message\n          ? this.formatMessage(this.message, data)\n          : this.formatMessage(\"'%name%' should be an integer.\", data),\n      };\n    }\n\n    const floatNum = Number.parseFloat(value);\n\n    if (!Number.isInteger(floatNum)) {\n      return {\n        value,\n        error: this.message\n          ? this.formatMessage(this.message, data)\n          : this.formatMessage(\"'%name%' should be an integer.\", data),\n      };\n    }\n\n    const num = Number.parseInt(floatNum);\n\n    return { value: num, error: null };\n  }\n}\n",
+    "static": true,
+    "longname": "/home/irshad/Documents/Code/MyCode/NPM/shark-validate/src/rules/toInt.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 167,
+    "kind": "class",
+    "name": "toInt",
+    "memberof": "src/rules/toInt.js",
+    "static": true,
+    "longname": "src/rules/toInt.js~toInt",
+    "access": "public",
+    "export": true,
+    "importPath": "shark-validator/lib/rules/toInt.js",
+    "importStyle": "toInt",
+    "description": "Converts the value to an integer and throws error if it cannot be converted",
+    "lineNumber": 6,
+    "interface": false,
+    "extends": [
+      "src/rules/Rule.js~Rule"
+    ]
+  },
+  {
+    "__docId__": 168,
+    "kind": "member",
+    "name": "message",
+    "memberof": "src/rules/toInt.js~toInt",
+    "static": false,
+    "longname": "src/rules/toInt.js~toInt#message",
+    "access": "public",
+    "description": "",
+    "lineNumber": 10,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 169,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/rules/toInt.js~toInt",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rules/toInt.js~toInt#constructor",
+    "access": "public",
+    "description": "Converts the value to an integer and throws error if it cannot be converted",
+    "lineNumber": 17,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options for `toInt`"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.message",
+        "description": "Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)"
+      }
+    ]
+  },
+  {
+    "__docId__": 172,
+    "kind": "method",
+    "name": "validate",
+    "memberof": "src/rules/toInt.js~toInt",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rules/toInt.js~toInt#validate",
+    "access": "public",
+    "description": "Validate the `value` and return the error `string` if there are any\notherwise return `null`.",
+    "lineNumber": 44,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{{ value: any, error: String }} Value and error string."
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "value",
+        "description": "The value to be checked."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "label",
+        "description": "Name or Label of the value being checked."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "{ value: any, error: String }"
+      ],
+      "spread": false,
+      "description": "Value and error string."
+    }
+  },
+  {
+    "__docId__": 173,
+    "kind": "file",
+    "name": "src/rules/toLowerCase.js",
+    "content": "import Rule from './Rule';\n\n/**\n * Converts the string value to lower case\n */\nexport default class toLowerCase extends Rule {\n  /**\n   * Converts the string value to lower case\n   */\n  constructor() {\n    super('toLowerCase');\n  }\n\n  /**\n   * Validate the `value` and return the error `string` if there are any\n   * otherwise return `null`.\n   * @param {any} value The value to be checked.\n   * @returns {{ value: any, error: String }} Value and error string.\n   */\n  validate(value) {\n    let newVal = value;\n    if (typeof newVal === 'string') {\n      newVal = newVal.toLowerCase();\n    }\n\n    return { value: newVal, error: null };\n  }\n}\n",
+    "static": true,
+    "longname": "/home/irshad/Documents/Code/MyCode/NPM/shark-validate/src/rules/toLowerCase.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 174,
+    "kind": "class",
+    "name": "toLowerCase",
+    "memberof": "src/rules/toLowerCase.js",
+    "static": true,
+    "longname": "src/rules/toLowerCase.js~toLowerCase",
+    "access": "public",
+    "export": true,
+    "importPath": "shark-validator/lib/rules/toLowerCase.js",
+    "importStyle": "toLowerCase",
+    "description": "Converts the string value to lower case",
+    "lineNumber": 6,
+    "interface": false,
+    "extends": [
+      "src/rules/Rule.js~Rule"
+    ]
+  },
+  {
+    "__docId__": 175,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/rules/toLowerCase.js~toLowerCase",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rules/toLowerCase.js~toLowerCase#constructor",
+    "access": "public",
+    "description": "Converts the string value to lower case",
+    "lineNumber": 10
+  },
+  {
+    "__docId__": 176,
+    "kind": "method",
+    "name": "validate",
+    "memberof": "src/rules/toLowerCase.js~toLowerCase",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rules/toLowerCase.js~toLowerCase#validate",
+    "access": "public",
+    "description": "Validate the `value` and return the error `string` if there are any\notherwise return `null`.",
+    "lineNumber": 20,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{{ value: any, error: String }} Value and error string."
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "value",
+        "description": "The value to be checked."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "{ value: any, error: String }"
+      ],
+      "spread": false,
+      "description": "Value and error string."
+    }
+  },
+  {
+    "__docId__": 177,
+    "kind": "file",
+    "name": "src/rules/toNumber.js",
+    "content": "import Rule from './Rule';\n\n/**\n * Converts the value to Number and throws error if it cannot be converted\n */\nexport default class toNumber extends Rule {\n  /**\n   * @ignore\n   */\n  message;\n\n  /**\n   * Converts the value to Number and throws error if it cannot be converted\n   * @param {Object} options Options for `toInt`\n   * @param {String} options.message Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)\n   */\n  constructor(options) {\n    super('toNumber');\n\n    this.message = undefined;\n    if (options !== undefined && typeof options !== 'object') {\n      throw new TypeError('`options` should be an object.');\n    }\n\n    if (options !== undefined) {\n      if (\n        options.message !== undefined &&\n        typeof options.message !== 'string'\n      ) {\n        throw new Error('`message` key in `options` should be a string.');\n      }\n\n      this.message = options.message;\n    }\n  }\n\n  /**\n   * Validate the `value` and return the error `string` if there are any\n   * otherwise return `null`.\n   * @param {any} value The value to be checked.\n   * @param {String} label Name or Label of the value being checked.\n   * @returns {{ value: any, error: String }} Value and error string.\n   */\n  validate(value, label) {\n    const data = {\n      name: label,\n    };\n\n    if (isNaN(value)) {\n      return {\n        value,\n        error: this.message\n          ? this.formatMessage(this.message, data)\n          : this.formatMessage(\"'%name%' should be a number.\", data),\n      };\n    }\n\n    const num = Number.parseFloat(value);\n\n    return { value: num, error: null };\n  }\n}\n",
+    "static": true,
+    "longname": "/home/irshad/Documents/Code/MyCode/NPM/shark-validate/src/rules/toNumber.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 178,
+    "kind": "class",
+    "name": "toNumber",
+    "memberof": "src/rules/toNumber.js",
+    "static": true,
+    "longname": "src/rules/toNumber.js~toNumber",
+    "access": "public",
+    "export": true,
+    "importPath": "shark-validator/lib/rules/toNumber.js",
+    "importStyle": "toNumber",
+    "description": "Converts the value to Number and throws error if it cannot be converted",
+    "lineNumber": 6,
+    "interface": false,
+    "extends": [
+      "src/rules/Rule.js~Rule"
+    ]
+  },
+  {
+    "__docId__": 179,
+    "kind": "member",
+    "name": "message",
+    "memberof": "src/rules/toNumber.js~toNumber",
+    "static": false,
+    "longname": "src/rules/toNumber.js~toNumber#message",
+    "access": "public",
+    "description": "",
+    "lineNumber": 10,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 180,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/rules/toNumber.js~toNumber",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rules/toNumber.js~toNumber#constructor",
+    "access": "public",
+    "description": "Converts the value to Number and throws error if it cannot be converted",
+    "lineNumber": 17,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options for `toInt`"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.message",
+        "description": "Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)"
+      }
+    ]
+  },
+  {
+    "__docId__": 183,
+    "kind": "method",
+    "name": "validate",
+    "memberof": "src/rules/toNumber.js~toNumber",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rules/toNumber.js~toNumber#validate",
+    "access": "public",
+    "description": "Validate the `value` and return the error `string` if there are any\notherwise return `null`.",
+    "lineNumber": 44,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{{ value: any, error: String }} Value and error string."
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "value",
+        "description": "The value to be checked."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "label",
+        "description": "Name or Label of the value being checked."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "{ value: any, error: String }"
+      ],
+      "spread": false,
+      "description": "Value and error string."
+    }
+  },
+  {
+    "__docId__": 184,
+    "kind": "file",
+    "name": "src/rules/toUpperCase.js",
+    "content": "import Rule from './Rule';\n\n/**\n * Converts the string value to upper case\n */\nexport default class toUpperCase extends Rule {\n  /**\n   * Converts the string value to upper case\n   */\n  constructor() {\n    super('toUpperCase');\n  }\n\n  /**\n   * Validate the `value` and return the error `string` if there are any\n   * otherwise return `null`.\n   * @param {any} value The value to be checked.\n   * @returns {{ value: any, error: String }} Value and error string.\n   */\n  validate(value) {\n    let newVal = value;\n    if (typeof newVal === 'string') {\n      newVal = newVal.toUpperCase();\n    }\n\n    return { value: newVal, error: null };\n  }\n}\n",
+    "static": true,
+    "longname": "/home/irshad/Documents/Code/MyCode/NPM/shark-validate/src/rules/toUpperCase.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 185,
+    "kind": "class",
+    "name": "toUpperCase",
+    "memberof": "src/rules/toUpperCase.js",
+    "static": true,
+    "longname": "src/rules/toUpperCase.js~toUpperCase",
+    "access": "public",
+    "export": true,
+    "importPath": "shark-validator/lib/rules/toUpperCase.js",
+    "importStyle": "toUpperCase",
+    "description": "Converts the string value to upper case",
+    "lineNumber": 6,
+    "interface": false,
+    "extends": [
+      "src/rules/Rule.js~Rule"
+    ]
+  },
+  {
+    "__docId__": 186,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/rules/toUpperCase.js~toUpperCase",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rules/toUpperCase.js~toUpperCase#constructor",
+    "access": "public",
+    "description": "Converts the string value to upper case",
+    "lineNumber": 10
+  },
+  {
+    "__docId__": 187,
+    "kind": "method",
+    "name": "validate",
+    "memberof": "src/rules/toUpperCase.js~toUpperCase",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rules/toUpperCase.js~toUpperCase#validate",
+    "access": "public",
+    "description": "Validate the `value` and return the error `string` if there are any\notherwise return `null`.",
+    "lineNumber": 20,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{{ value: any, error: String }} Value and error string."
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "value",
+        "description": "The value to be checked."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "{ value: any, error: String }"
+      ],
+      "spread": false,
+      "description": "Value and error string."
+    }
+  },
+  {
+    "kind": "index",
+    "content": "# Shark-Validator\n\n## Overview\nA tree shakable validator which for both `Nodejs` and `Browser`.\n\n## Installation\n```\nnpm install shark-validator\n```\n\n## Example usage\nCreate a schema for validation and import only the required Rules.\n\n```js\nconst { Validator, RuleSet, isRequired, isString, isLen } = require('shark-validator');\n\nconst schema = new Validator({\n  name: RuleSet.create([new isString(), new isRequired()]),\n  email: RuleSet.create([new isString(), new isRequired()]),\n  password: RuleSet.create([new isString(), new isRequired(), new isLen({ min:8 })]),\n});\n```\n\nValidate values using the created schema\n\n```js\nconst valuesToCheck = {\n  name: 'Dan',\n  email: 'dan@daninc.com',\n  password: '123456'\n};\n\nconst { values, errors } = schema.validate(valuesToCheck);\n```\n",
+    "longname": "/home/irshad/Documents/Code/MyCode/NPM/shark-validate/README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "packageJSON",
+    "content": "{\n  \"name\": \"shark-validator\",\n  \"version\": \"1.1.0\",\n  \"description\": \"A simple schema validator\",\n  \"main\": \"lib/index.js\",\n  \"module\": \"es/index.js\",\n  \"scripts\": {\n    \"prepublish\": \"npm run build && npm run test\",\n    \"build\": \"npm run build:cjs && npm run build:es\",\n    \"build:cjs\": \"babel --env-name cjs src --out-dir lib\",\n    \"build:es\": \"babel --env-name es src --out-dir es\",\n    \"test\": \"mocha\",\n    \"pretest\": \"npm run build\"\n  },\n  \"devDependencies\": {\n    \"@babel/cli\": \"^7.8.4\",\n    \"@babel/core\": \"^7.8.7\",\n    \"@babel/plugin-proposal-class-properties\": \"^7.8.3\",\n    \"@babel/preset-env\": \"^7.8.7\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-ecmascript-proposal-plugin\": \"^1.0.0\",\n    \"esdoc-importpath-plugin\": \"^1.0.2\",\n    \"esdoc-lint-plugin\": \"^1.0.2\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"mocha\": \"^7.1.1\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/irshadjsr21/Shark-Validator.git\"\n  },\n  \"license\": \"ISC\",\n  \"keywords\": [\n    \"schema\",\n    \"validation\",\n    \"tree shakeable\"\n  ],\n  \"author\": {\n    \"name\": \"Md. Irshad Ansari\",\n    \"email\": \"irshadjsr21@gmail.com\",\n    \"url\": \"https://imirshad.com\"\n  }\n}\n",
+    "longname": "/home/irshad/Documents/Code/MyCode/NPM/shark-validate/package.json",
+    "name": "package.json",
+    "static": true,
+    "access": "public"
+  }
+]

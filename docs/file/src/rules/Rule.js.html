@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/rules/Rule.js | shark-validator</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="A simple schema validator"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="shark-validator"><meta property="twitter:description" content="A simple schema validator"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/irshadjsr21/Shark-Validator.git"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/RuleSet.js~RuleSet.html">RuleSet</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Validator.js~Validator.html">Validator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-validationError">validationError</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#rules">rules</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/rules/Rule.js~Rule.html">Rule</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/rules/isAlpha.js~isAlpha.html">isAlpha</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/rules/isAlphaNum.js~isAlphaNum.html">isAlphaNum</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/rules/isIn.js~isIn.html">isIn</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/rules/isInt.js~isInt.html">isInt</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/rules/isLen.js~isLen.html">isLen</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/rules/isNumber.js~isNumber.html">isNumber</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/rules/isRequired.js~isRequired.html">isRequired</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/rules/isString.js~isString.html">isString</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/rules/matchRegex.js~matchRegex.html">matchRegex</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/rules/toInt.js~toInt.html">toInt</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/rules/toLowerCase.js~toLowerCase.html">toLowerCase</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/rules/toNumber.js~toNumber.html">toNumber</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/rules/toUpperCase.js~toUpperCase.html">toUpperCase</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/rules/Rule.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * Rule class should be extended in order to create any rule.
+ * @abstract
+ */
+export default class Rule {
+  /**
+   * @private
+   * @type {String} Name of the `Rule`
+   */
+  __name;
+
+  /**
+   * `Rule` is an abstract class which must be extended in order to
+   * create a Rule. The subclass must have a `validate` function.
+   * @param {String} name Name of the Rule being defined.
+   */
+  constructor(name) {
+    if (!name || typeof name !== &apos;string&apos;) {
+      throw new Error(&apos;`name` is required in `Rule` class constructor.&apos;);
+    }
+
+    this.__name = name;
+
+    if (this.constructor === Rule) {
+      throw new TypeError(
+        &apos;Abstract class &quot;Rule&quot; cannot be instantiated directly.&apos;,
+      );
+    }
+
+    if (this.validate === undefined) {
+      throw new TypeError(
+        &apos;Classes extending the `Rule` must have `validate` function.&apos;,
+      );
+    }
+  }
+
+  /**
+   * @abstract
+   * Validate the `value` and return the error `string` if there are any
+   * otherwise return `null`.
+   * @param {any} value The value to be checked.
+   * @param {String} label Name or Label of the value being checked.
+   * @returns {{ value: any, error: String }} Value and error string.
+   */
+  validate(value, label) {}
+
+  /**
+   * This formats the formatter string and includes the variables in it
+   * from `values` object.
+   * The variable key must be surrounded by `%` char.
+   * 
+   * @param {String} formatter The format string.
+   * @param {Object} values Object containing `key` and `value` pairs used in formatter `string`.
+   * @returns {String} Returns formatted string
+   * 
+   * @example
+   * const formattedString = formatMessage(&apos;%name% should not be empty.&apos;, { name: &apos;Email&apos; });
+   * // Returns &apos;Email should not be empty.&apos;
+   * 
+   * @example
+   * // If the message contains actual `%` symbol, it should be prefixed with `-`.
+   * 
+   * const formattedString = formatMessage(&apos;%name% should be greater than 90-%.&apos;, { name: &apos;Marks&apos; });
+   * // Returns &apos;Marks should be greater than 90%.&apos;
+   */
+  formatMessage(formatter, values) {
+    let __values = values;
+    if (!__values) __values = {};
+    if (typeof __values !== &apos;object&apos;) {
+      throw new TypeError(&apos;`values` should be an object.&apos;);
+    }
+
+    if (!formatter || typeof formatter !== &apos;string&apos;) {
+      throw new TypeError(&apos;`formatter` should be a string.&apos;);
+    }
+
+    let newString = &apos;&apos;;
+    let key = &apos;&apos;;
+    let isBuildingKey = false;
+
+    for (let i = 0; i &lt; formatter.length; i++) {
+      const char = formatter.charAt(i);
+      switch (char) {
+        case &apos;-&apos;:
+          if (i + 1 &lt; formatter.length &amp;&amp; formatter.charAt(i + 1) === &apos;%&apos;) {
+            newString += &apos;%&apos;;
+            i++;
+          } else {
+            newString += &apos;-&apos;;
+          }
+          break;
+        case &apos;%&apos;:
+          isBuildingKey = !isBuildingKey;
+          if (isBuildingKey) {
+            key = &apos;&apos;;
+          } else {
+            let value = __values[key];
+            if (value === null || value === undefined) {
+              throw new Error(`Value of \`${key}\` is not present.`);
+            }
+            newString += value;
+          }
+          break;
+        default:
+          if (isBuildingKey) {
+            key += char;
+          } else {
+            newString += char;
+          }
+      }
+    }
+
+    if (isBuildingKey) {
+      throw new Error(&apos;Invalid pairs of `%` in `formatter`.&apos;);
+    }
+
+    return newString;
+  }
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
