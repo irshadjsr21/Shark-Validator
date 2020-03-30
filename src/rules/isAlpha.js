@@ -1,11 +1,29 @@
 import Rule from './Rule';
 
+/**
+ * Checks if the value contains only Alphabets.
+ */
 export default class isAlpha extends Rule {
   /**
-   * Checks if the value matches the regular expression.
+   * @ignore
+   */
+  message;
+
+  /**
+   * @ignore
+   */
+  allowSpaces;
+
+  /**
+   * @ignore
+   */
+  regex;
+
+  /**
+   * Checks if the value contains only Alphabets.
    * @param {Object} options Options for `isAlpha`
    * @param {Boolean} options.allowSpaces If `true`, it allows spaces
-   * @param {String} options.message Custom error message if test fails
+   * @param {String} options.message Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)
    */
   constructor(options) {
     super('isAlpha');
@@ -41,6 +59,13 @@ export default class isAlpha extends Rule {
     this.regex = new RegExp(`^[${allowedString}]*$`, 'i');
   }
 
+  /**
+   * Validate the `value` and return the error `string` if there are any
+   * otherwise return `null`.
+   * @param {any} value The value to be checked.
+   * @param {String} label Name or Label of the value being checked.
+   * @returns {{ value: any, error: String }} Value and error string.
+   */
   validate(value, label) {
     if (typeof value === 'string') {
       const data = {

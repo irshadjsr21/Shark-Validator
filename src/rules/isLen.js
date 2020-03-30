@@ -1,13 +1,36 @@
 import Rule from './Rule';
 
+/**
+ * Checks length of string value
+ */
 export default class isLen extends Rule {
+  /**
+   * @ignore
+   */
+  message;
+
+  /**
+   * @ignore
+   */
+  min;
+
+  /**
+   * @ignore
+   */
+  max;
+
+  /**
+   * @ignore
+   */
+  eq;
+
   /**
    * Checks length of string value
    * @param {Object} options Options for `isLen`
    * @param {Number} options.eq Length should be equal to `eq`
    * @param {Number} options.min Length should be min `min`
    * @param {Number} options.max Length should be max to `max`
-   * @param {String} options.message Custom error message if test fails
+   * @param {String} options.message Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)
    */
   constructor(options) {
     super('isLen');
@@ -37,6 +60,13 @@ export default class isLen extends Rule {
     this.message = options.message;
   }
 
+  /**
+   * Validate the `value` and return the error `string` if there are any
+   * otherwise return `null`.
+   * @param {any} value The value to be checked.
+   * @param {String} label Name or Label of the value being checked.
+   * @returns {{ value: any, error: String }} Value and error string.
+   */
   validate(value, label) {
     if (typeof value === 'string') {
       const len = value.length;

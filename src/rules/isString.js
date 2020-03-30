@@ -1,10 +1,18 @@
 import Rule from './Rule';
 
+/**
+ * Required the field to be a `string`
+ */
 export default class isString extends Rule {
+  /**
+   * @ignore
+   */
+  message;
+
   /**
    * Required the field to be a `string`
    * @param {Object} options Options for `isString`
-   * @param {String} options.message Custom error message if test fails
+   * @param {String} options.message Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)
    */
   constructor(options) {
     super('isString');
@@ -26,6 +34,13 @@ export default class isString extends Rule {
     }
   }
 
+  /**
+   * Validate the `value` and return the error `string` if there are any
+   * otherwise return `null`.
+   * @param {any} value The value to be checked.
+   * @param {String} label Name or Label of the value being checked.
+   * @returns {{ value: any, error: String }} Value and error string.
+   */
   validate(value, label) {
     if (typeof value !== 'string') {
       const data = {

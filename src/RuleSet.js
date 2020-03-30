@@ -1,9 +1,32 @@
 import { Rule } from './rules';
 
-export default class RuleSet {
+/**
+ * Vaidation error object.
+ * @typedef {Object} validationError
+ * @property {String} error - Error string
+ * @property {String} validator - Name of validator (`Rule`) where the error occured
+ * @property {Any} value - Value which caused the `Rule` to fail
+ */
+
+/**
+ * Creates a set of rules for a single key.
+ */
+class RuleSet {
   /**
-   * Create a ruleset for a particular `key` or `value`
-   * @param {Array} arrayOfRules Array of `Rule` objects
+   * @ignore
+   * @private
+   */
+  __rules;
+
+  /**
+   * @ignore
+   * @private
+   */
+  __label;
+
+  /**
+   * Create a ruleset for a particular `key` or `value`.
+   * @param {Array<Rule>} arrayOfRules Array of `Rule` objects
    * @param {String} label The name or label of the value being checked
    */
   constructor(arrayOfRules, label) {
@@ -24,19 +47,12 @@ export default class RuleSet {
   }
 
   /**
-   * Create a ruleset for a particular `key` or `value`
-   * @param {String} label The name or label of the value being checked
-   * @param {Array} arrayOfRules Array of `Rule` objects
-   */
-  static create(label, arrayOfRules) {
-    return new RuleSet(label, arrayOfRules);
-  }
-
-  /**
    * Validates the `value` and returns an array of errors if any,
    * othewise returns `null`.
+   *
    * @param {any} valueToCheck Value to be validated
    * @param {String} key Key of the value being checked
+   * @returns {validationError[]} An object containing `value` and `errors` if any
    */
   validate(valueToCheck, key) {
     const errors = [];
@@ -45,7 +61,10 @@ export default class RuleSet {
       if (!(rule instanceof Rule)) {
         throw new TypeError('Rule should be an instance of `Rule` class.');
       }
-      const { value, error } = rule.validate(modifiedValue, this.__label || key);
+      const { value, error } = rule.validate(
+        modifiedValue,
+        this.__label || key,
+      );
       modifiedValue = value;
       if (error) errors.push({ error, validator: rule.__name, value });
     }
@@ -55,11 +74,15 @@ export default class RuleSet {
   }
 
   /**
-   * Create a ruleset for a particular `key` or `value`
+   * Create a ruleset for a particular `key` or `value`.
+   * Can be used as an alternative to the constructor.
    * @param {Array} arrayOfRules Array of `Rule` objects
    * @param {String} label The name or label of the value being checked
+   * @returns {RuleSet} A new `RuleSet` object
    */
   static create(arrayOfRules, label) {
     return new RuleSet(arrayOfRules, label);
   }
 }
+
+export default RuleSet;

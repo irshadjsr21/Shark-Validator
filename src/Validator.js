@@ -1,9 +1,18 @@
 import RuleSet from './RuleSet';
 
+/**
+ * Creates a Validator.
+ */
 export default class Validator {
   /**
+   * @ignore
+   * @private
+   */
+  __ruleSets;
+
+  /**
    * Creates a validator schema.
-   * @param {Object} objectOfRuleSet Object whose `key` matches with the `key` of values to be checked, and values should be an instance of `RuleSet`
+   * @param {Object<RuleSet>} objectOfRuleSet Set of `RuleSet`. `key` should match with the `key` of object being validated.
    */
   constructor(objectOfRuleSet) {
     if (!objectOfRuleSet || typeof objectOfRuleSet !== 'object') {
@@ -18,9 +27,10 @@ export default class Validator {
   }
 
   /**
-   * Validates the values and returns error object if any,
-   * otherwise return `null`
+   * Validates the `values` passed and returns `error` object if any,
+   * otherwise return `null` along with `values`.
    * @param {Object} valuesToCheck Object of values to be checked.
+   * @returns {{values: Object, errors: Object<validationError>}} Object containing `values` and `errors`
    */
   validate(valuesToCheck) {
     if (!valuesToCheck || typeof valuesToCheck !== 'object') {

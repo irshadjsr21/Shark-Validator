@@ -1,11 +1,24 @@
 import Rule from './Rule';
 
+/**
+ * Checks if the value matches the regular expression.
+ */
 export default class matchRegex extends Rule {
+  /**
+   * @ignore
+   */
+  message;
+
+  /**
+   * @ignore
+   */
+  regex;
+
   /**
    * Checks if the value matches the regular expression.
    * @param {Object} options Options for `matchRegex`
    * @param {RegExp} options.regex Regex expression
-   * @param {String} options.message Custom error message if test fails
+   * @param {String} options.message Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)
    */
   constructor(options) {
     super('matchRegex');
@@ -36,6 +49,13 @@ export default class matchRegex extends Rule {
     this.regex = options.regex;
   }
 
+  /**
+   * Validate the `value` and return the error `string` if there are any
+   * otherwise return `null`.
+   * @param {any} value The value to be checked.
+   * @param {String} label Name or Label of the value being checked.
+   * @returns {{ value: any, error: String }} Value and error string.
+   */
   validate(value, label) {
     if (typeof value === 'string') {
       const data = {

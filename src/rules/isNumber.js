@@ -1,12 +1,30 @@
 import Rule from './Rule';
 
+/**
+ * Checks if the value is a number
+ */
 export default class isNumber extends Rule {
+  /**
+   * @ignore
+   */
+  message;
+
+  /**
+   * @ignore
+   */
+  min;
+
+  /**
+   * @ignore
+   */
+  max;
+
   /**
    * Checks if the value is a number
    * @param {Object} options Options for `isNumber`
    * @param {Number} options.min Number should be min to `min`
    * @param {Number} options.max Number should be max to `max`
-   * @param {String} options.message Custom error message if test fails
+   * @param {String} options.message Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)
    */
   constructor(options) {
     super('isNumber');
@@ -41,6 +59,13 @@ export default class isNumber extends Rule {
     }
   }
 
+  /**
+   * Validate the `value` and return the error `string` if there are any
+   * otherwise return `null`.
+   * @param {any} value The value to be checked.
+   * @param {String} label Name or Label of the value being checked.
+   * @returns {{ value: any, error: String }} Value and error string.
+   */
   validate(value, label) {
     const data = {
       name: label,

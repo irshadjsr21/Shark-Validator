@@ -1,4 +1,14 @@
+/**
+ * Rule class should be extended in order to create any rule.
+ * @abstract
+ */
 export default class Rule {
+  /**
+   * @private
+   * @type {String} Name of the `Rule`
+   */
+  __name;
+
   /**
    * `Rule` is an abstract class which must be extended in order to
    * create a Rule. The subclass must have a `validate` function.
@@ -25,10 +35,12 @@ export default class Rule {
   }
 
   /**
+   * @abstract
    * Validate the `value` and return the error `string` if there are any
    * otherwise return `null`.
    * @param {any} value The value to be checked.
    * @param {String} label Name or Label of the value being checked.
+   * @returns {{ value: any, error: String }} Value and error string.
    */
   validate(value, label) {}
 
@@ -36,14 +48,20 @@ export default class Rule {
    * This formats the formatter string and includes the variables in it
    * from `values` object.
    * The variable key must be surrounded by `%` char.
-   * Example formatter : `%name% should not be empty.` 
-   * Example values : `{ name: 'email' }` 
    * 
-   * If the message contains actual `%` symbol, it should be prefixed
-   * with `-`.
-   * Example formatter : `%marks% should be greater than 90-%`
    * @param {String} formatter The format string.
    * @param {Object} values Object containing `key` and `value` pairs used in formatter `string`.
+   * @returns {String} Returns formatted string
+   * 
+   * @example
+   * const formattedString = formatMessage('%name% should not be empty.', { name: 'Email' });
+   * // Returns 'Email should not be empty.'
+   * 
+   * @example
+   * // If the message contains actual `%` symbol, it should be prefixed with `-`.
+   * 
+   * const formattedString = formatMessage('%name% should be greater than 90-%.', { name: 'Marks' });
+   * // Returns 'Marks should be greater than 90%.'
    */
   formatMessage(formatter, values) {
     let __values = values;

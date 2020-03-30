@@ -1,10 +1,18 @@
 import Rule from './Rule';
 
+/**
+ * Converts the value to an integer and throws error if it cannot be converted
+ */
 export default class toInt extends Rule {
+  /**
+   * @ignore
+   */
+  message;
+
   /**
    * Converts the value to an integer and throws error if it cannot be converted
    * @param {Object} options Options for `toInt`
-   * @param {String} options.message Custom error message if test fails
+   * @param {String} options.message Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)
    */
   constructor(options) {
     super('toInt');
@@ -26,6 +34,13 @@ export default class toInt extends Rule {
     }
   }
 
+  /**
+   * Validate the `value` and return the error `string` if there are any
+   * otherwise return `null`.
+   * @param {any} value The value to be checked.
+   * @param {String} label Name or Label of the value being checked.
+   * @returns {{ value: any, error: String }} Value and error string.
+   */
   validate(value, label) {
     const data = {
       name: label,

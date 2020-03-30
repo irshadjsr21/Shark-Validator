@@ -1,11 +1,24 @@
 import Rule from './Rule';
 
+/**
+ * Checks if the value is in the given array (works for number and strings) (is type sensitive)
+ */
 export default class isIn extends Rule {
+  /**
+   * @ignore
+   */
+  message;
+
+  /**
+   * @ignore
+   */
+  in;
+
   /**
    * Checks if the value is in the given array (works for number and strings) (is type sensitive)
    * @param {Object} options Options for `isIn`
    * @param {Array} options.in Array containing possible values
-   * @param {String} options.message Custom error message if test fails
+   * @param {String} options.message Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)
    */
   constructor(options) {
     super('isIn');
@@ -29,6 +42,13 @@ export default class isIn extends Rule {
     this.message = options.message;
   }
 
+  /**
+   * Validate the `value` and return the error `string` if there are any
+   * otherwise return `null`.
+   * @param {any} value The value to be checked.
+   * @param {String} label Name or Label of the value being checked.
+   * @returns {{ value: any, error: String }} Value and error string.
+   */
   validate(value, label) {
     const data = {
       name: label,
