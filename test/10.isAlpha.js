@@ -11,6 +11,9 @@ const schema = new Validator({
   ),
 });
 
+/**
+ * @test {isAlpha}
+ */
 describe('10. isAlpha', () => {
   describe('With invalid values', () => {
     let result;

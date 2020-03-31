@@ -2,7 +2,9 @@
   "source": "./src",
   "destination": "./docs",
   "plugins": [
-    { "name": "esdoc-standard-plugin" },
+    {
+      "name": "esdoc-standard-plugin"
+    },
     { "name": "esdoc-lint-plugin", "option": { "enable": true } },
     { "name": "esdoc-ecmascript-proposal-plugin", "option": { "all": true } },
     {
@@ -10,6 +12,25 @@
       "option": {
         "stripPackageName": false,
         "replaces": [{ "from": "^src/", "to": "lib/" }]
+      }
+    },
+    {
+      "name": "esdoc-integrate-test-plugin",
+      "option": {
+        "source": "./test/",
+        "interfaces": ["describe", "it", "context", "suite", "test"],
+        "includes": ["()\\.js$"]
+      }
+    },
+    {
+      "name": "esdoc-brand-plugin",
+      "option": {
+        "title": "Shark Validator",
+        "description": "A simple schema validator for both Node.js and browser with tree shaking support.",
+        "repository": "https://github.com/irshadjsr21/Shark-Validator",
+        "site": "https://irshadjsr21.github.io/Shark-Validator/",
+        "author": "https://imirshad.com",
+        "image": "https://imirshad.com/favicon.png"
       }
     }
   ]

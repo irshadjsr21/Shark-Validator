@@ -6,6 +6,9 @@ const schema = new Validator({
   password: RuleSet.create([new toUpperCase()]),
 });
 
+/**
+ * @test {toUpperCase}
+ */
 describe('13. toUpperCase', () => {
   let values, errors;
   before(() => {

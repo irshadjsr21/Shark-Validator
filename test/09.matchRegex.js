@@ -14,6 +14,9 @@ const schema = new Validator({
   ),
 });
 
+/**
+ * @test {matchRegex}
+ */
 describe('09. matchRegex', () => {
   describe('With error values', () => {
     let result;
