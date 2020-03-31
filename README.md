@@ -1,4 +1,8 @@
+
 # Shark-Validator
+
+[](https://github.com/irshadjsr21/Shark-Validator/workflows/Node.js%20CI/badge.svg)
+[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
 
 ## Overview
 A tree shakable validator which for both `Nodejs` and `Browser`.
