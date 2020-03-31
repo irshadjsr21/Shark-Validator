@@ -30,7 +30,7 @@
     "type": "git",
     "url": "https://github.com/irshadjsr21/Shark-Validator.git"
   },
-  "license": "ISC",
+  "license": "MIT",
   "keywords": [
     "schema",
     "validation",
