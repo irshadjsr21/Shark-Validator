@@ -15,6 +15,9 @@ const schema = new Validator({
   ),
 });
 
+/**
+ * @test {toNumber}
+ */
 describe('06. toNumber', () => {
   describe('With error values', () => {
     let errors;

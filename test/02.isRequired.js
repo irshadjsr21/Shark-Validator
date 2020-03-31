@@ -11,6 +11,9 @@ const schema = new Validator({
   ),
 });
 
+/**
+ * @test {isRequired}
+ */
 describe('02. isRequired', () => {
   describe('With null, undefined and empty string', () => {
     let result;

@@ -10,6 +10,9 @@ const schema = new Validator({
   ),
 });
 
+/**
+ * @test {isAlphaNum}
+ */
 describe('11. isAlphaNum', () => {
   describe('With invalid values', () => {
     let result;

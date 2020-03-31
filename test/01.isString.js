@@ -12,6 +12,9 @@ const schema = new Validator({
   ),
 });
 
+/**
+ * @test {isString}
+ */
 describe('01. isString', () => {
   describe('With null, undefined, object and array', () => {
     let result;
