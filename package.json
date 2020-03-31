@@ -1,6 +1,6 @@
 {
   "name": "shark-validator",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A simple schema validator",
   "main": "lib/index.js",
   "module": "es/index.js",
