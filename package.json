@@ -5,7 +5,6 @@
   "main": "lib/index.js",
   "module": "es/index.js",
   "scripts": {
-    "prepublish": "npm run build && npm run test",
     "build": "npm run build:cjs && npm run build:es",
     "build:cjs": "babel --env-name cjs src --out-dir lib",
     "build:es": "babel --env-name es src --out-dir es",
