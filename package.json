@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "module": "es/index.js",
   "scripts": {
-    "build": "npm run build:cjs && npm run build:es",
+    "build": "npm run build:cjs && npm run build:es && npm run build:docs",
     "build:cjs": "babel --env-name cjs src --out-dir lib",
     "build:es": "babel --env-name es src --out-dir es",
     "build:docs": "./node_modules/.bin/esdoc",
