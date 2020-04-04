@@ -1,7 +1,6 @@
 
 # Shark-Validator
-
-[](https://github.com/irshadjsr21/Shark-Validator/workflows/Node.js%20CI/badge.svg)
+![Node.js CI](https://github.com/irshadjsr21/Shark-Validator/workflows/Node.js%20CI/badge.svg?branch=master)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
 
 ## Overview
