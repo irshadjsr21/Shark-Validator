@@ -52,11 +52,29 @@ class RuleSet {
    *
    * @param {any} valueToCheck Value to be validated
    * @param {String} key Key of the value being checked
+   * @param {Object} options Options for validate
+   * @param {Object} options.returnEarly If `true` returns the after getting the first error.
    * @returns {validationError[]} An object containing `value` and `errors` if any
    */
-  validate(valueToCheck, key) {
+  validate(valueToCheck, key, options) {
     const errors = [];
     let modifiedValue = valueToCheck;
+    let returnEarly = false;
+
+    if (options !== undefined) {
+      if (typeof options !== 'object') {
+        throw new TypeError('`options` should be an object.');
+      }
+
+      if (options.returnEarly !== undefined) {
+        if (typeof options.returnEarly !== 'boolean') {
+          throw new TypeError('`options.returnEarly` should be a boolean.');
+        }
+
+        returnEarly = options.returnEarly;
+      }
+    }
+
     for (const rule of this.__rules) {
       if (!(rule instanceof Rule)) {
         throw new TypeError('Rule should be an instance of `Rule` class.');
@@ -66,7 +84,10 @@ class RuleSet {
         this.__label || key,
       );
       modifiedValue = value;
-      if (error) errors.push({ error, validator: rule.__name, value });
+      if (error) {
+        errors.push({ error, validator: rule.__name, value });
+        if (returnEarly) break;
+      }
     }
 
     if (errors.length > 0) return { value: modifiedValue, errors };
