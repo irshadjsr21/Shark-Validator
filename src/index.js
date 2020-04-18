@@ -15,4 +15,5 @@ export {
   isAlphaNum,
   toLowerCase,
   toUpperCase,
+  isEmail,
 } from './rules';

@@ -11,16 +11,55 @@ export default class Validator {
   __ruleSets;
 
   /**
+   * @ignore
+   * @private
+   */
+  __returnEarly;
+
+  /**
+   * @ignore
+   * @private
+   */
+  __returnRuleSetEarly;
+
+  /**
    * Creates a validator schema.
    * @param {Object<RuleSet>} objectOfRuleSet Set of `RuleSet`. `key` should match with the `key` of object being validated.
+   * @param {Object} options Options for validator schema.
+   * @param {Boolean} options.returnEarly If `true` returns whenever first `key` in `values` fails the test.
+   * @param {Boolean} options.returnRuleSetEarly If `true` returns the after getting the first error on all `keys`.
    */
-  constructor(objectOfRuleSet) {
+  constructor(objectOfRuleSet, options) {
     if (!objectOfRuleSet || typeof objectOfRuleSet !== 'object') {
       throw new TypeError('`objectOfRuleSet` should be an object.');
     }
 
     if (Object.keys(objectOfRuleSet).length <= 0) {
       throw new TypeError('`objectOfRuleSet` should not be empty.');
+    }
+
+    if (options !== undefined) {
+      if (typeof options !== 'object') {
+        throw new TypeError('`options` should be an object.');
+      }
+
+      if (options.returnEarly !== undefined) {
+        if (typeof options.returnEarly !== 'boolean') {
+          throw new TypeError('`options.returnEarly` should be a boolean.');
+        }
+
+        this.__returnEarly = options.returnEarly;
+      }
+
+      if (options.returnRuleSetEarly !== undefined) {
+        if (typeof options.returnRuleSetEarly !== 'boolean') {
+          throw new TypeError(
+            '`options.returnRuleSetEarly` should be a boolean.',
+          );
+        }
+
+        this.__returnRuleSetEarly = options.returnRuleSetEarly;
+      }
     }
 
     this.__ruleSets = { ...objectOfRuleSet };
@@ -49,10 +88,14 @@ export default class Validator {
       const { value, errors: currentErrors } = ruleSet.validate(
         valuesToCheck[key],
         key,
+        { returnEarly: this.__returnRuleSetEarly },
       );
       modifiedValues[key] = value;
       if (currentErrors) {
         allErrors[key] = currentErrors;
+        if (this.__returnEarly) {
+          break;
+        }
       }
     }
 
