@@ -1,7 +1,7 @@
 import Rule from './Rule';
 
 /**
- * Checks if the value contains only Alphabets and numbers.
+ * Checks if the value is a valid email address.
  */
 export default class isEmail extends Rule {
   /**
@@ -15,7 +15,7 @@ export default class isEmail extends Rule {
   regex;
 
   /**
-   * Checks if the value contains only Alphabets and numbers.
+   * Checks if the value is a valid email address.
    * @param {Object} options Options for `isEmail`
    * @param {String} options.message Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)
    */

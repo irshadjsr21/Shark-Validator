@@ -36,4 +36,4 @@ const { values, errors } = schema.validate(valuesToCheck);
 ```
 
 ## Reference and API Documentation
-[https://shark-validator.netlify.com/](https://shark-validator.netlify.com/)
+[https://shark.imirshad.com/](https://shark.imirshad.com/)
