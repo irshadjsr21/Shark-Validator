@@ -12,3 +12,4 @@ export { default as isAlpha } from './isAlpha';
 export { default as isAlphaNum } from './isAlphaNum';
 export { default as toLowerCase } from './toLowerCase';
 export { default as toUpperCase } from './toUpperCase';
+export { default as isEmail } from './isEmail';
