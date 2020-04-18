@@ -2,3 +2,4 @@ node_modules
 test
 docs
 .esdoc.json
+.github
