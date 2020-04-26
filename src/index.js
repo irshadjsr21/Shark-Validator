@@ -16,4 +16,5 @@ export {
   toLowerCase,
   toUpperCase,
   isEmail,
+  isObject,
 } from './rules';

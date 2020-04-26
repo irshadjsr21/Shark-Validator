@@ -54,12 +54,16 @@ class RuleSet {
    * @param {String} key Key of the value being checked
    * @param {Object} options Options for validate
    * @param {Object} options.returnEarly If `true` returns the after getting the first error.
+   * @param {String} options.path Validation path.
+   * @param {Boolean} options.showNestedError If `true` shows nested errors.
    * @returns {validationError[]} An object containing `value` and `errors` if any
    */
   validate(valueToCheck, key, options) {
-    const errors = [];
+    let errors = [];
     let modifiedValue = valueToCheck;
     let returnEarly = false;
+    let path = null;
+    let showNestedError = false;
 
     if (options !== undefined) {
       if (typeof options !== 'object') {
@@ -73,19 +77,52 @@ class RuleSet {
 
         returnEarly = options.returnEarly;
       }
+
+      if (options.path !== undefined) {
+        if (typeof options.path !== 'string') {
+          throw new TypeError('`options.path` should be a string.');
+        }
+
+        path = options.path;
+      }
+
+      if (options.showNestedError !== undefined) {
+        if (typeof options.showNestedError !== 'boolean') {
+          throw new TypeError('`options.showNestedError` should be a boolean.');
+        }
+
+        showNestedError = options.showNestedError;
+      }
     }
 
     for (const rule of this.__rules) {
       if (!(rule instanceof Rule)) {
         throw new TypeError('Rule should be an instance of `Rule` class.');
       }
-      const { value, error } = rule.validate(
-        modifiedValue,
-        this.__label || key,
-      );
+
+      let currentPath = path ? `${path}.${key}` : key;
+      const { value, error } = rule.validate(modifiedValue, {
+        label: this.__label || key,
+        path: currentPath,
+        showNestedError,
+      });
+
       modifiedValue = value;
+
       if (error) {
-        errors.push({ error, validator: rule.__name, value });
+        if (!showNestedError && typeof error === 'object') {
+          for (const innerKey in error) {
+            if (error[innerKey]) {
+              errors = errors.concat(error[innerKey]);
+            }
+          }
+        } else
+          errors.push({
+            error,
+            validator: rule.__name,
+            value,
+            path: currentPath,
+          });
         if (returnEarly) break;
       }
     }
