@@ -1,28 +1,19 @@
 const assert = require('assert');
-const util = require('util');
-const {
-  Validator,
-  RuleSet,
-  isString,
-  isObject,
-  toLowerCase,
-  toInt
-} = require('../lib');
+const { Validator, RuleSet, isString, toLowerCase } = require('../lib');
 
 const addressSchema = new Validator({
-  city: RuleSet.create([new toInt()]),
+  city: RuleSet.create([new isString(), new toLowerCase()]),
 });
 
-const userSchema = new Validator(
-  {
-    name: RuleSet.create([new isString(), new toLowerCase()]),
-    address: RuleSet.create([new isObject({ schema: addressSchema })]),
-  },
-  { showNestedError: false },
-);
+const userSchema = new Validator({
+  name: RuleSet.create([new isString(), new toLowerCase()]),
+  address: RuleSet.schema(addressSchema, 'Address', {
+    message: '%name% must be an object.',
+  }),
+});
 
 const schema = new Validator({
-  user1: RuleSet.create([new isObject({ schema: userSchema })]),
+  user: RuleSet.schema(userSchema),
 });
 
 /**
@@ -30,74 +21,124 @@ const schema = new Validator({
  */
 describe('15. isObject', () => {
   describe('With invalid values', () => {
-    let result;
-    before(() => {
-      const data = schema.validate({
-        user1: { name: 'IRSHAD', address: { city: '100' } },
+    describe('Should return error if not an object.', () => {
+      let result;
+      before(() => {
+        const data = schema.validate({
+          user: 'Irshad',
+        });
+        result = data.errors;
       });
-      result = data.errors;
-      console.log(util.inspect(result, { depth: null }));
-      console.log(data.values);
+
+      it('Should return error', () => {
+        assert.equal(typeof result, 'object');
+        assert.notEqual(result, null);
+      });
+
+      it('Should return error of not an object', () => {
+        const errorArray = result.user;
+        assert.equal(Array.isArray(errorArray), true);
+        assert.equal(errorArray.length, 1);
+        assert.equal(typeof errorArray[0], 'object');
+        assert.equal(errorArray[0].validator, 'isObject');
+        assert.equal(errorArray[0].value, 'Irshad');
+        assert.equal(errorArray[0].path, 'user');
+      });
     });
 
-    it('Should return error', () => {
-      assert.equal(typeof result, 'object');
-      assert.notEqual(result, null);
+    describe('Should return error if key is not present.', () => {
+      let result;
+      before(() => {
+        const data = schema.validate({
+          user: {},
+        });
+        result = data.errors;
+      });
+
+      it('Should return error', () => {
+        assert.equal(typeof result, 'object');
+        assert.notEqual(result, null);
+      });
+
+      it('Should return error if name is not present', () => {
+        const errorArray = result.user;
+        assert.equal(Array.isArray(errorArray), true);
+        assert.equal(errorArray.length, 2);
+        assert.equal(typeof errorArray[0], 'object');
+        assert.equal(typeof errorArray[1], 'object');
+
+        assert.equal(errorArray[0].validator, 'isString');
+        assert.equal(errorArray[0].value, undefined);
+        assert.equal(errorArray[0].path, 'user.name');
+
+        assert.equal(errorArray[1].validator, 'isObject');
+        assert.equal(errorArray[1].value, undefined);
+        assert.equal(errorArray[1].path, 'user.address');
+      });
     });
 
-    // it('Should return error if only user name', () => {
-    //   const errorArray = result.email1;
-    //   assert.equal(Array.isArray(errorArray), true);
-    //   assert.equal(errorArray.length, 1);
-    //   assert.equal(typeof errorArray[0], 'object');
-    //   assert.equal(errorArray[0].validator, 'isEmail');
-    //   assert.equal(errorArray[0].value, 'irshad');
-    // });
+    describe('Should return error if object key is invalid.', () => {
+      let result;
+      before(() => {
+        const data = schema.validate({
+          user: { name: 21, address: 1 },
+        });
+        result = data.errors;
+      });
 
-    // it('Should return error if only user name with @', () => {
-    //   const errorArray = result.email2;
-    //   assert.equal(Array.isArray(errorArray), true);
-    //   assert.equal(errorArray.length, 1);
-    //   assert.equal(typeof errorArray[0], 'object');
-    //   assert.equal(errorArray[0].validator, 'isEmail');
-    //   assert.equal(errorArray[0].value, 'irshad@');
-    // });
+      it('Should return error', () => {
+        assert.equal(typeof result, 'object');
+        assert.notEqual(result, null);
+      });
 
-    // it('Should return error if top level domain is missing', () => {
-    //   const errorArray = result.email3;
-    //   assert.equal(Array.isArray(errorArray), true);
-    //   assert.equal(errorArray.length, 1);
-    //   assert.equal(typeof errorArray[0], 'object');
-    //   assert.equal(errorArray[0].validator, 'isEmail');
-    //   assert.equal(errorArray[0].value, 'irshad@gmail');
-    // });
+      it('Should return error if object key is invalid', () => {
+        const errorArray = result.user;
+        assert.equal(Array.isArray(errorArray), true);
+        assert.equal(errorArray.length, 2);
+        assert.equal(typeof errorArray[0], 'object');
+        assert.equal(typeof errorArray[1], 'object');
 
-    // it('Should return custom message on error', () => {
-    //   const errorArray = result.email3;
-    //   assert.equal(Array.isArray(errorArray), true);
-    //   assert.equal(errorArray.length, 1);
-    //   assert.equal(typeof errorArray[0], 'object');
-    //   assert.equal(errorArray[0].validator, 'isEmail');
-    //   assert.equal(
-    //     errorArray[0].error,
-    //     'Email is not an email.',
-    //   );
-    // });
+        assert.equal(errorArray[0].validator, 'isString');
+        assert.equal(errorArray[0].value, 21);
+        assert.equal(errorArray[0].path, 'user.name');
+
+        assert.equal(errorArray[1].validator, 'isObject');
+        assert.equal(errorArray[1].value, 1);
+        assert.equal(errorArray[1].path, 'user.address');
+      });
+
+      it('Should return custom message', () => {
+        const errorArray = result.user;
+        assert.equal(errorArray[1].error, 'Address must be an object.');
+      });
+    });
   });
 
-  // describe('With valid strings', () => {
-  //   let result;
-  //   before(() => {
-  //     const data = schema.validate({
-  //       email1: 'irshad@gmail.com',
-  //       email2: 'irshad@mail.gmail.com',
-  //       email3: 'irshad@gmail.in',
-  //     });
-  //     result = data.errors;
-  //   });
+  describe('With valid values', () => {
+    let errors, values;
+    before(() => {
+      const data = schema.validate({
+        user: { name: 'IRSHAD', address: { city: 'Bangalore' } },
+      });
+      errors = data.errors;
+      values = data.values;
+    });
 
-  //   it('Should not return error', () => {
-  //     assert.equal(result, null);
-  //   });
-  // });
+    it('Should not return error', () => {
+      assert.equal(typeof errors, 'object');
+      assert.equal(errors, null);
+    });
+
+    it('Should transform nested keys', () => {
+      assert.equal(typeof values, 'object');
+      let value = values.user.name;
+      assert.equal(typeof value, 'string');
+      assert.equal(value, 'irshad');
+
+      value = values.user.address.city;
+      assert.equal(typeof values, 'object');
+      assert.equal(typeof value, 'string');
+      assert.equal(value, 'bangalore');
+    });
+  });
 });

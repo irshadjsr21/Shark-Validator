@@ -1,4 +1,5 @@
-import { Rule } from './rules';
+import { Rule, isObject } from './rules';
+import Validator from './Validator';
 
 /**
  * Vaidation error object.
@@ -26,24 +27,50 @@ class RuleSet {
 
   /**
    * Create a ruleset for a particular `key` or `value`.
-   * @param {Array<Rule>} arrayOfRules Array of `Rule` objects
-   * @param {String} label The name or label of the value being checked
+   * @param {Object} options Options for `RuleSet`.
+   * @param {Array<Rule>} options.rules Array of `Rule` object (should not be set if the key is an obejct)
+   * @param {Validator} options.schema Validator object (only if the key is an object)
+   * @param {String} options.label The name or label of the value being checked
+   * @param {Object} options.schemaOptions Options for `isObject`
    */
-  constructor(arrayOfRules, label) {
-    if (label && typeof label !== 'string') {
-      throw new TypeError('`label` should be a string.');
+  constructor(options) {
+    if (typeof options !== 'object') {
+      throw new TypeError('`options` should be an object.');
     }
 
-    if (!arrayOfRules || !Array.isArray(arrayOfRules)) {
-      throw new TypeError('`arrayOfRules` should be an array.');
+    if (options.label && typeof options.label !== 'string') {
+      throw new TypeError('`options.label` should be a string.');
     }
 
-    if (arrayOfRules.length <= 0) {
-      throw new TypeError('`arrayOfRules` should not be empty.');
+    const isSchema = options.rules === undefined;
+
+    if (isSchema) {
+      if (!(options.schema instanceof Validator)) {
+        throw new TypeError(
+          '`options.schema` should be an instance of `Validator`.',
+        );
+      }
+
+      let objectOptions = {};
+      if (options.schemaOptions) {
+        objectOptions = { ...options.schemaOptions };
+      }
+
+      objectOptions.schema = options.schema;
+      this.__rules = [new isObject(objectOptions)];
+    } else {
+      if (!Array.isArray(options.rules)) {
+        throw new TypeError('`options.rules` should be an array of `Rule`.');
+      }
+
+      if (options.rules.length <= 0) {
+        throw new TypeError('`options.rules` should not be empty.');
+      }
+
+      this.__rules = [...options.rules];
     }
 
-    this.__rules = [...arrayOfRules];
-    this.__label = label;
+    this.__label = options.label;
   }
 
   /**
@@ -134,12 +161,25 @@ class RuleSet {
   /**
    * Create a ruleset for a particular `key` or `value`.
    * Can be used as an alternative to the constructor.
-   * @param {Array} arrayOfRules Array of `Rule` objects
+   * @param {Array<Rule>} rules Array of `Rule` object
    * @param {String} label The name or label of the value being checked
    * @returns {RuleSet} A new `RuleSet` object
    */
-  static create(arrayOfRules, label) {
-    return new RuleSet(arrayOfRules, label);
+  static create(rules, label) {
+    return new RuleSet({ rules, label });
+  }
+
+  /**
+   * Create a ruleset for a particular `key` or `value` if it is supposed to be an object.
+   * Can be used as an alternative to the constructor.
+   * @param {Validator} schema Array of `Rule` object
+   * @param {String} label The name or label of the value being checked
+   * @param {Object} schemaOptions Options for `isObject`
+   * @param {String} schemaOptions.message Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)
+   * @returns {RuleSet} A new `RuleSet` object
+   */
+  static schema(schema, label, schemaOptions) {
+    return new RuleSet({ schema, label, schemaOptions });
   }
 }
 
