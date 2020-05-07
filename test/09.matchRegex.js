@@ -40,6 +40,7 @@ describe('09. matchRegex', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'matchRegex');
       assert.equal(errorArray[0].value, 'Asdk!#sa');
+      assert.equal(errorArray[0].path, 'email');
     });
 
     it('Should return custom message on error', () => {
@@ -53,6 +54,7 @@ describe('09. matchRegex', () => {
         errorArray[0].error,
         'Password should only contain alphabets.',
       );
+      assert.equal(errorArray[0].path, 'password');
     });
   });
 

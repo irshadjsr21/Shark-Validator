@@ -39,6 +39,7 @@ describe('10. isAlpha', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'isAlpha');
       assert.equal(errorArray[0].value, 'asd#!');
+      assert.equal(errorArray[0].path, 'name');
     });
 
     it('Should return error if spaces are present', () => {
@@ -48,6 +49,7 @@ describe('10. isAlpha', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'isAlpha');
       assert.equal(errorArray[0].value, 'ahsdg jasdg j!hasgd');
+      assert.equal(errorArray[0].path, 'email');
     });
 
     it('Should return error if numbers are present', () => {
@@ -57,6 +59,7 @@ describe('10. isAlpha', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'isAlpha');
       assert.equal(errorArray[0].value, 'kasjdhkaq212jsdh');
+      assert.equal(errorArray[0].path, 'password');
     });
 
     it('Should return custom message on error', () => {
@@ -70,6 +73,7 @@ describe('10. isAlpha', () => {
         errorArray[0].error,
         'Confirm password should only be alphabets.',
       );
+      assert.equal(errorArray[0].path, 'confirmPassword');
     });
   });
 

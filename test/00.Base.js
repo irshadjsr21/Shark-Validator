@@ -35,6 +35,7 @@ describe('00. Base for all Rules', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'isString');
       assert.equal(errorArray[0].value, null);
+      assert.equal(errorArray[0].path, 'name');
     });
 
     it('Should not return error on undefined', () => {
@@ -73,6 +74,7 @@ describe('00. Base for all Rules', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'isString');
       assert.equal(errorArray[0].value, null);
+      assert.equal(errorArray[0].path, 'name');
     });
 
     it('Should return error on undefined', () => {
@@ -82,6 +84,7 @@ describe('00. Base for all Rules', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'isString');
       assert.equal(errorArray[0].value, undefined);
+      assert.equal(errorArray[0].path, 'username');
     });
   });
 
@@ -115,6 +118,7 @@ describe('00. Base for all Rules', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'isString');
       assert.equal(errorArray[0].value, null);
+      assert.equal(errorArray[0].path, 'name');
     });
 
     it('Should not return error on undefined', () => {
@@ -153,6 +157,7 @@ describe('00. Base for all Rules', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'isString');
       assert.equal(errorArray[0].value, null);
+      assert.equal(errorArray[0].path, 'name');
     });
 
     it('Should return error on undefined', () => {
@@ -162,6 +167,7 @@ describe('00. Base for all Rules', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'isString');
       assert.equal(errorArray[0].value, undefined);
+      assert.equal(errorArray[0].path, 'username');
     });
   });
 });

@@ -37,6 +37,7 @@ describe('14. isEmail', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'isEmail');
       assert.equal(errorArray[0].value, 'irshad');
+      assert.equal(errorArray[0].path, 'email1');
     });
 
     it('Should return error if only user name with @', () => {
@@ -46,6 +47,7 @@ describe('14. isEmail', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'isEmail');
       assert.equal(errorArray[0].value, 'irshad@');
+      assert.equal(errorArray[0].path, 'email2');
     });
 
     it('Should return error if top level domain is missing', () => {
@@ -55,6 +57,7 @@ describe('14. isEmail', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'isEmail');
       assert.equal(errorArray[0].value, 'irshad@gmail');
+      assert.equal(errorArray[0].path, 'email3');
     });
 
     it('Should return custom message on error', () => {
@@ -63,10 +66,8 @@ describe('14. isEmail', () => {
       assert.equal(errorArray.length, 1);
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'isEmail');
-      assert.equal(
-        errorArray[0].error,
-        'Email is not an email.',
-      );
+      assert.equal(errorArray[0].error, 'Email is not an email.');
+      assert.equal(errorArray[0].path, 'email3');
     });
   });
 

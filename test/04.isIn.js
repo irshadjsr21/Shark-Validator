@@ -39,6 +39,7 @@ describe('04. isIn', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'isIn');
       assert.equal(errorArray[0].value, 'irsh');
+      assert.equal(errorArray[0].path, 'name');
     });
 
     it('Should return error if not in given numbers', () => {
@@ -48,6 +49,7 @@ describe('04. isIn', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'isIn');
       assert.equal(errorArray[0].value, '20181');
+      assert.equal(errorArray[0].path, 'yearOfBirth');
     });
 
     it('Should return error if not in given single string', () => {
@@ -57,6 +59,7 @@ describe('04. isIn', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'isIn');
       assert.equal(errorArray[0].value, 'ir');
+      assert.equal(errorArray[0].path, 'username');
     });
 
     it('Should return custom message on error', () => {
@@ -67,6 +70,7 @@ describe('04. isIn', () => {
       assert.equal(errorArray[0].validator, 'isIn');
       assert.equal(errorArray[0].value, 'MALE');
       assert.equal(errorArray[0].error, 'Gender can only be M, F.');
+      assert.equal(errorArray[0].path, 'gender');
     });
   });
 

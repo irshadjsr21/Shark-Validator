@@ -38,6 +38,7 @@ describe('02. isRequired', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'isRequired');
       assert.equal(errorArray[0].value, null);
+      assert.equal(errorArray[0].path, 'name');
     });
 
     it('Should return error on undefined', () => {
@@ -47,6 +48,7 @@ describe('02. isRequired', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'isRequired');
       assert.equal(errorArray[0].value, undefined);
+      assert.equal(errorArray[0].path, 'email');
     });
 
     it('Should return error on empty string', () => {
@@ -56,6 +58,7 @@ describe('02. isRequired', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'isRequired');
       assert.equal(errorArray[0].value, '');
+      assert.equal(errorArray[0].path, 'password');
     });
 
     it('Should return custom message on error', () => {
@@ -66,6 +69,7 @@ describe('02. isRequired', () => {
       assert.equal(errorArray[0].validator, 'isRequired');
       assert.equal(errorArray[0].value, null);
       assert.equal(errorArray[0].error, 'Confirm password is to be present.');
+      assert.equal(errorArray[0].path, 'confirmPassword');
     });
   });
 

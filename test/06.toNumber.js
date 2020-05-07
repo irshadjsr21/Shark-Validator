@@ -43,6 +43,7 @@ describe('06. toNumber', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'toNumber');
       assert.equal(errorArray[0].value, '201a4');
+      assert.equal(errorArray[0].path, 'id');
     });
 
     it('Should return error if a symbol is present', () => {
@@ -52,6 +53,7 @@ describe('06. toNumber', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'toNumber');
       assert.equal(errorArray[0].value, '~10');
+      assert.equal(errorArray[0].path, 'age');
     });
 
     it('Should return error if character after `.`', () => {
@@ -61,6 +63,7 @@ describe('06. toNumber', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'toNumber');
       assert.equal(errorArray[0].value, '20181.01a');
+      assert.equal(errorArray[0].path, 'yearOfBirth');
     });
 
     it('Should return custom message on error', () => {
@@ -71,6 +74,7 @@ describe('06. toNumber', () => {
       assert.equal(errorArray[0].validator, 'toNumber');
       assert.equal(errorArray[0].value, 'Jan');
       assert.equal(errorArray[0].error, 'Month of birth should be a number.');
+      assert.equal(errorArray[0].path, 'monthOfBirth');
     });
   });
 
