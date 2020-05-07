@@ -178,7 +178,7 @@ class RuleSet {
    * @param {String} schemaOptions.message Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)
    * @returns {RuleSet} A new `RuleSet` object
    */
-  static schema(schema, label, schemaOptions) {
+  static object(schema, label, schemaOptions) {
     return new RuleSet({ schema, label, schemaOptions });
   }
 }

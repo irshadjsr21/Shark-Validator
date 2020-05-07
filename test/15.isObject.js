@@ -7,13 +7,13 @@ const addressSchema = new Validator({
 
 const userSchema = new Validator({
   name: RuleSet.create([new isString(), new toLowerCase()]),
-  address: RuleSet.schema(addressSchema, 'Address', {
+  address: RuleSet.object(addressSchema, 'Address', {
     message: '%name% must be an object.',
   }),
 });
 
 const schema = new Validator({
-  user: RuleSet.schema(userSchema),
+  user: RuleSet.object(userSchema),
 });
 
 /**
@@ -110,6 +110,31 @@ describe('15. isObject', () => {
       it('Should return custom message', () => {
         const errorArray = result.user;
         assert.equal(errorArray[1].error, 'Address must be an object.');
+      });
+    });
+
+    describe('Should return error if multi-nested object key is invalid.', () => {
+      let result;
+      before(() => {
+        const data = schema.validate({
+          user: { name: 'Irshad', address: { city: 2 } },
+        });
+        result = data.errors;
+      });
+
+      it('Should return error', () => {
+        assert.equal(typeof result, 'object');
+        assert.notEqual(result, null);
+      });
+
+      it('Should return error if multi-nested object key is invalid', () => {
+        const errorArray = result.user;
+        assert.equal(Array.isArray(errorArray), true);
+        assert.equal(errorArray.length, 1);
+        assert.equal(typeof errorArray[0], 'object');
+        assert.equal(errorArray[0].validator, 'isString');
+        assert.equal(errorArray[0].value, 2);
+        assert.equal(errorArray[0].path, 'user.address.city');
       });
     });
   });
