@@ -6,6 +6,7 @@ import Validator from './Validator';
  * @typedef {Object} validationError
  * @property {String} error - Error string
  * @property {String} validator - Name of validator (`Rule`) where the error occured
+ * @property {String} path - Path to the error value
  * @property {Any} value - Value which caused the `Rule` to fail
  */
 
@@ -172,7 +173,7 @@ class RuleSet {
   /**
    * Create a ruleset for a particular `key` or `value` if it is supposed to be an object.
    * Can be used as an alternative to the constructor.
-   * @param {Validator} schema Array of `Rule` object
+   * @param {Validator} schema A `Validator` object to be checked against the object
    * @param {String} label The name or label of the value being checked
    * @param {Object} schemaOptions Options for `isObject`
    * @param {String} schemaOptions.message Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)

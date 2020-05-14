@@ -1,7 +1,7 @@
 {
   "name": "shark-validator",
   "version": "1.3.1",
-  "description": "A simple schema validator",
+  "description": "A light weight, powerful, tree shakable javascript schema validator which works on both Nodejs and Browser.",
   "main": "lib/index.js",
   "module": "es/index.js",
   "scripts": {
