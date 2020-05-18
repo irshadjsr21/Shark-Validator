@@ -5,14 +5,14 @@
   "main": "lib/index.js",
   "module": "es/index.js",
   "scripts": {
-    "build": "npm run build:cjs && npm run build:es && npm run build:docs",
     "build:cjs": "babel --env-name cjs src --out-dir lib",
     "build:es": "babel --env-name es src --out-dir es",
     "build:docs": "./node_modules/.bin/esdoc",
+    "build:js": "npm run build:cjs && npm run build:es",
+    "build": "npm run build:js && npm run build:docs",
     "lint": "eslint src/**/* src/* test/**/*  --fix",
     "test": "mocha",
-    "dev:test": "mocha",
-    "pretest": "npm run build"
+    "dev:test": "npm run build:js && npm run test"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
@@ -36,7 +36,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && npm run test"
+      "pre-commit": "npm run build && lint-staged && npm run test"
     }
   },
   "lint-staged": {
