@@ -62,6 +62,7 @@ export default class isObject extends Rule {
    * @param {String} options.label Name or Label of the value being checked.
    * @param {String} options.path Validator path.
    * @param {Boolean} options.showNestedError If `true` shows nested errors.
+   * @param {Boolean} options.returnEarly If `true` returns the after getting the first error.
    * @returns {{ value: any, error: String }} Value and error string.
    */
   validate(value, options) {
@@ -83,10 +84,8 @@ export default class isObject extends Rule {
 
     const path = options.path;
 
-    if(options.showNestedError !== undefined) {
-      if (
-        typeof options.showNestedError !== 'boolean'
-      ) {
+    if (options.showNestedError !== undefined) {
+      if (typeof options.showNestedError !== 'boolean') {
         throw new TypeError('`options.showNestedError` should be a boolean.');
       }
 
@@ -106,11 +105,15 @@ export default class isObject extends Rule {
       };
     }
 
-    const { errors, values } = this.schema.validate(value, { path, showNestedError });
+    const { errors, values } = this.schema.validate(value, {
+      path,
+      showNestedError,
+      returnRuleSetEarly: options.returnEarly,
+    });
 
     if (errors && Object.keys(errors).length > 0) {
       return {
-        value: {...values},
+        value: values,
         error: errors,
       };
     }

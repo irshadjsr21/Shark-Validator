@@ -17,4 +17,5 @@ export {
   toUpperCase,
   isEmail,
   isObject,
+  isArray,
 } from './rules';

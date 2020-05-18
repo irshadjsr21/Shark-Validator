@@ -1,5 +1,6 @@
 import { Rule, isObject } from './rules';
 import Validator from './Validator';
+import isArray from '../lib/rules/isArray';
 
 /**
  * Vaidation error object.
@@ -30,9 +31,7 @@ class RuleSet {
    * Create a ruleset for a particular `key` or `value`.
    * @param {Object} options Options for `RuleSet`.
    * @param {Array<Rule>} options.rules Array of `Rule` object (should not be set if the key is an obejct)
-   * @param {Validator} options.schema Validator object (only if the key is an object)
    * @param {String} options.label The name or label of the value being checked
-   * @param {Object} options.schemaOptions Options for `isObject`
    */
   constructor(options) {
     if (typeof options !== 'object') {
@@ -43,33 +42,15 @@ class RuleSet {
       throw new TypeError('`options.label` should be a string.');
     }
 
-    const isSchema = options.rules === undefined;
-
-    if (isSchema) {
-      if (!(options.schema instanceof Validator)) {
-        throw new TypeError(
-          '`options.schema` should be an instance of `Validator`.',
-        );
-      }
-
-      let objectOptions = {};
-      if (options.schemaOptions) {
-        objectOptions = { ...options.schemaOptions };
-      }
-
-      objectOptions.schema = options.schema;
-      this.__rules = [new isObject(objectOptions)];
-    } else {
-      if (!Array.isArray(options.rules)) {
-        throw new TypeError('`options.rules` should be an array of `Rule`.');
-      }
-
-      if (options.rules.length <= 0) {
-        throw new TypeError('`options.rules` should not be empty.');
-      }
-
-      this.__rules = [...options.rules];
+    if (!Array.isArray(options.rules)) {
+      throw new TypeError('`options.rules` should be an array of `Rule`.');
     }
+
+    if (options.rules.length <= 0) {
+      throw new TypeError('`options.rules` should not be empty.');
+    }
+
+    this.__rules = [...options.rules];
 
     this.__label = options.label;
   }
@@ -83,6 +64,7 @@ class RuleSet {
    * @param {Object} options Options for validate
    * @param {Object} options.returnEarly If `true` returns the after getting the first error.
    * @param {String} options.path Validation path.
+   * @param {Boolean} options.isArrayElem `true` when validating array element.
    * @param {Boolean} options.showNestedError If `true` shows nested errors.
    * @returns {validationError[]} An object containing `value` and `errors` if any
    */
@@ -128,11 +110,17 @@ class RuleSet {
         throw new TypeError('Rule should be an instance of `Rule` class.');
       }
 
-      let currentPath = path ? `${path}.${key}` : key;
+      let currentPath = options.isArrayElem
+        ? path
+        : path
+        ? `${path}.${key}`
+        : key;
       const { value, error } = rule.validate(modifiedValue, {
         label: this.__label || key,
+        key: key,
         path: currentPath,
         showNestedError,
+        returnEarly,
       });
 
       modifiedValue = value;
@@ -180,7 +168,62 @@ class RuleSet {
    * @returns {RuleSet} A new `RuleSet` object
    */
   static object(schema, label, schemaOptions) {
-    return new RuleSet({ schema, label, schemaOptions });
+    let objectOptions = {};
+    if (schemaOptions) {
+      objectOptions = { ...schemaOptions };
+    }
+
+    objectOptions.schema = schema;
+    const rules = [new isObject(objectOptions)];
+
+    return new RuleSet({ rules, label });
+  }
+
+  /**
+   * Create a ruleset for a particular `key` or `value` if it is supposed to be an object.
+   * Can be used as an alternative to the constructor.
+   * @param {Array<Rule>} rules Array of rules
+   * @param {String} label The name or label of the value being checked
+   * @param {Object} schemaOptions Options for `isArray`
+   * @param {Number} schemaOptions.eq Length should be equal to `eq`
+   * @param {Number} schemaOptions.min Length should be min `min`
+   * @param {Number} schemaOptions.max Length should be max to `max`
+   * @param {String} schemaOptions.message Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)
+   * @returns {RuleSet} A new `RuleSet` object
+   */
+  static array(rules, label, schemaOptions) {
+    let objectOptions = {};
+    if (schemaOptions) {
+      objectOptions = { ...schemaOptions };
+    }
+
+    objectOptions.rules = RuleSet.create(rules);
+    const arrayOfRules = [new isArray(objectOptions)];
+
+    return new RuleSet({ rules: arrayOfRules, label });
+  }
+
+  /**
+   * Checks if value is an array and each value satisfies the given rules
+   * @param {Validator} schema A `Validator` object to be checked against the object
+   * @param {String} label The name or label of the value being checked
+   * @param {Object} schemaOptions Options for `isArray`
+   * @param {Number} schemaOptions.eq Length should be equal to `eq`
+   * @param {Number} schemaOptions.min Length should be min `min`
+   * @param {Number} schemaOptions.max Length should be max to `max`
+   * @param {String} schemaOptions.message Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)
+   * @returns {RuleSet} A new `RuleSet` object
+   */
+  static arrayOfObject(schema, label, schemaOptions) {
+    let objectOptions = {};
+    if (schemaOptions) {
+      objectOptions = { ...schemaOptions };
+    }
+
+    objectOptions.rules = RuleSet.object(schema);
+    const arrayOfRules = [new isArray(objectOptions)];
+
+    return new RuleSet({ rules: arrayOfRules, label });
   }
 }
 

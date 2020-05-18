@@ -87,6 +87,8 @@ export default class Validator {
    * @param {Object} options Options for validator.
    * @param {String} options.path Validation path.
    * @param {Boolean} options.showNestedError If `true` shows nested errors.
+   * @param {Boolean} options.returnEarly If `true` returns whenever first `key` in `values` fails the test.
+   * @param {Boolean} options.returnRuleSetEarly If `true` returns the after getting the first error on all `keys`.
    * @returns {{values: Object, errors: Object<validationError>}} Object containing `values` and `errors`
    */
   validate(valuesToCheck, options) {
@@ -115,6 +117,26 @@ export default class Validator {
           throw new TypeError('`options.showNestedError` should be a boolean.');
         }
         showNestedError = options.showNestedError;
+      }
+
+      if (typeof this.__returnEarly !== 'boolean') {
+        if (
+          options.returnEarly !== undefined &&
+          typeof options.returnEarly !== 'boolean'
+        ) {
+          throw new TypeError('`options.returnEarly` should be a boolean.');
+        }
+        this.__returnEarly = options.returnEarly;
+      }
+
+      if (typeof this.__returnRuleSetEarly !== 'boolean') {
+        if (
+          options.returnRuleSetEarly !== undefined &&
+          typeof options.returnRuleSetEarly !== 'boolean'
+        ) {
+          throw new TypeError('`options.returnRuleSetEarly` should be a boolean.');
+        }
+        this.__returnRuleSetEarly = options.returnRuleSetEarly;
       }
     }
 
