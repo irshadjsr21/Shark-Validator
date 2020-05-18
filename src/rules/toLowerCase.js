@@ -20,6 +20,7 @@ export default class toLowerCase extends Rule {
    * @param {String} options.path Validator path.
    * @returns {{ value: any, error: String }} Value and error string.
    */
+  // eslint-disable-next-line class-methods-use-this
   validate(value, options) {
     if (typeof options !== 'object') {
       throw new TypeError('`options` should be an object.');

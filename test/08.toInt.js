@@ -80,6 +80,7 @@ describe('08. toInt', () => {
 
   describe('With valid values', () => {
     let errors;
+    let values;
     before(() => {
       const data = schema.validate({
         id: '10',

@@ -12,7 +12,8 @@ export default class isRequired extends Rule {
   /**
    * Requires the field to be non empty.
    * @param {Object} options Options for `isRequired`
-   * @param {String} options.message Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)
+   * @param {String} options.message Custom error message if test fails
+   * (check {@link Rule#formatMessage} for more customization details)
    *
    */
   constructor(options) {
@@ -25,8 +26,8 @@ export default class isRequired extends Rule {
 
     if (options !== undefined) {
       if (
-        options.message !== undefined &&
-        typeof options.message !== 'string'
+        options.message !== undefined
+        && typeof options.message !== 'string'
       ) {
         throw new Error('`message` key in `options` should be a string.');
       }
@@ -53,12 +54,12 @@ export default class isRequired extends Rule {
       throw new TypeError('`options.label` should be a string.');
     }
 
-    const label = options.label;
+    const { label } = options;
 
     if (
-      value === null ||
-      value === undefined ||
-      (typeof value === 'string' && value === '')
+      value === null
+      || value === undefined
+      || (typeof value === 'string' && value === '')
     ) {
       const data = {
         name: label,

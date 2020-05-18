@@ -19,7 +19,8 @@ export default class isObject extends Rule {
    * Checks if the value is an object and satisfies the given schema
    * @param {Object} options Options for `isObject`
    * @param {Validator} options.schema Schema for the object
-   * @param {String} options.message Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)
+   * @param {String} options.message Custom error message if test fails
+   * (check {@link Rule#formatMessage} for more customization details)
    */
   constructor(options) {
     super('isObject');
@@ -33,8 +34,8 @@ export default class isObject extends Rule {
 
     if (options !== undefined) {
       if (
-        options.message !== undefined &&
-        typeof options.message !== 'string'
+        options.message !== undefined
+        && typeof options.message !== 'string'
       ) {
         throw new Error('`message` key in `options` should be a string.');
       }
@@ -42,8 +43,8 @@ export default class isObject extends Rule {
       this.message = options.message;
 
       if (
-        options.schema !== undefined &&
-        !(options.schema instanceof Validator)
+        options.schema !== undefined
+        && !(options.schema instanceof Validator)
       ) {
         throw new Error(
           '`schema` key in `options` should be an instance of class `Validator`.',
@@ -66,7 +67,7 @@ export default class isObject extends Rule {
    * @returns {{ value: any, error: String }} Value and error string.
    */
   validate(value, options) {
-    let showNestedError = undefined;
+    let showNestedError;
 
     if (typeof options !== 'object') {
       throw new TypeError('`options` should be an object.');
@@ -76,13 +77,13 @@ export default class isObject extends Rule {
       throw new TypeError('`options.label` should be a string.');
     }
 
-    const label = options.label;
+    const { label } = options;
 
     if (typeof options.path !== 'string') {
       throw new TypeError('`options.path` should be a string.');
     }
 
-    const path = options.path;
+    const { path } = options;
 
     if (options.showNestedError !== undefined) {
       if (typeof options.showNestedError !== 'boolean') {

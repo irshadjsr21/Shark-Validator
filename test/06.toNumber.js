@@ -26,7 +26,7 @@ describe('06. toNumber', () => {
         id: '201a4',
         age: '~10',
         yearOfBirth: '20181.01a',
-        monthOfBirth: 'Jan'
+        monthOfBirth: 'Jan',
       });
       errors = data.errors;
     });
@@ -80,12 +80,13 @@ describe('06. toNumber', () => {
 
   describe('With valid values', () => {
     let errors;
+    let values;
     before(() => {
       const data = schema.validate({
         id: '10.12',
         age: 1.0,
         yearOfBirth: '2018',
-        monthOfBirth: '5'
+        monthOfBirth: '5',
       });
       errors = data.errors;
       values = data.values;

@@ -1,5 +1,7 @@
 const assert = require('assert');
-const { Validator, RuleSet, isString, isRequired } = require('../lib');
+const {
+  Validator, RuleSet, isString, isRequired,
+} = require('../lib');
 
 /**
  * @test {Validator}

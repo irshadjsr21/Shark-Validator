@@ -12,7 +12,8 @@ export default class toInt extends Rule {
   /**
    * Converts the value to an integer and throws error if it cannot be converted
    * @param {Object} options Options for `toInt`
-   * @param {String} options.message Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)
+   * @param {String} options.message Custom error message if test fails
+   * (check {@link Rule#formatMessage} for more customization details)
    */
   constructor(options) {
     super('toInt');
@@ -24,8 +25,8 @@ export default class toInt extends Rule {
 
     if (options !== undefined) {
       if (
-        options.message !== undefined &&
-        typeof options.message !== 'string'
+        options.message !== undefined
+        && typeof options.message !== 'string'
       ) {
         throw new Error('`message` key in `options` should be a string.');
       }
@@ -52,12 +53,13 @@ export default class toInt extends Rule {
       throw new TypeError('`options.label` should be a string.');
     }
 
-    const label = options.label;
+    const { label } = options;
 
     const data = {
       name: label,
     };
 
+    // eslint-disable-next-line no-restricted-globals
     if (isNaN(value)) {
       return {
         value,
@@ -78,7 +80,7 @@ export default class toInt extends Rule {
       };
     }
 
-    const num = Number.parseInt(floatNum);
+    const num = Number.parseInt(floatNum, 10);
 
     return { value: num, error: null };
   }

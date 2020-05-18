@@ -23,7 +23,8 @@ export default class isAlpha extends Rule {
    * Checks if the value contains only Alphabets.
    * @param {Object} options Options for `isAlpha`
    * @param {Boolean} options.allowSpaces If `true`, it allows spaces
-   * @param {String} options.message Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)
+   * @param {String} options.message Custom error message if test fails
+   * (check {@link Rule#formatMessage} for more customization details)
    */
   constructor(options) {
     super('isAlpha');
@@ -37,15 +38,15 @@ export default class isAlpha extends Rule {
 
     if (options !== undefined) {
       if (
-        options.message !== undefined &&
-        typeof options.message !== 'string'
+        options.message !== undefined
+        && typeof options.message !== 'string'
       ) {
         throw new Error('`message` key in `options` should be a string.');
       }
 
       if (
-        options.allowSpaces !== undefined &&
-        typeof options.allowSpaces !== 'boolean'
+        options.allowSpaces !== undefined
+        && typeof options.allowSpaces !== 'boolean'
       ) {
         throw new Error('`allowSpaces` key in `options` should be a boolean.');
       }
@@ -77,23 +78,24 @@ export default class isAlpha extends Rule {
       throw new TypeError('`options.label` should be a string.');
     }
 
-    const label = options.label;
+    const { label } = options;
 
     if (typeof value === 'string') {
       const data = {
         name: label,
       };
 
-      if (!this.regex.test(value))
+      if (!this.regex.test(value)) {
         return {
           value,
           error: this.message
             ? this.formatMessage(this.message, data)
             : this.formatMessage(
-                "'%name%' should contain only alphabets.",
-                data,
-              ),
+              "'%name%' should contain only alphabets.",
+              data,
+            ),
         };
+      }
     }
     return { value, error: null };
   }

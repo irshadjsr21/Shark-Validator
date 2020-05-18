@@ -1,5 +1,7 @@
 const assert = require('assert');
-const { Validator, RuleSet, isString, toLowerCase } = require('../lib');
+const {
+  Validator, RuleSet, isString, toLowerCase,
+} = require('../lib');
 
 const addressSchema = new Validator({
   city: RuleSet.create([new isString(), new toLowerCase()]),
@@ -140,7 +142,8 @@ describe('15. isObject', () => {
   });
 
   describe('With valid values', () => {
-    let errors, values;
+    let errors; let
+      values;
     before(() => {
       const data = schema.validate({
         user: { name: 'IRSHAD', address: { city: 'Bangalore' } },

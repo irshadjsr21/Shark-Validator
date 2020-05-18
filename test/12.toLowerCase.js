@@ -10,7 +10,8 @@ const schema = new Validator({
  * @test {toLowerCase}
  */
 describe('12. toLowerCase', () => {
-  let values, errors;
+  let values; let
+    errors;
   before(() => {
     const data = schema.validate({
       email: 'Irshad@GMAIL.com',

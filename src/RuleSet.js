@@ -1,5 +1,5 @@
+/* eslint-disable import/no-cycle */
 import { Rule, isObject } from './rules';
-import Validator from './Validator';
 import isArray from '../lib/rules/isArray';
 
 /**
@@ -30,7 +30,8 @@ class RuleSet {
   /**
    * Create a ruleset for a particular `key` or `value`.
    * @param {Object} options Options for `RuleSet`.
-   * @param {Array<Rule>} options.rules Array of `Rule` object (should not be set if the key is an obejct)
+   * @param {Array<Rule>} options.rules Array of `Rule` object
+   * (should not be set if the key is an obejct)
    * @param {String} options.label The name or label of the value being checked
    */
   constructor(options) {
@@ -105,19 +106,22 @@ class RuleSet {
       }
     }
 
+    // eslint-disable-next-line no-restricted-syntax
     for (const rule of this.__rules) {
       if (!(rule instanceof Rule)) {
         throw new TypeError('Rule should be an instance of `Rule` class.');
       }
 
-      let currentPath = options.isArrayElem
-        ? path
-        : path
-        ? `${path}.${key}`
-        : key;
+      let currentPath = key;
+      if (options.isArrayElem) {
+        currentPath = path;
+      } else if (path) {
+        currentPath = `${path}.${key}`;
+      }
+
       const { value, error } = rule.validate(modifiedValue, {
         label: this.__label || key,
-        key: key,
+        key,
         path: currentPath,
         showNestedError,
         returnEarly,
@@ -127,18 +131,20 @@ class RuleSet {
 
       if (error) {
         if (!showNestedError && typeof error === 'object') {
+          // eslint-disable-next-line no-restricted-syntax
           for (const innerKey in error) {
             if (error[innerKey]) {
               errors = errors.concat(error[innerKey]);
             }
           }
-        } else
+        } else {
           errors.push({
             error,
             validator: rule.__name,
             value,
             path: currentPath,
           });
+        }
         if (returnEarly) break;
       }
     }
@@ -164,7 +170,8 @@ class RuleSet {
    * @param {Validator} schema A `Validator` object to be checked against the object
    * @param {String} label The name or label of the value being checked
    * @param {Object} schemaOptions Options for `isObject`
-   * @param {String} schemaOptions.message Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)
+   * @param {String} schemaOptions.message Custom error message if test fails
+   * (check {@link Rule#formatMessage} for more customization details)
    * @returns {RuleSet} A new `RuleSet` object
    */
   static object(schema, label, schemaOptions) {
@@ -188,7 +195,8 @@ class RuleSet {
    * @param {Number} schemaOptions.eq Length should be equal to `eq`
    * @param {Number} schemaOptions.min Length should be min `min`
    * @param {Number} schemaOptions.max Length should be max to `max`
-   * @param {String} schemaOptions.message Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)
+   * @param {String} schemaOptions.message Custom error message if test fails
+   * (check {@link Rule#formatMessage} for more customization details)
    * @returns {RuleSet} A new `RuleSet` object
    */
   static array(rules, label, schemaOptions) {
@@ -211,7 +219,8 @@ class RuleSet {
    * @param {Number} schemaOptions.eq Length should be equal to `eq`
    * @param {Number} schemaOptions.min Length should be min `min`
    * @param {Number} schemaOptions.max Length should be max to `max`
-   * @param {String} schemaOptions.message Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)
+   * @param {String} schemaOptions.message Custom error message if test fails
+   * (check {@link Rule#formatMessage} for more customization details)
    * @returns {RuleSet} A new `RuleSet` object
    */
   static arrayOfObject(schema, label, schemaOptions) {

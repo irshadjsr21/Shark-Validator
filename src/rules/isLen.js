@@ -30,7 +30,8 @@ export default class isLen extends Rule {
    * @param {Number} options.eq Length should be equal to `eq`
    * @param {Number} options.min Length should be min `min`
    * @param {Number} options.max Length should be max to `max`
-   * @param {String} options.message Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)
+   * @param {String} options.message Custom error message if test fails
+   * (check {@link Rule#formatMessage} for more customization details)
    */
   constructor(options) {
     super('isLen');
@@ -44,6 +45,7 @@ export default class isLen extends Rule {
       );
     }
     const keys = ['min', 'max', 'eq'];
+    // eslint-disable-next-line no-restricted-syntax
     for (const key of keys) {
       if (options[key] !== undefined && typeof options[key] !== 'number') {
         throw new TypeError(`\`${key}\` key in options should be an integer.`);
@@ -78,7 +80,7 @@ export default class isLen extends Rule {
       throw new TypeError('`options.label` should be a string.');
     }
 
-    const label = options.label;
+    const { label } = options;
 
     if (typeof value === 'string') {
       const len = value.length;
@@ -95,25 +97,25 @@ export default class isLen extends Rule {
           error: this.message
             ? this.formatMessage(this.message, data)
             : this.formatMessage(
-                "'%name%' should be %eq% characters long.",
-                data,
-              ),
+              "'%name%' should be %eq% characters long.",
+              data,
+            ),
         };
       }
 
       if (
-        this.min !== undefined &&
-        this.max !== undefined &&
-        (len > this.max || len < this.min)
+        this.min !== undefined
+        && this.max !== undefined
+        && (len > this.max || len < this.min)
       ) {
         return {
           value,
           error: this.message
             ? this.formatMessage(this.message, data)
             : this.formatMessage(
-                "'%name%' should be a between %min% - %max% characters.",
-                data,
-              ),
+              "'%name%' should be a between %min% - %max% characters.",
+              data,
+            ),
         };
       }
 
@@ -123,9 +125,9 @@ export default class isLen extends Rule {
           error: this.message
             ? this.formatMessage(this.message, data)
             : this.formatMessage(
-                "'%name%' should not be less than %min% characters.",
-                data,
-              ),
+              "'%name%' should not be less than %min% characters.",
+              data,
+            ),
         };
       }
 
@@ -135,9 +137,9 @@ export default class isLen extends Rule {
           error: this.message
             ? this.formatMessage(this.message, data)
             : this.formatMessage(
-                "'%name%' should not be greater than %max% characters.",
-                data,
-              ),
+              "'%name%' should not be greater than %max% characters.",
+              data,
+            ),
         };
       }
     }

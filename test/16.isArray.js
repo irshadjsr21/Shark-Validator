@@ -42,7 +42,8 @@ const plainArraySchema = new Validator({
 describe('16. isArray', () => {
   describe('With invalid values', () => {
     describe('Should return error if not an array.', () => {
-      let result1, result2;
+      let result1;
+      let result2;
       before(() => {
         const data1 = schema.validate({
           users: 'Irshad',
@@ -83,7 +84,8 @@ describe('16. isArray', () => {
     });
 
     describe('Should return error if less than min elements.', () => {
-      let result1, result2;
+      let result1;
+      let result2;
       before(() => {
         const data1 = schema.validate({
           users: [],
@@ -124,7 +126,8 @@ describe('16. isArray', () => {
     });
 
     describe('Should return error if greater than max elements.', () => {
-      let result1, result2;
+      let result1;
+      let result2;
       before(() => {
         const data1 = schema.validate({
           users: [{}, {}, {}, {}, {}],
@@ -165,7 +168,8 @@ describe('16. isArray', () => {
     });
 
     describe('Should return error if invalid element is present.', () => {
-      let result1, result2;
+      let result1;
+      let result2;
       before(() => {
         const data1 = schema.validate({
           users: [
@@ -223,7 +227,10 @@ describe('16. isArray', () => {
   });
 
   describe('With valid values', () => {
-    let errors1, errors2, values1, values2;
+    let errors1;
+    let errors2;
+    let values1;
+    let values2;
     before(() => {
       const data1 = schema.validate({
         users: [
@@ -269,17 +276,15 @@ describe('16. isArray', () => {
       assert.equal(value, 'irshad@gmail.com');
 
       assert.equal(typeof values2, 'object');
-      value = values2.users[0];
-      assert.equal(typeof value, 'string');
-      assert.equal(value, 'irshad');
+      const [elem1, elem2, elem3] = values2.users;
+      assert.equal(typeof elem1, 'string');
+      assert.equal(elem1, 'irshad');
 
-      value = values2.users[1];
-      assert.equal(typeof value, 'string');
-      assert.equal(value, 'irshad');
+      assert.equal(typeof elem2, 'string');
+      assert.equal(elem2, 'irshad');
 
-      value = values2.users[2];
-      assert.equal(typeof value, 'string');
-      assert.equal(value, 'ansari');
+      assert.equal(typeof elem3, 'string');
+      assert.equal(elem3, 'ansari');
     });
   });
 });

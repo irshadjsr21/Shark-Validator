@@ -18,7 +18,8 @@ export default class isIn extends Rule {
    * Checks if the value is in the given array (works for number and strings) (is type sensitive)
    * @param {Object} options Options for `isIn`
    * @param {Array} options.in Array containing possible values
-   * @param {String} options.message Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)
+   * @param {String} options.message Custom error message if test fails
+   * (check {@link Rule#formatMessage} for more customization details)
    */
   constructor(options) {
     super('isIn');
@@ -60,7 +61,7 @@ export default class isIn extends Rule {
       throw new TypeError('`options.label` should be a string.');
     }
 
-    const label = options.label;
+    const { label } = options;
 
     const data = {
       name: label,
@@ -71,8 +72,8 @@ export default class isIn extends Rule {
       : this.formatMessage("'%name%' should be one of '%in%'.", data);
 
     if (
-      (typeof value !== 'string' && typeof value !== 'number') ||
-      !this.in.includes(value)
+      (typeof value !== 'string' && typeof value !== 'number')
+      || !this.in.includes(value)
     ) {
       return { value, error: errorMsg };
     }

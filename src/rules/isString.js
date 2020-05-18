@@ -12,7 +12,8 @@ export default class isString extends Rule {
   /**
    * Required the field to be a `string`
    * @param {Object} options Options for `isString`
-   * @param {String} options.message Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)
+   * @param {String} options.message Custom error message if test fails
+   * (check {@link Rule#formatMessage} for more customization details)
    */
   constructor(options) {
     super('isString');
@@ -24,8 +25,8 @@ export default class isString extends Rule {
 
     if (options !== undefined) {
       if (
-        options.message !== undefined &&
-        typeof options.message !== 'string'
+        options.message !== undefined
+        && typeof options.message !== 'string'
       ) {
         throw new Error('`message` key in `options` should be a string.');
       }
@@ -52,7 +53,7 @@ export default class isString extends Rule {
       throw new TypeError('`options.label` should be a string.');
     }
 
-    const label = options.label;
+    const { label } = options;
 
     if (typeof value !== 'string') {
       const data = {

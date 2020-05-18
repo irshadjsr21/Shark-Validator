@@ -24,7 +24,8 @@ export default class isInt extends Rule {
    * @param {Object} options Options for `isInt`
    * @param {Number} options.min Number should be min to `min`
    * @param {Number} options.max Number should be max to `max`
-   * @param {String} options.message Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)
+   * @param {String} options.message Custom error message if test fails
+   * (check {@link Rule#formatMessage} for more customization details)
    */
   constructor(options) {
     super('isInt');
@@ -38,6 +39,7 @@ export default class isInt extends Rule {
 
     if (options !== undefined) {
       const keys = ['min', 'max'];
+      // eslint-disable-next-line no-restricted-syntax
       for (const key of keys) {
         if (options[key] !== undefined && typeof options[key] !== 'number') {
           throw new TypeError(
@@ -47,8 +49,8 @@ export default class isInt extends Rule {
       }
 
       if (
-        options.message !== undefined &&
-        typeof options.message !== 'string'
+        options.message !== undefined
+        && typeof options.message !== 'string'
       ) {
         throw new Error('`message` key in `options` should be a string.');
       }
@@ -77,7 +79,7 @@ export default class isInt extends Rule {
       throw new TypeError('`options.label` should be a string.');
     }
 
-    const label = options.label;
+    const { label } = options;
 
     const data = {
       name: label,
@@ -85,6 +87,7 @@ export default class isInt extends Rule {
       max: this.max,
     };
 
+    // eslint-disable-next-line no-restricted-globals
     if (isNaN(value)) {
       return {
         value,
@@ -106,18 +109,18 @@ export default class isInt extends Rule {
     }
 
     if (
-      this.min !== undefined &&
-      this.max !== undefined &&
-      (num > this.max || num < this.min)
+      this.min !== undefined
+      && this.max !== undefined
+      && (num > this.max || num < this.min)
     ) {
       return {
         value,
         error: this.message
           ? this.formatMessage(this.message, data)
           : this.formatMessage(
-              "'%name%' should be a between %min% - %max%.",
-              data,
-            ),
+            "'%name%' should be a between %min% - %max%.",
+            data,
+          ),
       };
     }
 
@@ -136,9 +139,9 @@ export default class isInt extends Rule {
         error: this.message
           ? this.formatMessage(this.message, data)
           : this.formatMessage(
-              "'%name%' should not be greater than %max%.",
-              data,
-            ),
+            "'%name%' should not be greater than %max%.",
+            data,
+          ),
       };
     }
 
