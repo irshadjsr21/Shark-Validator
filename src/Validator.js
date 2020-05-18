@@ -30,10 +30,13 @@ export default class Validator {
 
   /**
    * Creates a validator schema.
-   * @param {Object<RuleSet>} objectOfRuleSet Set of `RuleSet`. `key` should match with the `key` of object being validated.
+   * @param {Object<RuleSet>} objectOfRuleSet Set of `RuleSet`. `key` should match
+   * with the `key` of object being validated.
    * @param {Object} options Options for validator schema.
-   * @param {Boolean} options.returnEarly If `true` returns whenever first `key` in `values` fails the test.
-   * @param {Boolean} options.returnRuleSetEarly If `true` returns the after getting the first error on all `keys`.
+   * @param {Boolean} options.returnEarly If `true` returns whenever first `key`
+   * in `values` fails the test.
+   * @param {Boolean} options.returnRuleSetEarly If `true` returns the after getting
+   * the first error on all `keys`.
    * @param {Boolean} options.showNestedError If `true` shows nested errors.
    */
   constructor(objectOfRuleSet, options) {
@@ -87,9 +90,12 @@ export default class Validator {
    * @param {Object} options Options for validator.
    * @param {String} options.path Validation path.
    * @param {Boolean} options.showNestedError If `true` shows nested errors.
-   * @param {Boolean} options.returnEarly If `true` returns whenever first `key` in `values` fails the test.
-   * @param {Boolean} options.returnRuleSetEarly If `true` returns the after getting the first error on all `keys`.
-   * @returns {{values: Object, errors: Object<validationError>}} Object containing `values` and `errors`
+   * @param {Boolean} options.returnEarly If `true` returns whenever first
+   * `key` in `values` fails the test.
+   * @param {Boolean} options.returnRuleSetEarly If `true` returns the after
+   * getting the first error on all `keys`.
+   * @returns {{values: Object, errors: Object<validationError>}} Object containing
+   * `values` and `errors`
    */
   validate(valuesToCheck, options) {
     let path = '';
@@ -111,8 +117,8 @@ export default class Validator {
 
       if (typeof showNestedError !== 'boolean') {
         if (
-          options.showNestedError !== undefined &&
-          typeof options.showNestedError !== 'boolean'
+          options.showNestedError !== undefined
+          && typeof options.showNestedError !== 'boolean'
         ) {
           throw new TypeError('`options.showNestedError` should be a boolean.');
         }
@@ -121,8 +127,8 @@ export default class Validator {
 
       if (typeof this.__returnEarly !== 'boolean') {
         if (
-          options.returnEarly !== undefined &&
-          typeof options.returnEarly !== 'boolean'
+          options.returnEarly !== undefined
+          && typeof options.returnEarly !== 'boolean'
         ) {
           throw new TypeError('`options.returnEarly` should be a boolean.');
         }
@@ -131,10 +137,12 @@ export default class Validator {
 
       if (typeof this.__returnRuleSetEarly !== 'boolean') {
         if (
-          options.returnRuleSetEarly !== undefined &&
-          typeof options.returnRuleSetEarly !== 'boolean'
+          options.returnRuleSetEarly !== undefined
+          && typeof options.returnRuleSetEarly !== 'boolean'
         ) {
-          throw new TypeError('`options.returnRuleSetEarly` should be a boolean.');
+          throw new TypeError(
+            '`options.returnRuleSetEarly` should be a boolean.',
+          );
         }
         this.__returnRuleSetEarly = options.returnRuleSetEarly;
       }
@@ -142,7 +150,8 @@ export default class Validator {
 
     const allErrors = {};
     const modifiedValues = {};
-    for (const key in this.__ruleSets) {
+    // eslint-disable-next-line no-restricted-syntax
+    for (const key of Object.keys(this.__ruleSets)) {
       const ruleSet = this.__ruleSets[key];
       if (!(ruleSet instanceof RuleSet)) {
         throw new TypeError(
@@ -163,8 +172,7 @@ export default class Validator {
       }
     }
 
-    if (Object.keys(allErrors).length > 0)
-      return { values: modifiedValues, errors: allErrors };
+    if (Object.keys(allErrors).length > 0) { return { values: modifiedValues, errors: allErrors }; }
 
     return { values: modifiedValues, errors: null };
   }

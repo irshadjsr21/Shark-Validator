@@ -9,7 +9,7 @@
     "build:cjs": "babel --env-name cjs src --out-dir lib",
     "build:es": "babel --env-name es src --out-dir es",
     "build:docs": "./node_modules/.bin/esdoc",
-    "lint": "eslint src/**/* test/**/*  --fix",
+    "lint": "eslint src/**/* src/* test/**/*  --fix",
     "test": "mocha",
     "dev:test": "mocha",
     "pretest": "npm run build"
@@ -30,7 +30,17 @@
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.2",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.4",
     "mocha": "^7.1.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm run test"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint --fix"
   },
   "repository": {
     "type": "git",
