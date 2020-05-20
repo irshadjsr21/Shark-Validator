@@ -81,7 +81,7 @@ The value of the variable `values` and `errors` will be.
 { 
   "email": 
     [ 
-      { "error": "\'email\' should be a valid email.",
+      { "error": "'email' should be a valid email.",
         "validator": "isEmail",
         "value": "dandaninc.com",
         "path": "email"
@@ -90,7 +90,7 @@ The value of the variable `values` and `errors` will be.
 
   "password": 
     [ 
-      { "error": "\'password\' should not be less than 8 characters.",
+      { "error": "'password' should not be less than 8 characters.",
         "validator": "isLen",
         "value": "123456",
         "path": "password"
@@ -130,7 +130,7 @@ Then the returned error message will use the name `Business Email`.
 {
   "email": 
     [ 
-      { "error": "\'Business Email\' should be a valid email.",
+      { "error": "'Business Email' should be a valid email.",
         "validator": "isEmail",
         "value": "dandaninc.com",
         "path": "email"
@@ -170,7 +170,7 @@ Then the errors object will be:
 {
   "email": 
     [ 
-      { "error": "\'Business Email\' should be a valid email.",
+      { "error": "'Business Email' should be a valid email.",
         "validator": "isEmail",
         "value": "dandaninc.com",
         "path": "email"
