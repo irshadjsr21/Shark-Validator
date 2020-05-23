@@ -5,6 +5,13 @@
 ## Overview
 A light weight, powerful, tree shakable javascript schema validator which works on both `Nodejs` and `Browser`.
 
+## Table of Contents
+1. [Installation](#installation)
+2. [Importing](#importing)
+3. [Quick start](#quick-start)
+4. [More fetures](#more-fetures)
+5. [Reference and API Documentation](#reference-and-api-documentation)
+
 ## Installation
 ```
 npm install shark-validator
@@ -46,9 +53,9 @@ The rules we'll use in this example are:
 const { Validator, RuleSet, isRequired, isString, isLen, isEmail } = require('shark-validator');
 
 const schema = new Validator({
-  name: RuleSet.create([new isString(), new isRequired()]),
-  email: RuleSet.create([new isString(), new isRequired(), new isEmail()]),
-  password: RuleSet.create([new isString(), new isRequired(), new isLen({ min:8 })]),
+  name: RuleSet.create([new isRequired(), new isString()]),
+  email: RuleSet.create([new isRequired(), new isString(), new isEmail()]),
+  password: RuleSet.create([new isRequired(), new isString(), new isLen({ min:8 })]),
 });
 ```
 
@@ -111,17 +118,16 @@ The `errors` object contains the following data:
 - `path`: Path to the value.
 
 
-### More fetures
-------
+## More fetures
 
-#### Custom label
+### Custom label
 You can provide a custom name to a particular key which can be displayed on the error message if the test for that key fails.
 
 ##### Example
 If in the above example we defined the `RuleSet` for the `email` key as:
 
 ```js
-RuleSet.create([new isString(), new isRequired(), new isEmail()], 'Business Email')
+RuleSet.create([new isRequired(), new isString(), new isEmail()], 'Business Email')
 ```
 
 Then the returned error message will use the name `Business Email`.
@@ -141,7 +147,7 @@ Then the returned error message will use the name `Business Email`.
 }
 ```
 
-#### Return early
+### Return early
 If you want to stop the check if one error is found, then you can pass in an additional parameters `returnEarly` and `returnRuleSetEarly` to the `Validator` constructor.
 
 If set to true, then the functionality of the two parameters will be:
@@ -155,9 +161,9 @@ If the validator is defined as below.
 
 ```js
 const schema = new Validator({
-  name: RuleSet.create([new isString(), new isRequired()]),
-  email: RuleSet.create([new isString(), new isRequired(), new isEmail()]),
-  password: RuleSet.create([new isString(), new isRequired(), new isLen({ min:8 })]),
+  name: RuleSet.create([new isRequired(), new isString()]),
+  email: RuleSet.create([new isRequired(), new isString(), new isEmail()]),
+  password: RuleSet.create([new isRequired(), new isString(), new isLen({ min:8 })]),
 }, 
 {
   returnEarly: true
@@ -181,7 +187,7 @@ Then the errors object will be:
 
 Notice that no `password` error is returned because the validation stopped when the email failed the test.
 
-#### Custom error message
+### Custom error message
 If you don't like the existing error messages, you can provide custom error messages if a particular rule fails just by adding a parameter `message` to the `Rule` constructor as:
 
 ```js
@@ -201,8 +207,8 @@ If in the above example we defined the `RuleSet` for the `password` key as:
 
 ```js
 RuleSet.create([
-  new isString(), 
   new isRequired(), 
+  new isString(), 
   new isLen({ min:8, message: '%name% must be equal to or greater than %min% charecters.' })
 ])
 ```
@@ -224,5 +230,77 @@ Then the returned error will use our custom message.
 }
 ```
 
-## Reference and API Documentation for more features
-[https://shark.imirshad.com/](https://shark.imirshad.com/)
+### Validating objects
+You can validate objects with `RuleSet`'s static method `object`. You can also nest mustiple object with this method.
+
+To achieve this you need to create a seperate schema for the object you are validating and use it inside the `RuleSet`'s `object` method.
+
+##### Example
+
+```js
+const addressSchema = new Validator({
+  city: RuleSet.create([new isRequired(), new isString()]),
+  state: RuleSet.create([new isRequired(), new isString()]),
+});
+```
+
+Now you can use this `addressSchema` in your main validation schema.
+
+```js
+const schema = new Validator({
+  name: RuleSet.create([new isRequired(), new isString()]),
+  address: RuleSet.object(addressSchema),
+});
+
+const { values, errors } = schema.validate(valuesToCheck);
+```
+
+You can check additional parameters in `RuleSet` documentation.
+
+### Validating arrays
+You can validate arrays with `RuleSet`'s static method `array`.
+
+You have to define a set of rules to validate each array element and also specify the range of array length.
+
+##### Example
+
+```js
+const schema = new Validator({
+  name: RuleSet.create([new isRequired(), new isString()]),
+  emails: RuleSet.array([new isRequired(), new isString(), new isEmail()]),
+});
+
+const { values, errors } = schema.validate(valuesToCheck);
+```
+
+You can check additional parameters in `RuleSet` documentation.
+
+### Validating array of objects
+You can validate array of objects with `RuleSet`'s static method `arrayOfObject`. You can also nest mustiple object with this method.
+
+To achieve this you need to create a seperate schema for the object you are validating and use it inside the `RuleSet`'s `arrayOfObject` method.
+
+##### Example
+
+```js
+const addressSchema = new Validator({
+  city: RuleSet.create([new isRequired(), new isString()]),
+  state: RuleSet.create([new isRequired(), new isString()]),
+});
+```
+
+Now you can use this `addressSchema` in your main validation schema.
+
+```js
+const schema = new Validator({
+  name: RuleSet.create([new isRequired(), new isString()]),
+  addresses: RuleSet.arrayOfObject(addressSchema),
+});
+
+const { values, errors } = schema.validate(valuesToCheck);
+```
+
+You can check additional parameters in `RuleSet` documentation.
+
+## Reference and API Documentation
+Checkout the reference and API documentation for more features. [https://shark.imirshad.com/](https://shark.imirshad.com/)
