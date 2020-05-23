@@ -18,7 +18,8 @@ export default class isIn extends Rule {
    * Checks if the value is in the given array (works for number and strings) (is type sensitive)
    * @param {Object} options Options for `isIn`
    * @param {Array} options.in Array containing possible values
-   * @param {String} options.message Custom error message if test fails (check {@link Rule#formatMessage} for more customization details)
+   * @param {String} options.message Custom error message if test fails
+   * (check {@link Rule#formatMessage} for more customization details)
    */
   constructor(options) {
     super('isIn');
@@ -46,10 +47,22 @@ export default class isIn extends Rule {
    * Validate the `value` and return the error `string` if there are any
    * otherwise return `null`.
    * @param {any} value The value to be checked.
-   * @param {String} label Name or Label of the value being checked.
+   * @param {Object} options Options for validate.
+   * @param {String} options.label Name or Label of the value being checked.
+   * @param {String} options.path Validator path.
    * @returns {{ value: any, error: String }} Value and error string.
    */
-  validate(value, label) {
+  validate(value, options) {
+    if (typeof options !== 'object') {
+      throw new TypeError('`options` should be an object.');
+    }
+
+    if (typeof options.label !== 'string') {
+      throw new TypeError('`options.label` should be a string.');
+    }
+
+    const { label } = options;
+
     const data = {
       name: label,
       in: this.in.join(', '),
@@ -59,8 +72,8 @@ export default class isIn extends Rule {
       : this.formatMessage("'%name%' should be one of '%in%'.", data);
 
     if (
-      (typeof value !== 'string' && typeof value !== 'number') ||
-      !this.in.includes(value)
+      (typeof value !== 'string' && typeof value !== 'number')
+      || !this.in.includes(value)
     ) {
       return { value, error: errorMsg };
     }

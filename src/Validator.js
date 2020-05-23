@@ -23,11 +23,21 @@ export default class Validator {
   __returnRuleSetEarly;
 
   /**
+   * @ignore
+   * @private
+   */
+  __showNestedError;
+
+  /**
    * Creates a validator schema.
-   * @param {Object<RuleSet>} objectOfRuleSet Set of `RuleSet`. `key` should match with the `key` of object being validated.
+   * @param {Object<RuleSet>} objectOfRuleSet Set of `RuleSet`. `key` should match
+   * with the `key` of object being validated.
    * @param {Object} options Options for validator schema.
-   * @param {Boolean} options.returnEarly If `true` returns whenever first `key` in `values` fails the test.
-   * @param {Boolean} options.returnRuleSetEarly If `true` returns the after getting the first error on all `keys`.
+   * @param {Boolean} options.returnEarly If `true` returns whenever first `key`
+   * in `values` fails the test.
+   * @param {Boolean} options.returnRuleSetEarly If `true` returns the after getting
+   * the first error on all `keys`.
+   * @param {Boolean} options.showNestedError If `true` shows nested errors.
    */
   constructor(objectOfRuleSet, options) {
     if (!objectOfRuleSet || typeof objectOfRuleSet !== 'object') {
@@ -60,6 +70,14 @@ export default class Validator {
 
         this.__returnRuleSetEarly = options.returnRuleSetEarly;
       }
+
+      if (options.showNestedError !== undefined) {
+        if (typeof options.showNestedError !== 'boolean') {
+          throw new TypeError('`options.showNestedError` should be a boolean.');
+        }
+
+        this.__showNestedError = options.showNestedError;
+      }
     }
 
     this.__ruleSets = { ...objectOfRuleSet };
@@ -69,16 +87,71 @@ export default class Validator {
    * Validates the `values` passed and returns `error` object if any,
    * otherwise return `null` along with `values`.
    * @param {Object} valuesToCheck Object of values to be checked.
-   * @returns {{values: Object, errors: Object<validationError>}} Object containing `values` and `errors`
+   * @param {Object} options Options for validator.
+   * @param {String} options.path Validation path.
+   * @param {Boolean} options.showNestedError If `true` shows nested errors.
+   * @param {Boolean} options.returnEarly If `true` returns whenever first
+   * `key` in `values` fails the test.
+   * @param {Boolean} options.returnRuleSetEarly If `true` returns the after
+   * getting the first error on all `keys`.
+   * @returns {{values: Object, errors: Object<validationError>}} Object containing
+   * `values` and `errors`
    */
-  validate(valuesToCheck) {
+  validate(valuesToCheck, options) {
+    let path = '';
+    let showNestedError = this.__showNestedError;
     if (!valuesToCheck || typeof valuesToCheck !== 'object') {
       throw new TypeError('`valuesToCheck` should be an object.');
     }
 
+    if (options !== undefined && typeof options !== 'object') {
+      throw new TypeError('`options` should be an object.');
+    }
+
+    if (options) {
+      if (options.path !== undefined && typeof options.path !== 'string') {
+        throw new TypeError('`options.path` should be a string.');
+      }
+
+      path = options.path;
+
+      if (typeof showNestedError !== 'boolean') {
+        if (
+          options.showNestedError !== undefined
+          && typeof options.showNestedError !== 'boolean'
+        ) {
+          throw new TypeError('`options.showNestedError` should be a boolean.');
+        }
+        showNestedError = options.showNestedError;
+      }
+
+      if (typeof this.__returnEarly !== 'boolean') {
+        if (
+          options.returnEarly !== undefined
+          && typeof options.returnEarly !== 'boolean'
+        ) {
+          throw new TypeError('`options.returnEarly` should be a boolean.');
+        }
+        this.__returnEarly = options.returnEarly;
+      }
+
+      if (typeof this.__returnRuleSetEarly !== 'boolean') {
+        if (
+          options.returnRuleSetEarly !== undefined
+          && typeof options.returnRuleSetEarly !== 'boolean'
+        ) {
+          throw new TypeError(
+            '`options.returnRuleSetEarly` should be a boolean.',
+          );
+        }
+        this.__returnRuleSetEarly = options.returnRuleSetEarly;
+      }
+    }
+
     const allErrors = {};
     const modifiedValues = {};
-    for (const key in this.__ruleSets) {
+    // eslint-disable-next-line no-restricted-syntax
+    for (const key of Object.keys(this.__ruleSets)) {
       const ruleSet = this.__ruleSets[key];
       if (!(ruleSet instanceof RuleSet)) {
         throw new TypeError(
@@ -88,7 +161,7 @@ export default class Validator {
       const { value, errors: currentErrors } = ruleSet.validate(
         valuesToCheck[key],
         key,
-        { returnEarly: this.__returnRuleSetEarly },
+        { returnEarly: this.__returnRuleSetEarly, path, showNestedError },
       );
       modifiedValues[key] = value;
       if (currentErrors) {
@@ -99,8 +172,7 @@ export default class Validator {
       }
     }
 
-    if (Object.keys(allErrors).length > 0)
-      return { values: modifiedValues, errors: allErrors };
+    if (Object.keys(allErrors).length > 0) { return { values: modifiedValues, errors: allErrors }; }
 
     return { values: modifiedValues, errors: null };
   }

@@ -53,6 +53,7 @@ describe('07. isInt', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'isInt');
       assert.equal(errorArray[0].value, '2014.05');
+      assert.equal(errorArray[0].path, 'id');
     });
 
     it('Should return error if a symbol is present', () => {
@@ -62,6 +63,7 @@ describe('07. isInt', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'isInt');
       assert.equal(errorArray[0].value, '~10');
+      assert.equal(errorArray[0].path, 'age');
     });
 
     it('Should return error if character is present', () => {
@@ -71,6 +73,7 @@ describe('07. isInt', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'isInt');
       assert.equal(errorArray[0].value, '20181.01a');
+      assert.equal(errorArray[0].path, 'yearOfBirth');
     });
 
     it('Should return error if less than `min`', () => {
@@ -80,6 +83,7 @@ describe('07. isInt', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'isInt');
       assert.equal(errorArray[0].value, '5');
+      assert.equal(errorArray[0].path, 'monthOfBirth');
     });
 
     it('Should return error if greater than `max`', () => {
@@ -89,6 +93,7 @@ describe('07. isInt', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'isInt');
       assert.equal(errorArray[0].value, '55');
+      assert.equal(errorArray[0].path, 'dateOfBirth');
     });
 
     it('Should return error if less than `min` when both `min` & `max` are present', () => {
@@ -98,6 +103,7 @@ describe('07. isInt', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'isInt');
       assert.equal(errorArray[0].value, '-10');
+      assert.equal(errorArray[0].path, 'score');
     });
 
     it('Should return error if greater than `max` when both `min` & `max` are present', () => {
@@ -107,6 +113,7 @@ describe('07. isInt', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'isInt');
       assert.equal(errorArray[0].value, '150');
+      assert.equal(errorArray[0].path, 'avgScore');
     });
 
     it('Should return custom message on error', () => {
@@ -120,6 +127,7 @@ describe('07. isInt', () => {
         errorArray[0].error,
         'Max Score should be in the range of 0 to 100',
       );
+      assert.equal(errorArray[0].path, 'maxScore');
     });
   });
 

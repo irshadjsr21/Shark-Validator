@@ -41,6 +41,7 @@ describe('01. isString', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'isString');
       assert.equal(errorArray[0].value, null);
+      assert.equal(errorArray[0].path, 'name');
     });
 
     it('Should return error on undefined', () => {
@@ -50,6 +51,7 @@ describe('01. isString', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'isString');
       assert.equal(errorArray[0].value, undefined);
+      assert.equal(errorArray[0].path, 'username');
     });
 
     it('Should return error on object', () => {
@@ -59,6 +61,7 @@ describe('01. isString', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'isString');
       assert.deepEqual(errorArray[0].value, {});
+      assert.equal(errorArray[0].path, 'email');
     });
 
     it('Should return error on array', () => {
@@ -68,6 +71,7 @@ describe('01. isString', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'isString');
       assert.deepEqual(errorArray[0].value, []);
+      assert.equal(errorArray[0].path, 'password');
     });
 
     it('Should return custom message on error', () => {
@@ -78,6 +82,7 @@ describe('01. isString', () => {
       assert.equal(errorArray[0].validator, 'isString');
       assert.equal(errorArray[0].value, null);
       assert.equal(errorArray[0].error, 'Confirm password should be a string.');
+      assert.equal(errorArray[0].path, 'confirmPassword');
     });
   });
 

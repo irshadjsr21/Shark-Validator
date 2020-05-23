@@ -43,6 +43,7 @@ describe('08. toInt', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'toInt');
       assert.equal(errorArray[0].value, '2014.05');
+      assert.equal(errorArray[0].path, 'id');
     });
 
     it('Should return error if a symbol is present', () => {
@@ -52,6 +53,7 @@ describe('08. toInt', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'toInt');
       assert.equal(errorArray[0].value, '~10');
+      assert.equal(errorArray[0].path, 'age');
     });
 
     it('Should return error if character after `.`', () => {
@@ -61,6 +63,7 @@ describe('08. toInt', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'toInt');
       assert.equal(errorArray[0].value, '20181.01a');
+      assert.equal(errorArray[0].path, 'yearOfBirth');
     });
 
     it('Should return custom message on error', () => {
@@ -71,11 +74,13 @@ describe('08. toInt', () => {
       assert.equal(errorArray[0].validator, 'toInt');
       assert.equal(errorArray[0].value, 'Jan');
       assert.equal(errorArray[0].error, 'Month of birth should be a number.');
+      assert.equal(errorArray[0].path, 'monthOfBirth');
     });
   });
 
   describe('With valid values', () => {
     let errors;
+    let values;
     before(() => {
       const data = schema.validate({
         id: '10',

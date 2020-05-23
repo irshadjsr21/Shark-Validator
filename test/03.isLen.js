@@ -45,6 +45,7 @@ describe('03. isLen', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'isLen');
       assert.equal(errorArray[0].value, 'irsh');
+      assert.equal(errorArray[0].path, 'name');
     });
 
     it('Should return error if greater than `eq`', () => {
@@ -54,6 +55,7 @@ describe('03. isLen', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'isLen');
       assert.equal(errorArray[0].value, '20181');
+      assert.equal(errorArray[0].path, 'yearOfBirth');
     });
 
     it('Should return error if less than `min`', () => {
@@ -63,6 +65,7 @@ describe('03. isLen', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'isLen');
       assert.equal(errorArray[0].value, 'ir');
+      assert.equal(errorArray[0].path, 'username');
     });
 
     it('Should return error if greater than `max`', () => {
@@ -72,6 +75,7 @@ describe('03. isLen', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'isLen');
       assert.equal(errorArray[0].value, 'irshad@gmail.com');
+      assert.equal(errorArray[0].path, 'email');
     });
 
     it('Should return error if less than `min` when both `min` & `max` are present', () => {
@@ -81,6 +85,7 @@ describe('03. isLen', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'isLen');
       assert.equal(errorArray[0].value, '1234567');
+      assert.equal(errorArray[0].path, 'password');
     });
 
     it('Should return error if greater than `max` when both `min` & `max` are present', () => {
@@ -90,6 +95,7 @@ describe('03. isLen', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'isLen');
       assert.equal(errorArray[0].value, '12345678910');
+      assert.equal(errorArray[0].path, 'confirmPassword');
     });
 
     it('Should return custom message on error', () => {
@@ -100,6 +106,7 @@ describe('03. isLen', () => {
       assert.equal(errorArray[0].validator, 'isLen');
       assert.equal(errorArray[0].value, 'MALE');
       assert.equal(errorArray[0].error, 'Gender should only have 1 charecter.');
+      assert.equal(errorArray[0].path, 'gender');
     });
   });
 

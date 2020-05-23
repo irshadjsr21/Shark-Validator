@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 /**
  * Rule class should be extended in order to create any rule.
  * @abstract
@@ -42,25 +43,30 @@ export default class Rule {
    * @param {String} label Name or Label of the value being checked.
    * @returns {{ value: any, error: String }} Value and error string.
    */
-  validate(value, label) {}
+  // eslint-disable-next-line no-unused-vars
+  validate(value, label) {
+    // To be overridden
+  }
 
   /**
    * This formats the formatter string and includes the variables in it
    * from `values` object.
    * The variable key must be surrounded by `%` char.
-   * 
+   *
    * @param {String} formatter The format string.
    * @param {Object} values Object containing `key` and `value` pairs used in formatter `string`.
    * @returns {String} Returns formatted string
-   * 
+   *
    * @example
    * const formattedString = formatMessage('%name% should not be empty.', { name: 'Email' });
    * // Returns 'Email should not be empty.'
-   * 
+   *
    * @example
    * // If the message contains actual `%` symbol, it should be prefixed with `-`.
-   * 
-   * const formattedString = formatMessage('%name% should be greater than 90-%.', { name: 'Marks' });
+   *
+   * const formattedString = formatMessage('%name% should be greater than 90-%.',
+   *  { name: 'Marks' }
+   * );
    * // Returns 'Marks should be greater than 90%.'
    */
   formatMessage(formatter, values) {
@@ -78,13 +84,13 @@ export default class Rule {
     let key = '';
     let isBuildingKey = false;
 
-    for (let i = 0; i < formatter.length; i++) {
+    for (let i = 0; i < formatter.length; i += 1) {
       const char = formatter.charAt(i);
       switch (char) {
         case '-':
           if (i + 1 < formatter.length && formatter.charAt(i + 1) === '%') {
             newString += '%';
-            i++;
+            i += 1;
           } else {
             newString += '-';
           }
@@ -94,7 +100,7 @@ export default class Rule {
           if (isBuildingKey) {
             key = '';
           } else {
-            let value = __values[key];
+            const value = __values[key];
             if (value === null || value === undefined) {
               throw new Error(`Value of \`${key}\` is not present.`);
             }
