@@ -22,9 +22,7 @@ const schema = new Validator({
 });
 
 /**
- * @test {isNumber
-      assert.equal(errorArray[0].path, 'name');
- *}
+ * @test {isNumber}
  */
 describe('05. isNumber', () => {
   describe('With error values', () => {
