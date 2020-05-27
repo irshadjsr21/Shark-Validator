@@ -1,4 +1,5 @@
 import Rule from './Rule';
+// eslint-disable-next-line import/no-cycle
 import RuleSet from '../RuleSet';
 
 /**

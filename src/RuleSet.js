@@ -1,6 +1,6 @@
 /* eslint-disable import/no-cycle */
 import { Rule, isObject } from './rules';
-import isArray from '../lib/rules/isArray';
+import isArray from './rules/isArray';
 
 /**
  * @description
