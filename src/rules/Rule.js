@@ -1,6 +1,8 @@
 /* eslint-disable class-methods-use-this */
 /**
+ * @description
  * Rule class should be extended in order to create any rule.
+ *
  * @abstract
  */
 export default class Rule {
@@ -11,8 +13,10 @@ export default class Rule {
   __name;
 
   /**
+   * @description
    * `Rule` is an abstract class which must be extended in order to
    * create a Rule. The subclass must have a `validate` function.
+   *
    * @param {String} name Name of the Rule being defined.
    */
   constructor(name) {
@@ -37,8 +41,11 @@ export default class Rule {
 
   /**
    * @abstract
+   *
+   * @description
    * Validate the `value` and return the error `string` if there are any
    * otherwise return `null`.
+   *
    * @param {any} value The value to be checked.
    * @param {String} label Name or Label of the value being checked.
    * @returns {{ value: any, error: String }} Value and error string.
@@ -49,6 +56,7 @@ export default class Rule {
   }
 
   /**
+   * @description
    * This formats the formatter string and includes the variables in it
    * from `values` object.
    * The variable key must be surrounded by `%` char.

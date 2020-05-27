@@ -2,9 +2,10 @@ import Rule from './Rule';
 import Validator from '../Validator';
 
 /**
+ * @description
  * Checks if the value is an object and satisfies the given schema
  */
-export default class isObject extends Rule {
+class IsObject extends Rule {
   /**
    * @ignore
    */
@@ -16,7 +17,9 @@ export default class isObject extends Rule {
   schema;
 
   /**
+   * @description
    * Checks if the value is an object and satisfies the given schema
+   *
    * @param {Object} options Options for `isObject`
    * @param {Validator} options.schema Schema for the object
    * @param {String} options.message Custom error message if test fails
@@ -56,8 +59,10 @@ export default class isObject extends Rule {
   }
 
   /**
+   * @description
    * Validate the `value` and return the error `string` if there are any
    * otherwise return `null`.
+   *
    * @param {any} value The value to be checked.
    * @param {Object} options Options for validate.
    * @param {String} options.label Name or Label of the value being checked.
@@ -121,4 +126,17 @@ export default class isObject extends Rule {
 
     return { value: values, error: null };
   }
+}
+
+/**
+ * @description
+ * Checks if the value is an object and satisfies the given schema
+ *
+ * @param {Object} options Options for `isObject`
+ * @param {Validator} options.schema Schema for the object
+ * @param {String} options.message Custom error message if test fails
+ * (check {@link Rule#formatMessage} for more customization details)
+ */
+export default function isObject(options) {
+  return new IsObject(options);
 }

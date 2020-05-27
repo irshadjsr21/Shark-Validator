@@ -1,9 +1,10 @@
 import Rule from './Rule';
 
 /**
+ * @description
  * Checks if the value is in the given array (works for number and strings) (is type sensitive)
  */
-export default class isIn extends Rule {
+class IsIn extends Rule {
   /**
    * @ignore
    */
@@ -15,7 +16,9 @@ export default class isIn extends Rule {
   in;
 
   /**
+   * @description
    * Checks if the value is in the given array (works for number and strings) (is type sensitive)
+   *
    * @param {Object} options Options for `isIn`
    * @param {Array} options.in Array containing possible values
    * @param {String} options.message Custom error message if test fails
@@ -44,8 +47,10 @@ export default class isIn extends Rule {
   }
 
   /**
+   * @description
    * Validate the `value` and return the error `string` if there are any
    * otherwise return `null`.
+   *
    * @param {any} value The value to be checked.
    * @param {Object} options Options for validate.
    * @param {String} options.label Name or Label of the value being checked.
@@ -80,4 +85,17 @@ export default class isIn extends Rule {
 
     return { value, error: null };
   }
+}
+
+/**
+ * @description
+ * Checks if the value is in the given array (works for number and strings) (is type sensitive)
+ *
+ * @param {Object} options Options for `isIn`
+ * @param {Array} options.in Array containing possible values
+ * @param {String} options.message Custom error message if test fails
+ * (check {@link Rule#formatMessage} for more customization details)
+ */
+export default function isIn(options) {
+  return new IsIn(options);
 }

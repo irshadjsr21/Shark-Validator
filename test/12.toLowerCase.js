@@ -2,16 +2,16 @@ const assert = require('assert');
 const { Validator, RuleSet, toLowerCase } = require('../lib');
 
 const schema = new Validator({
-  email: RuleSet.create([new toLowerCase()]),
-  password: RuleSet.create([new toLowerCase()]),
+  email: RuleSet.create([toLowerCase()]),
+  password: RuleSet.create([toLowerCase()]),
 });
 
 /**
  * @test {toLowerCase}
  */
 describe('12. toLowerCase', () => {
-  let values; let
-    errors;
+  let values;
+  let errors;
   before(() => {
     const data = schema.validate({
       email: 'Irshad@GMAIL.com',

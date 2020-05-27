@@ -2,14 +2,14 @@ const assert = require('assert');
 const { Validator, RuleSet, isLen } = require('../lib');
 
 const schema = new Validator({
-  name: RuleSet.create([new isLen({ eq: 5 })]),
-  yearOfBirth: RuleSet.create([new isLen({ eq: 4 })]),
-  username: RuleSet.create([new isLen({ min: 3 })]),
-  email: RuleSet.create([new isLen({ max: 10 })]),
-  password: RuleSet.create([new isLen({ min: 8, max: 10 })]),
-  confirmPassword: RuleSet.create([new isLen({ min: 8, max: 10 })]),
+  name: RuleSet.create([isLen({ eq: 5 })]),
+  yearOfBirth: RuleSet.create([isLen({ eq: 4 })]),
+  username: RuleSet.create([isLen({ min: 3 })]),
+  email: RuleSet.create([isLen({ max: 10 })]),
+  password: RuleSet.create([isLen({ min: 8, max: 10 })]),
+  confirmPassword: RuleSet.create([isLen({ min: 8, max: 10 })]),
   gender: RuleSet.create(
-    [new isLen({ eq: 1, message: '%name% should only have %eq% charecter.' })],
+    [isLen({ eq: 1, message: '%name% should only have %eq% charecter.' })],
     'Gender',
   ),
 });

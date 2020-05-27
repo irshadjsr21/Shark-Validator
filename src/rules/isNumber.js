@@ -1,9 +1,10 @@
 import Rule from './Rule';
 
 /**
+ * @description
  * Checks if the value is a number
  */
-export default class isNumber extends Rule {
+class IsNumber extends Rule {
   /**
    * @ignore
    */
@@ -20,7 +21,9 @@ export default class isNumber extends Rule {
   max;
 
   /**
+   * @description
    * Checks if the value is a number
+   *
    * @param {Object} options Options for `isNumber`
    * @param {Number} options.min Number should be min to `min`
    * @param {Number} options.max Number should be max to `max`
@@ -62,8 +65,10 @@ export default class isNumber extends Rule {
   }
 
   /**
+   * @description
    * Validate the `value` and return the error `string` if there are any
    * otherwise return `null`.
+   *
    * @param {any} value The value to be checked.
    * @param {Object} options Options for validate.
    * @param {String} options.label Name or Label of the value being checked.
@@ -138,4 +143,18 @@ export default class isNumber extends Rule {
 
     return { value, error: null };
   }
+}
+
+/**
+ * @description
+ * Checks if the value is a number
+ *
+ * @param {Object} options Options for `isNumber`
+ * @param {Number} options.min Number should be min to `min`
+ * @param {Number} options.max Number should be max to `max`
+ * @param {String} options.message Custom error message if test fails
+ * (check {@link Rule#formatMessage} for more customization details)
+ */
+export default function isNumber(options) {
+  return new IsNumber(options);
 }

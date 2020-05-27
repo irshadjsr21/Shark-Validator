@@ -1,9 +1,10 @@
 import Rule from './Rule';
 
 /**
+ * @description
  * Checks if the value contains only Alphabets.
  */
-export default class isAlpha extends Rule {
+class IsAlpha extends Rule {
   /**
    * @ignore
    */
@@ -20,7 +21,9 @@ export default class isAlpha extends Rule {
   regex;
 
   /**
+   * @description
    * Checks if the value contains only Alphabets.
+   *
    * @param {Object} options Options for `isAlpha`
    * @param {Boolean} options.allowSpaces If `true`, it allows spaces
    * @param {String} options.message Custom error message if test fails
@@ -61,8 +64,10 @@ export default class isAlpha extends Rule {
   }
 
   /**
+   * @description
    * Validate the `value` and return the error `string` if there are any
    * otherwise return `null`.
+   *
    * @param {any} value The value to be checked.
    * @param {Object} options Options for validate.
    * @param {String} options.label Name or Label of the value being checked.
@@ -100,3 +105,18 @@ export default class isAlpha extends Rule {
     return { value, error: null };
   }
 }
+
+/**
+ * @description
+ * Checks if the value contains only Alphabets.
+ *
+ * @param {Object} options Options for `isAlpha`
+ * @param {Boolean} options.allowSpaces If `true`, it allows spaces
+ * @param {String} options.message Custom error message if test fails
+ * (check {@link Rule#formatMessage} for more customization details)
+ */
+function isAlpha(options) {
+  return new IsAlpha(options);
+}
+
+export default isAlpha;

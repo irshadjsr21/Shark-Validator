@@ -1,6 +1,7 @@
 import RuleSet from './RuleSet';
 
 /**
+ * @description
  * Creates a Validator.
  */
 export default class Validator {
@@ -29,7 +30,9 @@ export default class Validator {
   __showNestedError;
 
   /**
+   * @description
    * Creates a validator schema.
+   *
    * @param {Object<RuleSet>} objectOfRuleSet Set of `RuleSet`. `key` should match
    * with the `key` of object being validated.
    * @param {Object} options Options for validator schema.
@@ -84,8 +87,10 @@ export default class Validator {
   }
 
   /**
+   * @description
    * Validates the `values` passed and returns `error` object if any,
    * otherwise return `null` along with `values`.
+   *
    * @param {Object} valuesToCheck Object of values to be checked.
    * @param {Object} options Options for validator.
    * @param {String} options.path Validation path.
@@ -172,7 +177,9 @@ export default class Validator {
       }
     }
 
-    if (Object.keys(allErrors).length > 0) { return { values: modifiedValues, errors: allErrors }; }
+    if (Object.keys(allErrors).length > 0) {
+      return { values: modifiedValues, errors: allErrors };
+    }
 
     return { values: modifiedValues, errors: null };
   }

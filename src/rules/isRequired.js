@@ -1,20 +1,22 @@
 import Rule from './Rule';
 
 /**
+ * @description
  * Requires the field to be non empty.
  */
-export default class isRequired extends Rule {
+class IsRequired extends Rule {
   /**
    * @ignore
    */
   message;
 
   /**
+   * @description
    * Requires the field to be non empty.
+   *
    * @param {Object} options Options for `isRequired`
    * @param {String} options.message Custom error message if test fails
    * (check {@link Rule#formatMessage} for more customization details)
-   *
    */
   constructor(options) {
     super('isRequired');
@@ -37,8 +39,10 @@ export default class isRequired extends Rule {
   }
 
   /**
+   * @description
    * Validate the `value` and return the error `string` if there are any
    * otherwise return `null`.
+   *
    * @param {any} value The value to be checked.
    * @param {Object} options Options for validate.
    * @param {String} options.label Name or Label of the value being checked.
@@ -73,4 +77,16 @@ export default class isRequired extends Rule {
     }
     return { value, error: null };
   }
+}
+
+/**
+ * @description
+ * Requires the field to be non empty.
+ *
+ * @param {Object} options Options for `isRequired`
+ * @param {String} options.message Custom error message if test fails
+ * (check {@link Rule#formatMessage} for more customization details)
+ */
+export default function isRequired(options) {
+  return new IsRequired(options);
 }

@@ -13,8 +13,8 @@ describe('00. Base for all Rules', () => {
     before(() => {
       const schema = new Validator(
         {
-          name: RuleSet.create([new isString(), new isRequired()]),
-          username: RuleSet.create([new isString()]),
+          name: RuleSet.create([isString(), isRequired()]),
+          username: RuleSet.create([isString()]),
         },
         { returnEarly: true },
       );
@@ -51,8 +51,8 @@ describe('00. Base for all Rules', () => {
     before(() => {
       const schema = new Validator(
         {
-          name: RuleSet.create([new isString(), new isRequired()]),
-          username: RuleSet.create([new isString()]),
+          name: RuleSet.create([isString(), isRequired()]),
+          username: RuleSet.create([isString()]),
         },
         { returnEarly: false },
       );
@@ -95,8 +95,8 @@ describe('00. Base for all Rules', () => {
     before(() => {
       const schema = new Validator(
         {
-          name: RuleSet.create([new isString(), new isRequired()]),
-          username: RuleSet.create([new isString()]),
+          name: RuleSet.create([isString(), isRequired()]),
+          username: RuleSet.create([isString()]),
         },
         { returnEarly: true, returnRuleSetEarly: true },
       );
@@ -134,8 +134,8 @@ describe('00. Base for all Rules', () => {
     before(() => {
       const schema = new Validator(
         {
-          name: RuleSet.create([new isString(), new isRequired()]),
-          username: RuleSet.create([new isString()]),
+          name: RuleSet.create([isString(), isRequired()]),
+          username: RuleSet.create([isString()]),
         },
         { returnEarly: false, returnRuleSetEarly: true },
       );

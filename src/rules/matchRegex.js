@@ -1,9 +1,10 @@
 import Rule from './Rule';
 
 /**
+ * @description
  * Checks if the value matches the regular expression.
  */
-export default class matchRegex extends Rule {
+class MatchRegex extends Rule {
   /**
    * @ignore
    */
@@ -15,7 +16,9 @@ export default class matchRegex extends Rule {
   regex;
 
   /**
+   * @description
    * Checks if the value matches the regular expression.
+   *
    * @param {Object} options Options for `matchRegex`
    * @param {RegExp} options.regex Regex expression
    * @param {String} options.message Custom error message if test fails
@@ -51,8 +54,10 @@ export default class matchRegex extends Rule {
   }
 
   /**
+   * @description
    * Validate the `value` and return the error `string` if there are any
    * otherwise return `null`.
+   *
    * @param {any} value The value to be checked.
    * @param {Object} options Options for validate.
    * @param {String} options.label Name or Label of the value being checked.
@@ -90,4 +95,17 @@ export default class matchRegex extends Rule {
     }
     return { value, error: null };
   }
+}
+
+/**
+ * @description
+ * Checks if the value matches the regular expression.
+ *
+ * @param {Object} options Options for `matchRegex`
+ * @param {RegExp} options.regex Regex expression
+ * @param {String} options.message Custom error message if test fails
+ * (check {@link Rule#formatMessage} for more customization details)
+ */
+export default function matchRegex(options) {
+  return new MatchRegex(options);
 }

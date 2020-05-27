@@ -10,13 +10,8 @@ const {
 
 const userSchema = new Validator(
   {
-    name: RuleSet.create([new isRequired(), new isString(), new toLowerCase()]),
-    email: RuleSet.create([
-      new isRequired(),
-      new isString(),
-      new isEmail(),
-      new toLowerCase(),
-    ]),
+    name: RuleSet.create([isRequired(), isString(), toLowerCase()]),
+    email: RuleSet.create([isRequired(), isString(), isEmail(), toLowerCase()]),
   },
   { returnRuleSetEarly: true },
 );
@@ -26,14 +21,10 @@ const schema = new Validator({
 });
 
 const plainArraySchema = new Validator({
-  users: RuleSet.array(
-    [new isRequired(), new isString(), new toLowerCase()],
-    null,
-    {
-      min: 1,
-      max: 3,
-    },
-  ),
+  users: RuleSet.array([isRequired(), isString(), toLowerCase()], null, {
+    min: 1,
+    max: 3,
+  }),
 });
 
 /**

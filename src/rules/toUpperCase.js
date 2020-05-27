@@ -1,10 +1,12 @@
 import Rule from './Rule';
 
 /**
+ * @description
  * Converts the string value to upper case
  */
-export default class toUpperCase extends Rule {
+class ToUpperCase extends Rule {
   /**
+   * @description
    * Converts the string value to upper case
    */
   constructor() {
@@ -12,8 +14,10 @@ export default class toUpperCase extends Rule {
   }
 
   /**
+   * @description
    * Validate the `value` and return the error `string` if there are any
    * otherwise return `null`.
+   *
    * @param {any} value The value to be checked.
    * @param {Object} options Options for validate.
    * @param {String} options.label Name or Label of the value being checked.
@@ -37,4 +41,12 @@ export default class toUpperCase extends Rule {
 
     return { value: newVal, error: null };
   }
+}
+
+/**
+ * @description
+ * Converts the string value to upper case
+ */
+export default function toUpperCase() {
+  return new ToUpperCase();
 }

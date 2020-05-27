@@ -2,11 +2,11 @@ const assert = require('assert');
 const { Validator, RuleSet, isAlpha } = require('../lib');
 
 const schema = new Validator({
-  name: RuleSet.create([new isAlpha()]),
-  email: RuleSet.create([new isAlpha()]),
-  password: RuleSet.create([new isAlpha({ allowSpaces: true })]),
+  name: RuleSet.create([isAlpha()]),
+  email: RuleSet.create([isAlpha()]),
+  password: RuleSet.create([isAlpha({ allowSpaces: true })]),
   confirmPassword: RuleSet.create(
-    [new isAlpha({ message: '%name% should only be alphabets.' })],
+    [isAlpha({ message: '%name% should only be alphabets.' })],
     'Confirm password',
   ),
 });

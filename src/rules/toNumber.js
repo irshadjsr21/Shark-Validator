@@ -1,17 +1,20 @@
 import Rule from './Rule';
 
 /**
+ * @description
  * Converts the value to Number and throws error if it cannot be converted
  */
-export default class toNumber extends Rule {
+class ToNumber extends Rule {
   /**
    * @ignore
    */
   message;
 
   /**
+   * @description
    * Converts the value to Number and throws error if it cannot be converted
-   * @param {Object} options Options for `toInt`
+   *
+   * @param {Object} options Options for `toNumber`
    * @param {String} options.message Custom error message if test fails
    * (check {@link Rule#formatMessage} for more customization details)
    */
@@ -36,8 +39,10 @@ export default class toNumber extends Rule {
   }
 
   /**
+   * @description
    * Validate the `value` and return the error `string` if there are any
    * otherwise return `null`.
+   *
    * @param {any} value The value to be checked.
    * @param {Object} options Options for validate.
    * @param {String} options.label Name or Label of the value being checked.
@@ -73,4 +78,16 @@ export default class toNumber extends Rule {
 
     return { value: num, error: null };
   }
+}
+
+/**
+ * @description
+ * Converts the value to Number and throws error if it cannot be converted
+ *
+ * @param {Object} options Options for `toNumber`
+ * @param {String} options.message Custom error message if test fails
+ * (check {@link Rule#formatMessage} for more customization details)
+ */
+export default function toNumber(options) {
+  return new ToNumber(options);
 }

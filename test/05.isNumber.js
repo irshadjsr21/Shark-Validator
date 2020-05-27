@@ -2,16 +2,16 @@ const assert = require('assert');
 const { Validator, RuleSet, isNumber } = require('../lib');
 
 const schema = new Validator({
-  id: RuleSet.create([new isNumber()]),
-  age: RuleSet.create([new isNumber()]),
-  yearOfBirth: RuleSet.create([new isNumber()]),
-  monthOfBirth: RuleSet.create([new isNumber({ min: 6 })]),
-  dateOfBirth: RuleSet.create([new isNumber({ max: 31 })]),
-  score: RuleSet.create([new isNumber({ min: 0, max: 10.5 })]),
-  avgScore: RuleSet.create([new isNumber({ min: 0, max: 100.77 })]),
+  id: RuleSet.create([isNumber()]),
+  age: RuleSet.create([isNumber()]),
+  yearOfBirth: RuleSet.create([isNumber()]),
+  monthOfBirth: RuleSet.create([isNumber({ min: 6 })]),
+  dateOfBirth: RuleSet.create([isNumber({ max: 31 })]),
+  score: RuleSet.create([isNumber({ min: 0, max: 10.5 })]),
+  avgScore: RuleSet.create([isNumber({ min: 0, max: 100.77 })]),
   maxScore: RuleSet.create(
     [
-      new isNumber({
+      isNumber({
         min: 0,
         max: 100.77,
         message: '%name% should be in the range of %min% to %max%',
@@ -123,7 +123,10 @@ describe('05. isNumber', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'isNumber');
       assert.equal(errorArray[0].value, '187');
-      assert.equal(errorArray[0].error, 'Max Score should be in the range of 0 to 100.77');
+      assert.equal(
+        errorArray[0].error,
+        'Max Score should be in the range of 0 to 100.77',
+      );
       assert.equal(errorArray[0].path, 'maxScore');
     });
   });

@@ -1,10 +1,12 @@
 import Rule from './Rule';
 
 /**
+ * @description
  * Converts the string value to lower case
  */
-export default class toLowerCase extends Rule {
+class ToLowerCase extends Rule {
   /**
+   * @description
    * Converts the string value to lower case
    */
   constructor() {
@@ -12,8 +14,10 @@ export default class toLowerCase extends Rule {
   }
 
   /**
+   * @description
    * Validate the `value` and return the error `string` if there are any
    * otherwise return `null`.
+   *
    * @param {any} value The value to be checked.
    * @param {Object} options Options for validate.
    * @param {String} options.label Name or Label of the value being checked.
@@ -37,4 +41,12 @@ export default class toLowerCase extends Rule {
 
     return { value: newVal, error: null };
   }
+}
+
+/**
+ * @description
+ * Converts the string value to lower case
+ */
+export default function toLowerCase() {
+  return new ToLowerCase();
 }

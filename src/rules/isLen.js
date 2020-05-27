@@ -1,9 +1,10 @@
 import Rule from './Rule';
 
 /**
+ * @description
  * Checks length of string value
  */
-export default class isLen extends Rule {
+class IsLen extends Rule {
   /**
    * @ignore
    */
@@ -25,7 +26,9 @@ export default class isLen extends Rule {
   eq;
 
   /**
+   * @description
    * Checks length of string value
+   *
    * @param {Object} options Options for `isLen`
    * @param {Number} options.eq Length should be equal to `eq`
    * @param {Number} options.min Length should be min `min`
@@ -63,8 +66,10 @@ export default class isLen extends Rule {
   }
 
   /**
+   * @description
    * Validate the `value` and return the error `string` if there are any
    * otherwise return `null`.
+   *
    * @param {any} value The value to be checked.
    * @param {Object} options Options for validate.
    * @param {String} options.label Name or Label of the value being checked.
@@ -145,4 +150,19 @@ export default class isLen extends Rule {
     }
     return { value, error: null };
   }
+}
+
+/**
+ * @description
+ * Checks lengt of string value
+ *
+ * @param {Object} options Options for `isLen`
+ * @param {Number} options.eq Length should be equal to `eq`
+ * @param {Number} options.min Length should be min `min`
+ * @param {Number} options.max Length should be max to `max`
+ * @param {String} options.message Custom error message if test fails
+ * (check {@link Rule#formatMessage} for more customization details)
+ */
+export default function isLen(options) {
+  return new IsLen(options);
 }

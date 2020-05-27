@@ -1,16 +1,19 @@
 import Rule from './Rule';
 
 /**
- * Required the field to be a `string`
+ * @description
+ * Requires the field to be a `string`
  */
-export default class isString extends Rule {
+class IsString extends Rule {
   /**
    * @ignore
    */
   message;
 
   /**
-   * Required the field to be a `string`
+   * @description
+   * Requires the field to be a `string`
+   *
    * @param {Object} options Options for `isString`
    * @param {String} options.message Custom error message if test fails
    * (check {@link Rule#formatMessage} for more customization details)
@@ -36,8 +39,10 @@ export default class isString extends Rule {
   }
 
   /**
+   * @description
    * Validate the `value` and return the error `string` if there are any
    * otherwise return `null`.
+   *
    * @param {any} value The value to be checked.
    * @param {Object} options Options for validate.
    * @param {String} options.label Name or Label of the value being checked.
@@ -69,4 +74,16 @@ export default class isString extends Rule {
     }
     return { value, error: null };
   }
+}
+
+/**
+ * @description
+ * Requires the field to be a `string`
+ *
+ * @param {Object} options Options for `isString`
+ * @param {String} options.message Custom error message if test fails
+ * (check {@link Rule#formatMessage} for more customization details)
+ */
+export default function isString(options) {
+  return new IsString(options);
 }

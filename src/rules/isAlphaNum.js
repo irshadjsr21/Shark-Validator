@@ -1,9 +1,10 @@
 import Rule from './Rule';
 
 /**
+ * @description
  * Checks if the value contains only Alphabets and numbers.
  */
-export default class isAlphaNum extends Rule {
+class IsAlphaNum extends Rule {
   /**
    * @ignore
    */
@@ -20,7 +21,9 @@ export default class isAlphaNum extends Rule {
   regex;
 
   /**
+   * @description
    * Checks if the value contains only Alphabets and numbers.
+   *
    * @param {Object} options Options for `isAlphaNum`
    * @param {Boolean} options.allowSpaces If `true`, it allows spaces
    * @param {String} options.message Custom error message if test fails
@@ -61,8 +64,10 @@ export default class isAlphaNum extends Rule {
   }
 
   /**
+   * @description
    * Validate the `value` and return the error `string` if there are any
    * otherwise return `null`.
+   *
    * @param {any} value The value to be checked.
    * @param {Object} options Options for validate.
    * @param {String} options.label Name or Label of the value being checked.
@@ -99,4 +104,17 @@ export default class isAlphaNum extends Rule {
     }
     return { value, error: null };
   }
+}
+
+/**
+ * @description
+ * Checks if the value contains only Alphabets and numbers.
+ *
+ * @param {Object} options Options for `isAlphaNum`
+ * @param {Boolean} options.allowSpaces If `true`, it allows spaces
+ * @param {String} options.message Custom error message if test fails
+ * (check {@link Rule#formatMessage} for more customization details)
+ */
+export default function isAlphaNum(options) {
+  return new IsAlphaNum(options);
 }

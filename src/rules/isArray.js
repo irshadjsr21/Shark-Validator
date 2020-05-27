@@ -2,9 +2,10 @@ import Rule from './Rule';
 import RuleSet from '../RuleSet';
 
 /**
+ * @description
  * Checks if value is an array and each value satisfies the given rules
  */
-export default class isArray extends Rule {
+class IsArray extends Rule {
   /**
    * @ignore
    */
@@ -31,7 +32,9 @@ export default class isArray extends Rule {
   eq;
 
   /**
+   * @description
    * Checks if value is an array and each value satisfies the given rules
+   *
    * @param {Object} options Options for `isArray`
    * @param {RuleSet} options.rules RuleSet for validating array value
    * @param {Number} options.eq Length should be equal to `eq`
@@ -78,8 +81,10 @@ export default class isArray extends Rule {
   }
 
   /**
+   * @description
    * Validate the `value` and return the error `string` if there are any
    * otherwise return `null`.
+   *
    * @param {any} value The value to be checked.
    * @param {Object} options Options for validate.
    * @param {String} options.label Name or Label of the value being checked.
@@ -218,4 +223,20 @@ export default class isArray extends Rule {
 
     return { value: allValues, error: null };
   }
+}
+
+/**
+ * @description
+ * Checks if value is an array and each value satisfies the given rules
+ *
+ * @param {Object} options Options for `isArray`
+ * @param {RuleSet} options.rules RuleSet for validating array value
+ * @param {Number} options.eq Length should be equal to `eq`
+ * @param {Number} options.min Length should be min `min`
+ * @param {Number} options.max Length should be max to `max`
+ * @param {String} options.message Custom error message if test fails
+ * (check {@link Rule#formatMessage} for more customization details)
+ */
+export default function isArray(options) {
+  return new IsArray(options);
 }
