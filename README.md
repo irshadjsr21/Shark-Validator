@@ -53,9 +53,9 @@ The rules we'll use in this example are:
 const { Validator, RuleSet, isRequired, isString, isLen, isEmail } = require('shark-validator');
 
 const schema = new Validator({
-  name: RuleSet.create([new isRequired(), new isString()]),
-  email: RuleSet.create([new isRequired(), new isString(), new isEmail()]),
-  password: RuleSet.create([new isRequired(), new isString(), new isLen({ min:8 })]),
+  name: RuleSet.create([isRequired(), isString()]),
+  email: RuleSet.create([isRequired(), isString(), isEmail()]),
+  password: RuleSet.create([isRequired(), isString(), isLen({ min:8 })]),
 });
 ```
 
@@ -127,7 +127,7 @@ You can provide a custom name to a particular key which can be displayed on the 
 If in the above example we defined the `RuleSet` for the `email` key as:
 
 ```js
-RuleSet.create([new isRequired(), new isString(), new isEmail()], 'Business Email')
+RuleSet.create([isRequired(), isString(), isEmail()], 'Business Email')
 ```
 
 Then the returned error message will use the name `Business Email`.
@@ -161,9 +161,9 @@ If the validator is defined as below.
 
 ```js
 const schema = new Validator({
-  name: RuleSet.create([new isRequired(), new isString()]),
-  email: RuleSet.create([new isRequired(), new isString(), new isEmail()]),
-  password: RuleSet.create([new isRequired(), new isString(), new isLen({ min:8 })]),
+  name: RuleSet.create([isRequired(), isString()]),
+  email: RuleSet.create([isRequired(), isString(), isEmail()]),
+  password: RuleSet.create([isRequired(), isString(), isLen({ min:8 })]),
 }, 
 {
   returnEarly: true
@@ -191,13 +191,13 @@ Notice that no `password` error is returned because the validation stopped when 
 If you don't like the existing error messages, you can provide custom error messages if a particular rule fails just by adding a parameter `message` to the `Rule` constructor as:
 
 ```js
-RuleSet.create([ new SomeRule({ message: 'Please provide a valid input.' }) ])
+RuleSet.create([ someRule({ message: 'Please provide a valid input.' }) ])
 ```
 
 Additionally you can use some variable inside the message string like `name` of the field. To use a variable you just have to enclose the name of the variable between `%`, like this.
 
 ```js
-RuleSet.create([ new SomeRule({ message: 'Please provide a valid input for %name%.' }) ])
+RuleSet.create([ someRule({ message: 'Please provide a valid input for %name%.' }) ])
 ```
 
 Other then the `name` valriable, you can use any other variable that you provide in the `Rule` constructor along with the message.
@@ -207,9 +207,9 @@ If in the above example we defined the `RuleSet` for the `password` key as:
 
 ```js
 RuleSet.create([
-  new isRequired(), 
-  new isString(), 
-  new isLen({ min:8, message: '%name% must be equal to or greater than %min% charecters.' })
+  isRequired(), 
+  isString(), 
+  isLen({ min:8, message: '%name% must be equal to or greater than %min% charecters.' })
 ])
 ```
 
@@ -239,8 +239,8 @@ To achieve this you need to create a seperate schema for the object you are vali
 
 ```js
 const addressSchema = new Validator({
-  city: RuleSet.create([new isRequired(), new isString()]),
-  state: RuleSet.create([new isRequired(), new isString()]),
+  city: RuleSet.create([isRequired(), isString()]),
+  state: RuleSet.create([isRequired(), isString()]),
 });
 ```
 
@@ -248,7 +248,7 @@ Now you can use this `addressSchema` in your main validation schema.
 
 ```js
 const schema = new Validator({
-  name: RuleSet.create([new isRequired(), new isString()]),
+  name: RuleSet.create([isRequired(), isString()]),
   address: RuleSet.object(addressSchema),
 });
 
@@ -266,8 +266,8 @@ You have to define a set of rules to validate each array element and also specif
 
 ```js
 const schema = new Validator({
-  name: RuleSet.create([new isRequired(), new isString()]),
-  emails: RuleSet.array([new isRequired(), new isString(), new isEmail()]),
+  name: RuleSet.create([isRequired(), isString()]),
+  emails: RuleSet.array([isRequired(), isString(), isEmail()]),
 });
 
 const { values, errors } = schema.validate(valuesToCheck);
@@ -284,8 +284,8 @@ To achieve this you need to create a seperate schema for the object you are vali
 
 ```js
 const addressSchema = new Validator({
-  city: RuleSet.create([new isRequired(), new isString()]),
-  state: RuleSet.create([new isRequired(), new isString()]),
+  city: RuleSet.create([isRequired(), isString()]),
+  state: RuleSet.create([isRequired(), isString()]),
 });
 ```
 
@@ -293,7 +293,7 @@ Now you can use this `addressSchema` in your main validation schema.
 
 ```js
 const schema = new Validator({
-  name: RuleSet.create([new isRequired(), new isString()]),
+  name: RuleSet.create([isRequired(), isString()]),
   addresses: RuleSet.arrayOfObject(addressSchema),
 });
 
