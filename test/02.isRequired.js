@@ -1,14 +1,11 @@
 const assert = require('assert');
-const { Validator, RuleSet, isRequired } = require('../lib');
+const { Validator, isRequired } = require('../lib');
 
 const schema = new Validator({
-  name: RuleSet.create([isRequired()]),
-  email: RuleSet.create([isRequired()]),
-  password: RuleSet.create([isRequired()]),
-  confirmPassword: RuleSet.create(
-    [isRequired({ message: '%name% is to be present.' })],
-    'Confirm password',
-  ),
+  name: [isRequired()],
+  email: [isRequired()],
+  password: [isRequired()],
+  confirmPassword: { rules: [isRequired({ message: '%name% is to be present.' })], label: 'Confirm password' },
 });
 
 /**

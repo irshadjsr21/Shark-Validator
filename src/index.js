@@ -18,4 +18,7 @@ export {
   isEmail,
   isObject,
   isArray,
+  toObject,
+  toArray,
+  isArrayOfObject,
 } from './rules';

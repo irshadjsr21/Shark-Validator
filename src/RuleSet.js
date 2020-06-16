@@ -36,17 +36,16 @@ class RuleSet {
    * @param {Object} options Options for `RuleSet`.
    * @param {Array<Rule>} options.rules Array of `Rule` object
    * (should not be set if the key is an obejct)
-   * @param {String} options.label The name or label of the value being checked
+   * @param {String} label The name or label of the value being checked
    */
-  constructor(options) {
+  constructor(options, label) {
     if (typeof options !== 'object') {
       throw new TypeError('`options` should be an object.');
     }
 
-    if (options.label && typeof options.label !== 'string') {
+    if (label && typeof label !== 'string') {
       throw new TypeError('`options.label` should be a string.');
     }
-
     if (!Array.isArray(options.rules)) {
       throw new TypeError('`options.rules` should be an array of `Rule`.');
     }
@@ -56,8 +55,7 @@ class RuleSet {
     }
 
     this.__rules = [...options.rules];
-
-    this.__label = options.label;
+    this.__label = label;
   }
 
   /**
@@ -163,12 +161,12 @@ class RuleSet {
    * Create a ruleset for a particular `key` or `value`.
    * Can be used as an alternative to the constructor.
    *
-   * @param {Array<Rule>} rules Array of `Rule` object
+   * @param {array<Rule>} rules Array of `Rule` object
    * @param {String} label The name or label of the value being checked
    * @returns {RuleSet} A new `RuleSet` object
    */
   static create(rules, label) {
-    return new RuleSet({ rules, label });
+    return new RuleSet({ rules }, label);
   }
 
   /**
@@ -183,16 +181,10 @@ class RuleSet {
    * (check {@link Rule#formatMessage} for more customization details)
    * @returns {RuleSet} A new `RuleSet` object
    */
-  static object(schema, label, schemaOptions) {
-    let objectOptions = {};
-    if (schemaOptions) {
-      objectOptions = { ...schemaOptions };
-    }
+  static object(schemaOptions, label) {
+    const rules = [isObject(schemaOptions)];
 
-    objectOptions.schema = schema;
-    const rules = [isObject(objectOptions)];
-
-    return new RuleSet({ rules, label });
+    return new RuleSet({ rules }, label);
   }
 
   /**
@@ -210,16 +202,10 @@ class RuleSet {
    * (check {@link Rule#formatMessage} for more customization details)
    * @returns {RuleSet} A new `RuleSet` object
    */
-  static array(rules, label, schemaOptions) {
-    let objectOptions = {};
-    if (schemaOptions) {
-      objectOptions = { ...schemaOptions };
-    }
+  static array(schemaOptions, label) {
+    const arrayOfRules = [isArray(schemaOptions)];
 
-    objectOptions.rules = RuleSet.create(rules);
-    const arrayOfRules = [isArray(objectOptions)];
-
-    return new RuleSet({ rules: arrayOfRules, label });
+    return new RuleSet({ rules: arrayOfRules }, label);
   }
 
   /**
@@ -236,16 +222,10 @@ class RuleSet {
    * (check {@link Rule#formatMessage} for more customization details)
    * @returns {RuleSet} A new `RuleSet` object
    */
-  static arrayOfObject(schema, label, schemaOptions) {
-    let objectOptions = {};
-    if (schemaOptions) {
-      objectOptions = { ...schemaOptions };
-    }
-
-    objectOptions.rules = RuleSet.object(schema);
+  static arrayOfObject(objectOptions, label) {
     const arrayOfRules = [isArray(objectOptions)];
 
-    return new RuleSet({ rules: arrayOfRules, label });
+    return new RuleSet({ rules: arrayOfRules }, label);
   }
 }
 

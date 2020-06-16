@@ -32,7 +32,9 @@
     "eslint-plugin-import": "^2.20.2",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.4",
-    "mocha": "^7.1.1"
+    "mocha": "^7.1.1",
+    "prettier": "npm:@btmills/prettier",
+    "prettier-eslint-cli": "^5.0.0"
   },
   "husky": {
     "hooks": {
