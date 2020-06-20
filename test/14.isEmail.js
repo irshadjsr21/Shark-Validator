@@ -2,8 +2,8 @@ const assert = require('assert');
 const { Validator, isEmail } = require('../lib');
 
 const schema = new Validator({
-  email1: [isEmail()],
-  email2: [isEmail()],
+  email1: isEmail(),
+  email2: isEmail(),
   email3: {
     rules: [isEmail({ message: '%name% is not an email.' })],
     label: 'Email',

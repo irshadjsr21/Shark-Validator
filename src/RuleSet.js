@@ -1,6 +1,5 @@
 /* eslint-disable import/no-cycle */
-import { Rule, isObject } from './rules';
-import isArray from './rules/isArray';
+import { Rule } from './rules';
 
 /**
  * @description
@@ -46,15 +45,16 @@ class RuleSet {
     if (label && typeof label !== 'string') {
       throw new TypeError('`options.label` should be a string.');
     }
-    if (!Array.isArray(options.rules)) {
-      throw new TypeError('`options.rules` should be an array of `Rule`.');
-    }
 
     if (options.rules.length <= 0) {
       throw new TypeError('`options.rules` should not be empty.');
     }
 
-    this.__rules = [...options.rules];
+    if (Array.isArray(options.rules)) {
+      this.__rules = [...options.rules];
+    } else {
+      this.__rules = [options.rules];
+    }
     this.__label = label;
   }
 
@@ -154,78 +154,6 @@ class RuleSet {
 
     if (errors.length > 0) return { value: modifiedValue, errors };
     return { value: modifiedValue, errors: null };
-  }
-
-  /**
-   * @description
-   * Create a ruleset for a particular `key` or `value`.
-   * Can be used as an alternative to the constructor.
-   *
-   * @param {array<Rule>} rules Array of `Rule` object
-   * @param {String} label The name or label of the value being checked
-   * @returns {RuleSet} A new `RuleSet` object
-   */
-  static create(rules, label) {
-    return new RuleSet({ rules }, label);
-  }
-
-  /**
-   * @description
-   * Create a ruleset for a particular `key` or `value` if it is supposed
-   * to be an object. Can be used as an alternative to the constructor.
-   *
-   * @param {Validator} schema A `Validator` object to be checked against the object
-   * @param {String} label The name or label of the value being checked
-   * @param {Object} schemaOptions Options for `isObject`
-   * @param {String} schemaOptions.message Custom error message if test fails
-   * (check {@link Rule#formatMessage} for more customization details)
-   * @returns {RuleSet} A new `RuleSet` object
-   */
-  static object(schemaOptions, label) {
-    const rules = [isObject(schemaOptions)];
-
-    return new RuleSet({ rules }, label);
-  }
-
-  /**
-   * @description
-   * Create a ruleset for a particular `key` or `value` if it is supposed
-   * to be an object. Can be used as an alternative to the constructor.
-   *
-   * @param {Array<Rule>} rules Array of rules
-   * @param {String} label The name or label of the value being checked
-   * @param {Object} schemaOptions Options for `isArray`
-   * @param {Number} schemaOptions.eq Length should be equal to `eq`
-   * @param {Number} schemaOptions.min Length should be min `min`
-   * @param {Number} schemaOptions.max Length should be max to `max`
-   * @param {String} schemaOptions.message Custom error message if test fails
-   * (check {@link Rule#formatMessage} for more customization details)
-   * @returns {RuleSet} A new `RuleSet` object
-   */
-  static array(schemaOptions, label) {
-    const arrayOfRules = [isArray(schemaOptions)];
-
-    return new RuleSet({ rules: arrayOfRules }, label);
-  }
-
-  /**
-   * @description
-   * Checks if value is an array and each value satisfies the given rules
-   *
-   * @param {Validator} schema A `Validator` object to be checked against the object
-   * @param {String} label The name or label of the value being checked
-   * @param {Object} schemaOptions Options for `isArray`
-   * @param {Number} schemaOptions.eq Length should be equal to `eq`
-   * @param {Number} schemaOptions.min Length should be min `min`
-   * @param {Number} schemaOptions.max Length should be max to `max`
-   * @param {String} schemaOptions.message Custom error message if test fails
-   * (check {@link Rule#formatMessage} for more customization details)
-   * @returns {RuleSet} A new `RuleSet` object
-   */
-  static arrayOfObject(objectOptions, label) {
-    const arrayOfRules = [isArray(objectOptions)];
-
-    return new RuleSet({ rules: arrayOfRules }, label);
   }
 }
 

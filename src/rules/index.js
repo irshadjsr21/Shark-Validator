@@ -16,6 +16,4 @@ export { default as toUpperCase } from './toUpperCase';
 export { default as isEmail } from './isEmail';
 export { default as isObject } from './isObject';
 export { default as isArray } from './isArray';
-export { default as toObject } from './toObject';
-export { default as toArray } from './toArray';
 export { default as isArrayOfObject } from './isArrayOfObject';

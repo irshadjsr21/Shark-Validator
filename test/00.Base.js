@@ -12,7 +12,7 @@ describe('00. Base for all Rules', () => {
       const schema = new Validator(
         {
           name: [isString(), isRequired()],
-          username: [isString()],
+          username: isString(),
         },
         { returnEarly: true },
       );

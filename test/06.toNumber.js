@@ -6,8 +6,7 @@ const schema = new Validator({
   age: [toNumber()],
   yearOfBirth: [toNumber()],
   monthOfBirth: {
-    rules:
-    [
+    rules: [
       toNumber({
         message: '%name% should be a number.',
       }),

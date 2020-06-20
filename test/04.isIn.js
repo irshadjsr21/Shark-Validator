@@ -2,10 +2,13 @@ const assert = require('assert');
 const { Validator, isIn } = require('../lib');
 
 const schema = new Validator({
-  name: [isIn({ in: ['irshad', 'ansari'] })],
-  yearOfBirth: [isIn({ in: [2018, 2019] })],
-  username: [isIn({ in: ['irshad'] })],
-  gender: { rules: [isIn({ in: ['M', 'F'], message: '%name% can only be %in%.' })], label: 'Gender' },
+  name: isIn({ in: ['irshad', 'ansari'] }),
+  yearOfBirth: isIn({ in: [2018, 2019] }),
+  username: isIn({ in: ['irshad'] }),
+  gender: {
+    rules: [isIn({ in: ['M', 'F'], message: '%name% can only be %in%.' })],
+    label: 'Gender',
+  },
 });
 
 /**

@@ -2,13 +2,18 @@ const assert = require('assert');
 const { Validator, isLen } = require('../lib');
 
 const schema = new Validator({
-  name: [isLen({ eq: 5 })],
-  yearOfBirth: [isLen({ eq: 4 })],
-  username: [isLen({ min: 3 })],
-  email: [isLen({ max: 10 })],
-  password: [isLen({ min: 8, max: 10 })],
-  confirmPassword: [isLen({ min: 8, max: 10 })],
-  gender: { rules: [isLen({ eq: 1, message: '%name% should only have %eq% charecter.' })], label: 'Gender' },
+  name: isLen({ eq: 5 }),
+  yearOfBirth: isLen({ eq: 4 }),
+  username: isLen({ min: 3 }),
+  email: isLen({ max: 10 }),
+  password: isLen({ min: 8, max: 10 }),
+  confirmPassword: isLen({ min: 8, max: 10 }),
+  gender: {
+    rules: [
+      isLen({ eq: 1, message: '%name% should only have %eq% charecter.' }),
+    ],
+    label: 'Gender',
+  },
 });
 
 /**

@@ -159,31 +159,18 @@ export default class Validator {
     // eslint-disable-next-line no-restricted-syntax
     for (const key of Object.keys(this.__ruleSets)) {
       let ruleSet;
-      if (this.__ruleSets[key].type === 'isArrayOfObject') {
-        ruleSet = RuleSet.arrayOfObject(
-          this.__ruleSets[key],
+      if (this.__ruleSets[key].arrayOfRules) {
+        ruleSet = new RuleSet(
+          { rules: this.__ruleSets[key].arrayOfRules },
           this.__ruleSets[key].label,
         );
-      } else if (this.__ruleSets[key].type === 'toArray') {
-        ruleSet = RuleSet.array(
-          this.__ruleSets[key],
+      } else if (this.__ruleSets[key].rules) {
+        ruleSet = new RuleSet(
+          { rules: this.__ruleSets[key].rules },
           this.__ruleSets[key].label,
         );
-      } else if (
-        Array.isArray(this.__ruleSets[key].rules)
-        && !this.__ruleSets[key].type
-      ) {
-        ruleSet = RuleSet.create(
-          this.__ruleSets[key].rules,
-          this.__ruleSets[key].label,
-        );
-      } else if (Array.isArray(this.__ruleSets[key])) {
-        ruleSet = RuleSet.create(this.__ruleSets[key]);
-      } else if (this.__ruleSets[key].schema) {
-        ruleSet = RuleSet.object(
-          this.__ruleSets[key],
-          this.__ruleSets[key].label,
-        );
+      } else {
+        ruleSet = new RuleSet({ rules: this.__ruleSets[key] });
       }
       if (!(ruleSet instanceof RuleSet)) {
         throw new TypeError(

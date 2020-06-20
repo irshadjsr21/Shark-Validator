@@ -2,8 +2,8 @@ const assert = require('assert');
 const { Validator, toLowerCase } = require('../lib');
 
 const schema = new Validator({
-  email: [toLowerCase()],
-  password: [toLowerCase()],
+  email: toLowerCase(),
+  password: toLowerCase(),
 });
 
 /**

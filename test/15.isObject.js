@@ -1,6 +1,6 @@
 const assert = require('assert');
 const {
-  Validator, isString, toLowerCase, toObject,
+  Validator, isString, toLowerCase, isObject,
 } = require('../lib');
 
 const addressSchema = new Validator({
@@ -9,13 +9,13 @@ const addressSchema = new Validator({
 
 const userSchema = new Validator({
   name: [isString(), toLowerCase()],
-  address: toObject(addressSchema, 'Address', {
+  address: isObject(addressSchema, 'Address', {
     message: '%name% must be an object.',
   }),
 });
 
 const schema = new Validator({
-  user: toObject(userSchema),
+  user: isObject(userSchema),
 });
 
 /**

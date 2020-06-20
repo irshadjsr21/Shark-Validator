@@ -5,7 +5,7 @@ const {
   toLowerCase,
   isRequired,
   isEmail,
-  toArray,
+  isArray,
   isArrayOfObject,
 } = require('../lib');
 
@@ -22,7 +22,7 @@ const schema = new Validator({
 });
 
 const plainArraySchema = new Validator({
-  users: toArray([isRequired(), isString(), toLowerCase()], null, {
+  users: isArray([isRequired(), isString(), toLowerCase()], null, {
     min: 1,
     max: 3,
   }),

@@ -129,14 +129,23 @@ class IsObject extends Rule {
 }
 
 /**
- * @description
- * Checks if the value is an object and satisfies the given schema
- *
- * @param {Object} options Options for `isObject`
- * @param {Validator} options.schema Schema for the object
- * @param {String} options.message Custom error message if test fails
+ * Create a ruleset for a particular `key` or `value` if it is supposed to be an object.
+ * Can be used as an alternative to the constructor.
+ * @param {Validator} schema A `Validator` object to be checked against the object
+ * @param {String} label The name or label of the value being checked
+ * @param {Object} schemaOptions Options for `isObject`
+ * @param {String} schemaOptions.message Custom error message if test fails
  * (check {@link Rule#formatMessage} for more customization details)
+ * @returns {RuleSet} A new `RuleSet` object
  */
-export default function isObject(options) {
-  return new IsObject(options);
+
+export default function isObject(schema, label, schemaOptions) {
+  let objectOptions = {};
+  if (schemaOptions) {
+    objectOptions = { ...schemaOptions };
+  }
+  objectOptions.schema = schema;
+  objectOptions.rules = [new IsObject(objectOptions)];
+  objectOptions.label = label;
+  return objectOptions;
 }

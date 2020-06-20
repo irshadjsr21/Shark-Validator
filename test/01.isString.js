@@ -2,10 +2,10 @@ const assert = require('assert');
 const { Validator, isString } = require('../lib');
 
 const schema = new Validator({
-  name: [isString()],
-  username: [isString()],
-  email: [isString()],
-  password: [isString()],
+  name: isString(),
+  username: isString(),
+  email: isString(),
+  password: isString(),
   confirmPassword: {
     rules: [isString({ message: '%name% should be a string.' })],
     label: 'Confirm password',

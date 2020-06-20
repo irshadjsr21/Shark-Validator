@@ -2,7 +2,7 @@ const assert = require('assert');
 const { Validator, matchRegex } = require('../lib');
 
 const schema = new Validator({
-  email: [matchRegex({ regex: new RegExp('^[a-zA-Z]*$') })],
+  email: matchRegex({ regex: new RegExp('^[a-zA-Z]*$') }),
   password: {
     rules: [
       matchRegex({

@@ -2,9 +2,9 @@ const assert = require('assert');
 const { Validator, toInt } = require('../lib');
 
 const schema = new Validator({
-  id: [toInt()],
-  age: [toInt()],
-  yearOfBirth: [toInt()],
+  id: toInt(),
+  age: toInt(),
+  yearOfBirth: toInt(),
   monthOfBirth: {
     rules: [
       toInt({

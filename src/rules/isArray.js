@@ -6,7 +6,7 @@ import RuleSet from '../RuleSet';
  * @description
  * Checks if value is an array and each value satisfies the given rules
  */
-class IsArray extends Rule {
+export class IsArray extends Rule {
   /**
    * @ignore
    */
@@ -227,17 +227,28 @@ class IsArray extends Rule {
 }
 
 /**
- * @description
- * Checks if value is an array and each value satisfies the given rules
- *
- * @param {Object} options Options for `isArray`
- * @param {RuleSet} options.rules RuleSet for validating array value
- * @param {Number} options.eq Length should be equal to `eq`
- * @param {Number} options.min Length should be min `min`
- * @param {Number} options.max Length should be max to `max`
- * @param {String} options.message Custom error message if test fails
+ * Create a ruleset for a particular `key` or `value` if it is supposed to be an object.
+ * Can be used as an alternative to the constructor.
+ * @param {Array<Rule>} rules Array of rules
+ * @param {String} label The name or label of the value being checked
+ * @param {Object} schemaOptions Options for `isArray`
+ * @param {Number} schemaOptions.eq Length should be equal to `eq`
+ * @param {Number} schemaOptions.min Length should be min `min`
+ * @param {Number} schemaOptions.max Length should be max to `max`
+ * @param {String} schemaOptions.message Custom error message if test fails
  * (check {@link Rule#formatMessage} for more customization details)
+ * @returns {RuleSet} A new `RuleSet` object
  */
-export default function isArray(options) {
-  return new IsArray(options);
+
+export default function isArray(rules, label, schemaOptions) {
+  let objectOptions = {};
+  let objOpt = {};
+  if (schemaOptions) {
+    objectOptions = { ...schemaOptions };
+    objOpt = { ...schemaOptions };
+  }
+  objectOptions.rules = new RuleSet({ rules });
+  objOpt.rules = [new IsArray(objectOptions)];
+  objOpt.label = label;
+  return objOpt;
 }

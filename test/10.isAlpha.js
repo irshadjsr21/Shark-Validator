@@ -2,9 +2,9 @@ const assert = require('assert');
 const { Validator, isAlpha } = require('../lib');
 
 const schema = new Validator({
-  name: [isAlpha()],
-  email: [isAlpha()],
-  password: [isAlpha({ allowSpaces: true })],
+  name: isAlpha(),
+  email: isAlpha(),
+  password: isAlpha({ allowSpaces: true }),
   confirmPassword: {
     rules: [isAlpha({ message: '%name% should only be alphabets.' })],
     label: 'Confirm password',

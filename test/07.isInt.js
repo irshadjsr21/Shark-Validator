@@ -2,13 +2,13 @@ const assert = require('assert');
 const { Validator, isInt } = require('../lib');
 
 const schema = new Validator({
-  id: [isInt()],
-  age: [isInt()],
-  yearOfBirth: [isInt()],
-  monthOfBirth: [isInt({ min: 6 })],
-  dateOfBirth: [isInt({ max: 31 })],
-  score: [isInt({ min: 0, max: 10 })],
-  avgScore: [isInt({ min: 0, max: 100 })],
+  id: isInt(),
+  age: isInt(),
+  yearOfBirth: isInt(),
+  monthOfBirth: isInt({ min: 6 }),
+  dateOfBirth: isInt({ max: 31 }),
+  score: isInt({ min: 0, max: 10 }),
+  avgScore: isInt({ min: 0, max: 100 }),
   maxScore: {
     rules: [
       isInt({
