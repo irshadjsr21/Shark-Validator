@@ -18,14 +18,25 @@ const userSchema = new Validator(
 );
 
 const schema = new Validator({
-  users: isArrayOfObject(userSchema, null, { min: 1, max: 3 }),
+  users: {
+    rules: isArrayOfObject({
+      schema: userSchema,
+      min: 1,
+      max: 3,
+    }),
+    label: null,
+  },
 });
 
 const plainArraySchema = new Validator({
-  users: isArray([isRequired(), isString(), toLowerCase()], null, {
-    min: 1,
-    max: 3,
-  }),
+  users: {
+    rules: isArray({
+      rules: [isRequired(), isString(), toLowerCase()],
+      min: 1,
+      max: 3,
+    }),
+    label: null,
+  },
 });
 
 /**

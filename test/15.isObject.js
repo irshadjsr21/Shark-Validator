@@ -9,15 +9,18 @@ const addressSchema = new Validator({
 
 const userSchema = new Validator({
   name: [isString(), toLowerCase()],
-  address: isObject(addressSchema, 'Address', {
-    message: '%name% must be an object.',
-  }),
+  address: {
+    rules: isObject({
+      schema: addressSchema,
+      message: '%name% must be an object.',
+    }),
+    label: 'Address',
+  },
 });
 
 const schema = new Validator({
-  user: isObject(userSchema),
+  user: isObject({ schema: userSchema }),
 });
-
 /**
  * @test {isObject}
  */

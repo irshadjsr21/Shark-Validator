@@ -35,14 +35,14 @@ class RuleSet {
    * @param {Object} options Options for `RuleSet`.
    * @param {Array<Rule>} options.rules Array of `Rule` object
    * (should not be set if the key is an obejct)
-   * @param {String} label The name or label of the value being checked
+   * @param {String} options.label The name or label of the value being checked
    */
-  constructor(options, label) {
+  constructor(options) {
     if (typeof options !== 'object') {
       throw new TypeError('`options` should be an object.');
     }
 
-    if (label && typeof label !== 'string') {
+    if (options.label && typeof options.label !== 'string') {
       throw new TypeError('`options.label` should be a string.');
     }
 
@@ -55,7 +55,7 @@ class RuleSet {
     } else {
       this.__rules = [options.rules];
     }
-    this.__label = label;
+    this.__label = options.label;
   }
 
   /**

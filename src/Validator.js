@@ -160,15 +160,15 @@ export default class Validator {
     for (const key of Object.keys(this.__ruleSets)) {
       let ruleSet;
       if (this.__ruleSets[key].arrayOfRules) {
-        ruleSet = new RuleSet(
-          { rules: this.__ruleSets[key].arrayOfRules },
-          this.__ruleSets[key].label,
-        );
+        ruleSet = new RuleSet({
+          rules: this.__ruleSets[key].arrayOfRules,
+          label: this.__ruleSets[key].label,
+        });
       } else if (this.__ruleSets[key].rules) {
-        ruleSet = new RuleSet(
-          { rules: this.__ruleSets[key].rules },
-          this.__ruleSets[key].label,
-        );
+        ruleSet = new RuleSet({
+          rules: this.__ruleSets[key].rules,
+          label: this.__ruleSets[key].label,
+        });
       } else {
         ruleSet = new RuleSet({ rules: this.__ruleSets[key] });
       }

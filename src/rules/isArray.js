@@ -60,11 +60,11 @@ export class IsArray extends Rule {
 
     this.message = options.message;
 
-    if (options.rules !== undefined && !(options.rules instanceof RuleSet)) {
-      throw new Error(
-        '`options.rules` key in `options` should be an instance of class `RuleSet`.',
-      );
-    }
+    // if (options.rules !== undefined && !(options.rules instanceof RuleSet)) {
+    //   throw new Error(
+    //     '`options.rules` key in `options` should be an instance of class `RuleSet`.',
+    //   );
+    // }
 
     this.rules = options.rules;
 
@@ -227,28 +227,21 @@ export class IsArray extends Rule {
 }
 
 /**
- * Create a ruleset for a particular `key` or `value` if it is supposed to be an object.
- * Can be used as an alternative to the constructor.
- * @param {Array<Rule>} rules Array of rules
- * @param {String} label The name or label of the value being checked
- * @param {Object} schemaOptions Options for `isArray`
- * @param {Number} schemaOptions.eq Length should be equal to `eq`
- * @param {Number} schemaOptions.min Length should be min `min`
- * @param {Number} schemaOptions.max Length should be max to `max`
- * @param {String} schemaOptions.message Custom error message if test fails
+ * @description
+ * Checks if value is an array and each value satisfies the given rules
+ *
+ * @param {Object} options Options for isArray Rule
+ * @param {Array<Rule>} options.rules Array of rules
+ * @param {Number} options.eq Length should be equal to `eq`
+ * @param {Number} options.min Length should be min `min`
+ * @param {Number} options.max Length should be max to `max`
+ * @param {String} options.message Custom error message if test fails
  * (check {@link Rule#formatMessage} for more customization details)
  * @returns {RuleSet} A new `RuleSet` object
  */
 
-export default function isArray(rules, label, schemaOptions) {
-  let objectOptions = {};
-  let objOpt = {};
-  if (schemaOptions) {
-    objectOptions = { ...schemaOptions };
-    objOpt = { ...schemaOptions };
-  }
-  objectOptions.rules = new RuleSet({ rules });
-  objOpt.rules = [new IsArray(objectOptions)];
-  objOpt.label = label;
-  return objOpt;
+export default function isArray(options) {
+  const objectOptions = { ...options };
+  objectOptions.rules = new RuleSet({ rules: options.rules });
+  return new IsArray(objectOptions);
 }

@@ -73,7 +73,6 @@ class IsObject extends Rule {
    */
   validate(value, options) {
     let showNestedError;
-
     if (typeof options !== 'object') {
       throw new TypeError('`options` should be an object.');
     }
@@ -123,29 +122,21 @@ class IsObject extends Rule {
         error: errors,
       };
     }
-
     return { value: values, error: null };
   }
 }
 
 /**
- * Create a ruleset for a particular `key` or `value` if it is supposed to be an object.
- * Can be used as an alternative to the constructor.
- * @param {Validator} schema A `Validator` object to be checked against the object
- * @param {String} label The name or label of the value being checked
- * @param {Object} schemaOptions Options for `isObject`
- * @param {String} schemaOptions.message Custom error message if test fails
+ * @description
+ * Checks if the value is an object and satisfies the given schema
+ *
+ * @param {Validator} options.schema A `Validator` object to be checked against the object
+ * @param {Object} options Options for `isObject`
+ * @param {String} options.message Custom error message if test fails
  * (check {@link Rule#formatMessage} for more customization details)
  * @returns {RuleSet} A new `RuleSet` object
  */
 
-export default function isObject(schema, label, schemaOptions) {
-  let objectOptions = {};
-  if (schemaOptions) {
-    objectOptions = { ...schemaOptions };
-  }
-  objectOptions.schema = schema;
-  objectOptions.rules = [new IsObject(objectOptions)];
-  objectOptions.label = label;
-  return objectOptions;
+export default function isObject(options) {
+  return new IsObject(options);
 }
