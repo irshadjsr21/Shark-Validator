@@ -237,7 +237,6 @@ export class IsArray extends Rule {
  * @param {Number} options.max Length should be max to `max`
  * @param {String} options.message Custom error message if test fails
  * (check {@link Rule#formatMessage} for more customization details)
- * @returns {RuleSet} A new `RuleSet` object
  */
 
 export default function isArray(options) {

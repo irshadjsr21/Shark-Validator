@@ -134,7 +134,6 @@ class IsObject extends Rule {
  * @param {Object} options Options for `isObject`
  * @param {String} options.message Custom error message if test fails
  * (check {@link Rule#formatMessage} for more customization details)
- * @returns {RuleSet} A new `RuleSet` object
  */
 
 export default function isObject(options) {
