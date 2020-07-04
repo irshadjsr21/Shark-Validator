@@ -1,7 +1,5 @@
 const assert = require('assert');
-const {
-  Validator, RuleSet, isString, isRequired,
-} = require('../lib');
+const { Validator, isString, isRequired } = require('../lib');
 
 /**
  * @test {Validator}
@@ -13,8 +11,8 @@ describe('00. Base for all Rules', () => {
     before(() => {
       const schema = new Validator(
         {
-          name: RuleSet.create([isString(), isRequired()]),
-          username: RuleSet.create([isString()]),
+          name: [isString(), isRequired()],
+          username: isString(),
         },
         { returnEarly: true },
       );
@@ -51,8 +49,8 @@ describe('00. Base for all Rules', () => {
     before(() => {
       const schema = new Validator(
         {
-          name: RuleSet.create([isString(), isRequired()]),
-          username: RuleSet.create([isString()]),
+          name: [isString(), isRequired()],
+          username: [isString()],
         },
         { returnEarly: false },
       );
@@ -95,8 +93,8 @@ describe('00. Base for all Rules', () => {
     before(() => {
       const schema = new Validator(
         {
-          name: RuleSet.create([isString(), isRequired()]),
-          username: RuleSet.create([isString()]),
+          name: [isString(), isRequired()],
+          username: [isString()],
         },
         { returnEarly: true, returnRuleSetEarly: true },
       );
@@ -134,8 +132,8 @@ describe('00. Base for all Rules', () => {
     before(() => {
       const schema = new Validator(
         {
-          name: RuleSet.create([isString(), isRequired()]),
-          username: RuleSet.create([isString()]),
+          name: [isString(), isRequired()],
+          username: [isString()],
         },
         { returnEarly: false, returnRuleSetEarly: true },
       );

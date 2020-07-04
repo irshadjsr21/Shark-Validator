@@ -6,7 +6,7 @@ import RuleSet from '../RuleSet';
  * @description
  * Checks if value is an array and each value satisfies the given rules
  */
-class IsArray extends Rule {
+export class IsArray extends Rule {
   /**
    * @ignore
    */
@@ -60,11 +60,11 @@ class IsArray extends Rule {
 
     this.message = options.message;
 
-    if (options.rules !== undefined && !(options.rules instanceof RuleSet)) {
-      throw new Error(
-        '`options.rules` key in `options` should be an instance of class `RuleSet`.',
-      );
-    }
+    // if (options.rules !== undefined && !(options.rules instanceof RuleSet)) {
+    //   throw new Error(
+    //     '`options.rules` key in `options` should be an instance of class `RuleSet`.',
+    //   );
+    // }
 
     this.rules = options.rules;
 
@@ -230,14 +230,17 @@ class IsArray extends Rule {
  * @description
  * Checks if value is an array and each value satisfies the given rules
  *
- * @param {Object} options Options for `isArray`
- * @param {RuleSet} options.rules RuleSet for validating array value
+ * @param {Object} options Options for isArray Rule
+ * @param {Array<Rule>} options.rules Array of rules
  * @param {Number} options.eq Length should be equal to `eq`
  * @param {Number} options.min Length should be min `min`
  * @param {Number} options.max Length should be max to `max`
  * @param {String} options.message Custom error message if test fails
  * (check {@link Rule#formatMessage} for more customization details)
  */
+
 export default function isArray(options) {
-  return new IsArray(options);
+  const objectOptions = { ...options };
+  objectOptions.rules = new RuleSet({ rules: options.rules });
+  return new IsArray(objectOptions);
 }

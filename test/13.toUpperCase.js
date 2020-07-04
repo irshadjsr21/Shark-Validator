@@ -1,9 +1,9 @@
 const assert = require('assert');
-const { Validator, RuleSet, toUpperCase } = require('../lib');
+const { Validator, toUpperCase } = require('../lib');
 
 const schema = new Validator({
-  email: RuleSet.create([toUpperCase()]),
-  password: RuleSet.create([toUpperCase()]),
+  email: toUpperCase(),
+  password: toUpperCase(),
 });
 
 /**

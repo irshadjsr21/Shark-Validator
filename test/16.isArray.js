@@ -1,30 +1,42 @@
 const assert = require('assert');
 const {
   Validator,
-  RuleSet,
   isString,
   toLowerCase,
   isRequired,
   isEmail,
+  isArray,
+  isArrayOfObject,
 } = require('../lib');
 
 const userSchema = new Validator(
   {
-    name: RuleSet.create([isRequired(), isString(), toLowerCase()]),
-    email: RuleSet.create([isRequired(), isString(), isEmail(), toLowerCase()]),
+    name: [isRequired(), isString(), toLowerCase()],
+    email: [isRequired(), isString(), isEmail(), toLowerCase()],
   },
   { returnRuleSetEarly: true },
 );
 
 const schema = new Validator({
-  users: RuleSet.arrayOfObject(userSchema, null, { min: 1, max: 3 }),
+  users: {
+    rules: isArrayOfObject({
+      schema: userSchema,
+      min: 1,
+      max: 3,
+    }),
+    label: null,
+  },
 });
 
 const plainArraySchema = new Validator({
-  users: RuleSet.array([isRequired(), isString(), toLowerCase()], null, {
-    min: 1,
-    max: 3,
-  }),
+  users: {
+    rules: isArray({
+      rules: [isRequired(), isString(), toLowerCase()],
+      min: 1,
+      max: 3,
+    }),
+    label: null,
+  },
 });
 
 /**

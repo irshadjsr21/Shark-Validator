@@ -1,18 +1,18 @@
 const assert = require('assert');
-const { Validator, RuleSet, toNumber } = require('../lib');
+const { Validator, toNumber } = require('../lib');
 
 const schema = new Validator({
-  id: RuleSet.create([toNumber()]),
-  age: RuleSet.create([toNumber()]),
-  yearOfBirth: RuleSet.create([toNumber()]),
-  monthOfBirth: RuleSet.create(
-    [
+  id: [toNumber()],
+  age: [toNumber()],
+  yearOfBirth: [toNumber()],
+  monthOfBirth: {
+    rules: [
       toNumber({
         message: '%name% should be a number.',
       }),
     ],
-    'Month of birth',
-  ),
+    label: 'Month of birth',
+  },
 });
 
 /**

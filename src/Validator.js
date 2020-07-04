@@ -155,9 +155,23 @@ export default class Validator {
 
     const allErrors = {};
     const modifiedValues = {};
+
     // eslint-disable-next-line no-restricted-syntax
     for (const key of Object.keys(this.__ruleSets)) {
-      const ruleSet = this.__ruleSets[key];
+      let ruleSet;
+      if (this.__ruleSets[key].arrayOfRules) {
+        ruleSet = new RuleSet({
+          rules: this.__ruleSets[key].arrayOfRules,
+          label: this.__ruleSets[key].label,
+        });
+      } else if (this.__ruleSets[key].rules) {
+        ruleSet = new RuleSet({
+          rules: this.__ruleSets[key].rules,
+          label: this.__ruleSets[key].label,
+        });
+      } else {
+        ruleSet = new RuleSet({ rules: this.__ruleSets[key] });
+      }
       if (!(ruleSet instanceof RuleSet)) {
         throw new TypeError(
           'RuleSet should be an instance of `RuleSet` class.',

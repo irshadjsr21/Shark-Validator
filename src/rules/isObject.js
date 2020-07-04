@@ -73,7 +73,6 @@ class IsObject extends Rule {
    */
   validate(value, options) {
     let showNestedError;
-
     if (typeof options !== 'object') {
       throw new TypeError('`options` should be an object.');
     }
@@ -123,7 +122,6 @@ class IsObject extends Rule {
         error: errors,
       };
     }
-
     return { value: values, error: null };
   }
 }
@@ -132,11 +130,12 @@ class IsObject extends Rule {
  * @description
  * Checks if the value is an object and satisfies the given schema
  *
+ * @param {Validator} options.schema A `Validator` object to be checked against the object
  * @param {Object} options Options for `isObject`
- * @param {Validator} options.schema Schema for the object
  * @param {String} options.message Custom error message if test fails
  * (check {@link Rule#formatMessage} for more customization details)
  */
+
 export default function isObject(options) {
   return new IsObject(options);
 }

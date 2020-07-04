@@ -1,17 +1,17 @@
 const assert = require('assert');
-const { Validator, RuleSet, matchRegex } = require('../lib');
+const { Validator, matchRegex } = require('../lib');
 
 const schema = new Validator({
-  email: RuleSet.create([matchRegex({ regex: new RegExp('^[a-zA-Z]*$') })]),
-  password: RuleSet.create(
-    [
+  email: matchRegex({ regex: new RegExp('^[a-zA-Z]*$') }),
+  password: {
+    rules: [
       matchRegex({
         message: '%name% should only contain alphabets.',
         regex: new RegExp('^[a-zA-Z]*$'),
       }),
     ],
-    'Password',
-  ),
+    label: 'Password',
+  },
 });
 
 /**

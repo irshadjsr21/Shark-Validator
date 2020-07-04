@@ -1,13 +1,13 @@
 const assert = require('assert');
-const { Validator, RuleSet, isAlphaNum } = require('../lib');
+const { Validator, isAlphaNum } = require('../lib');
 
 const schema = new Validator({
-  name: RuleSet.create([isAlphaNum({ allowSpaces: true })]),
-  email: RuleSet.create([isAlphaNum()]),
-  password: RuleSet.create(
-    [isAlphaNum({ message: '%name% should only be a-z or 0-9.' })],
-    'Password',
-  ),
+  name: isAlphaNum({ allowSpaces: true }),
+  email: isAlphaNum(),
+  password: {
+    rules: [isAlphaNum({ message: '%name% should only be a-z or 0-9.' })],
+    label: 'Password',
+  },
 });
 
 /**
@@ -57,10 +57,7 @@ describe('11. isAlphaNum', () => {
       assert.equal(typeof errorArray[0], 'object');
       assert.equal(errorArray[0].validator, 'isAlphaNum');
       assert.equal(errorArray[0].value, 'kasjdh!kaq212jsdh');
-      assert.equal(
-        errorArray[0].error,
-        'Password should only be a-z or 0-9.',
-      );
+      assert.equal(errorArray[0].error, 'Password should only be a-z or 0-9.');
       assert.equal(errorArray[0].path, 'password');
     });
   });
