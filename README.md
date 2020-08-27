@@ -136,7 +136,7 @@ The `validate` methods returns an object with `values` and `errros` (if any othe
       "error": "'email' should be a valid email.",
       "validator": "isEmail",
       "value": "dandaninc.com",
-      "path": "email"
+      "path": ["email"]
     }
   ],
 
@@ -145,7 +145,7 @@ The `validate` methods returns an object with `values` and `errros` (if any othe
       "error": "'password' should not be less than 8 characters.",
       "validator": "isLen",
       "value": "123456",
-      "path": "password"
+      "path": ["password"]
     }
   ]
 }
@@ -185,7 +185,7 @@ Then the returned error message will use the name `Business Email`.
       { "error": "'Business Email' should be a valid email.",
         "validator": "isEmail",
         "value": "dandaninc.com",
-        "path": "email"
+        "path": ["email"]
       }
     ],
 
@@ -230,7 +230,7 @@ Then the errors object will be:
       "error": "'Business Email' should be a valid email.",
       "validator": "isEmail",
       "value": "dandaninc.com",
-      "path": "email"
+      "path": ["email"]
     }
   ]
 }
@@ -278,7 +278,7 @@ Then the returned error will use our custom message.
       { "error": "password must be equal to or greater than 8 charecters.",
         "validator": "isLen",
         "value": "123456",
-        "path": "password"
+        "path": ["password"]
       }
     ],
 
