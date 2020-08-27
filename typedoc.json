@@ -1,0 +1,8 @@
+{
+  "inputFiles": ["./src"],
+  "out": "docs",
+  "mode": "modules",
+  "name": "Shark Validator",
+  "tsconfig": "./tsconfig.es.json",
+  "includeVersion": true
+}

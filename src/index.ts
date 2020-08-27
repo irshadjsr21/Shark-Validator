@@ -1,5 +1,5 @@
-export { default as Validator } from './Validator';
-export { default as RuleSet } from './RuleSet';
+export { default as Validator } from "./Validator";
+export { default as RuleSet } from "./RuleSet";
 export {
   Rule,
   isLen,
@@ -19,4 +19,4 @@ export {
   isObject,
   isArray,
   isArrayOfObject,
-} from './rules';
+} from "./rules";

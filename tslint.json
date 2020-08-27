@@ -1,0 +1,8 @@
+{
+  "extends": ["tslint:recommended"],
+  "jsRules": {},
+  "rules": {
+    "object-literal-sort-keys": false
+  },
+  "rulesDirectory": []
+}

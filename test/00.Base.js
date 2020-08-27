@@ -1,12 +1,12 @@
-const assert = require('assert');
-const { Validator, isString, isRequired } = require('../lib');
+const assert = require("assert");
+const { isRequired, isString, Validator } = require("../lib");
 
 /**
  * @test {Validator}
  * @test {RuleSet}
  */
-describe('00. Base for all Rules', () => {
-  describe('With returnEarly: true', () => {
+describe("00. Base for all Rules", () => {
+  describe("With returnEarly: true", () => {
     let result;
     before(() => {
       const schema = new Validator(
@@ -23,28 +23,28 @@ describe('00. Base for all Rules', () => {
       result = data.errors;
     });
 
-    it('Should return error', () => {
-      assert.equal(typeof result, 'object');
+    it("Should return error", () => {
+      assert.equal(typeof result, "object");
       assert.notEqual(result, null);
     });
 
-    it('Should return error on null', () => {
+    it("Should return error on null", () => {
       const errorArray = result.name;
       assert.equal(Array.isArray(errorArray), true);
       assert.equal(errorArray.length, 2);
-      assert.equal(typeof errorArray[0], 'object');
-      assert.equal(errorArray[0].validator, 'isString');
+      assert.equal(typeof errorArray[0], "object");
+      assert.equal(errorArray[0].validator, "isString");
       assert.equal(errorArray[0].value, null);
-      assert.equal(errorArray[0].path, 'name');
+      assert.deepEqual(errorArray[0].path, ["name"]);
     });
 
-    it('Should not return error on undefined', () => {
+    it("Should not return error on undefined", () => {
       const errorArray = result.username;
       assert.equal(errorArray, undefined);
     });
   });
 
-  describe('With returnEarly: false', () => {
+  describe("With returnEarly: false", () => {
     let result;
     before(() => {
       const schema = new Validator(
@@ -62,33 +62,33 @@ describe('00. Base for all Rules', () => {
       result = data.errors;
     });
 
-    it('Should return error', () => {
-      assert.equal(typeof result, 'object');
+    it("Should return error", () => {
+      assert.equal(typeof result, "object");
       assert.notEqual(result, null);
     });
 
-    it('Should return error on null', () => {
+    it("Should return error on null", () => {
       const errorArray = result.name;
       assert.equal(Array.isArray(errorArray), true);
       assert.equal(errorArray.length, 2);
-      assert.equal(typeof errorArray[0], 'object');
-      assert.equal(errorArray[0].validator, 'isString');
+      assert.equal(typeof errorArray[0], "object");
+      assert.equal(errorArray[0].validator, "isString");
       assert.equal(errorArray[0].value, null);
-      assert.equal(errorArray[0].path, 'name');
+      assert.deepEqual(errorArray[0].path, ["name"]);
     });
 
-    it('Should return error on undefined', () => {
+    it("Should return error on undefined", () => {
       const errorArray = result.username;
       assert.equal(Array.isArray(errorArray), true);
       assert.equal(errorArray.length, 1);
-      assert.equal(typeof errorArray[0], 'object');
-      assert.equal(errorArray[0].validator, 'isString');
+      assert.equal(typeof errorArray[0], "object");
+      assert.equal(errorArray[0].validator, "isString");
       assert.equal(errorArray[0].value, undefined);
-      assert.equal(errorArray[0].path, 'username');
+      assert.deepEqual(errorArray[0].path, ["username"]);
     });
   });
 
-  describe('With returnEarly: true & returnRuleSetEarly: true', () => {
+  describe("With returnEarly: true & returnRuleSetEarly: true", () => {
     let result;
     before(() => {
       const schema = new Validator(
@@ -106,28 +106,28 @@ describe('00. Base for all Rules', () => {
       result = data.errors;
     });
 
-    it('Should return error', () => {
-      assert.equal(typeof result, 'object');
+    it("Should return error", () => {
+      assert.equal(typeof result, "object");
       assert.notEqual(result, null);
     });
 
-    it('Should return error on null', () => {
+    it("Should return error on null", () => {
       const errorArray = result.name;
       assert.equal(Array.isArray(errorArray), true);
       assert.equal(errorArray.length, 1);
-      assert.equal(typeof errorArray[0], 'object');
-      assert.equal(errorArray[0].validator, 'isString');
+      assert.equal(typeof errorArray[0], "object");
+      assert.equal(errorArray[0].validator, "isString");
       assert.equal(errorArray[0].value, null);
-      assert.equal(errorArray[0].path, 'name');
+      assert.deepEqual(errorArray[0].path, ["name"]);
     });
 
-    it('Should not return error on undefined', () => {
+    it("Should not return error on undefined", () => {
       const errorArray = result.username;
       assert.equal(errorArray, undefined);
     });
   });
 
-  describe('With returnEarly: false & returnRuleSetEarly: true', () => {
+  describe("With returnEarly: false & returnRuleSetEarly: true", () => {
     let result;
     before(() => {
       const schema = new Validator(
@@ -145,29 +145,29 @@ describe('00. Base for all Rules', () => {
       result = data.errors;
     });
 
-    it('Should return error', () => {
-      assert.equal(typeof result, 'object');
+    it("Should return error", () => {
+      assert.equal(typeof result, "object");
       assert.notEqual(result, null);
     });
 
-    it('Should return error on null', () => {
+    it("Should return error on null", () => {
       const errorArray = result.name;
       assert.equal(Array.isArray(errorArray), true);
       assert.equal(errorArray.length, 1);
-      assert.equal(typeof errorArray[0], 'object');
-      assert.equal(errorArray[0].validator, 'isString');
+      assert.equal(typeof errorArray[0], "object");
+      assert.equal(errorArray[0].validator, "isString");
       assert.equal(errorArray[0].value, null);
-      assert.equal(errorArray[0].path, 'name');
+      assert.deepEqual(errorArray[0].path, ["name"]);
     });
 
-    it('Should return error on undefined', () => {
+    it("Should return error on undefined", () => {
       const errorArray = result.username;
       assert.equal(Array.isArray(errorArray), true);
       assert.equal(errorArray.length, 1);
-      assert.equal(typeof errorArray[0], 'object');
-      assert.equal(errorArray[0].validator, 'isString');
+      assert.equal(typeof errorArray[0], "object");
+      assert.equal(errorArray[0].validator, "isString");
       assert.equal(errorArray[0].value, undefined);
-      assert.equal(errorArray[0].path, 'username');
+      assert.deepEqual(errorArray[0].path, ["username"]);
     });
   });
 });

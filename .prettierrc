@@ -1,5 +1,5 @@
 {
   "trailingComma": "all",
-  "singleQuote": true,
+  "singleQuote": false,
   "proseWrap": "never"
 }
