@@ -108,6 +108,7 @@ class RuleSet {
         path: currentPath,
         showNestedError,
         returnEarly,
+        allValues: options.allValues,
       });
 
       modifiedValue = value;

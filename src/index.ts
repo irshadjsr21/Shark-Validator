@@ -19,4 +19,5 @@ export {
   isObject,
   isArray,
   isArrayOfObject,
+  isCustom,
 } from "./rules";

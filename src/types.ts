@@ -78,6 +78,8 @@ export interface IRuleSetValidateOptions {
   path?: any[];
   /** If the field being checked is an array element. */
   isArrayElem?: boolean;
+  /** All the values that are under test. */
+  allValues?: any;
 }
 
 export interface IRuleSetValidateReturn {
@@ -98,6 +100,8 @@ export interface IRuleValidateOptions {
   showNestedError?: boolean;
   /** If `true` returns the after getting the first error. */
   returnEarly?: boolean;
+  /** All the values that are under test. */
+  allValues?: any;
 }
 
 export interface IRuleValidateError {
@@ -199,3 +203,13 @@ export interface IMatchRegexOptions extends IRuleOptions {
 export interface IToIntOptions extends IRuleOptions {}
 
 export interface IToNumberOptions extends IRuleOptions {}
+
+export interface IIsCustomOptions extends IRuleOptions {
+  /* @describe Function to check if the value should be allowed.
+   * Returns the `string` error if any, otherwise returns `false` or `undefined`.
+   *
+   * @param value The value to be checked.
+   * @param options Options for validate.
+   */
+  check(value: any, options?: IRuleValidateOptions): undefined | false | string;
+}

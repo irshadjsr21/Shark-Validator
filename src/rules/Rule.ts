@@ -50,7 +50,10 @@ export default class Rule {
    * @param label Name or Label of the value being checked.
    * @returns Value and error.
    */
-  public validate(value: any, options: IRuleValidateOptions): IRuleValidateReturn {
+  public validate(
+    value: any,
+    options: IRuleValidateOptions,
+  ): IRuleValidateReturn {
     // To be overridden
     return { value: undefined, error: undefined };
   }
@@ -80,7 +83,10 @@ export default class Rule {
    * // Returns 'Marks should be greater than 90%.'
    * ```
    */
-  public formatMessage(formatter: string, values: IRuleFormatterValues): string {
+  public formatMessage(
+    formatter: string,
+    values: IRuleFormatterValues,
+  ): string {
     let valuesObj = values;
     if (!valuesObj) {
       valuesObj = {};

@@ -1,4 +1,3 @@
-/* eslint-disable import/no-cycle */
 export { default as Rule } from "./Rule";
 export { default as isString } from "./isString";
 export { default as isRequired } from "./isRequired";
@@ -17,3 +16,4 @@ export { default as isEmail } from "./isEmail";
 export { default as isObject } from "./isObject";
 export { default as isArray } from "./isArray";
 export { default as isArrayOfObject } from "./isArrayOfObject";
+export { default as isCustom } from "./isCustom";

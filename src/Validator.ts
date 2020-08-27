@@ -162,7 +162,12 @@ export default class Validator {
       const { value, errors: currentErrors } = ruleSet.validate(
         valuesToCheck[key],
         key,
-        { returnEarly: this.returnRuleSetEarly, path, showNestedError },
+        {
+          returnEarly: this.returnRuleSetEarly,
+          path,
+          showNestedError,
+          allValues: valuesToCheck,
+        },
       );
       modifiedValues[key] = value;
       if (currentErrors) {
