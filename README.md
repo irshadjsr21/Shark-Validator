@@ -6,6 +6,25 @@
 
 A light weight, powerful, tree shakable javascript schema validator which works on both `Nodejs` and `Browser`.
 
+## Features
+
+- Light weight & tree shakable to reduce your JS bundle size.
+- Works on both `Nodejs` & `Browser`.
+- Easy to create complex schema validation.
+- Supports array and array of object validation.
+
+## Comparison
+
+Here we have created a validator schema in `Shark Validator` & `Joi` for a field `users` which will contain array of objects with `name` & `email`. And here is the final bundle size from both packages.
+
+| **Shark Validator** | **Joi** |
+| ------------------- | ------- |
+| `12KB`              | `146KB` |
+
+This shows a huge **91.78%** reduction in bundle size, which can be of a huge significant if you are trying to reduce your JS bundle size.
+
+You can find the code for this test [here](https://github.com/irshadjsr21/Shark-Validator/tree/master/compare).
+
 ## Table of Contents
 
 1. [Installation](#installation)

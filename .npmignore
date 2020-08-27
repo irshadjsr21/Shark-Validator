@@ -1,6 +1,9 @@
 node_modules
 test
 docs
-assets
-.esdoc.json
+compare
+typedoc.json
+tsconfig.es.json
+tsconfig.cjs.json
+tslint.json
 .github

@@ -1,0 +1,24 @@
+{
+  "name": "shark-validator-compare",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/bundle.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev:build": "webpack --mode development"
+  },
+  "dependencies": {
+    "shark-validator": "^1.4.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
+    "babel": "^6.23.0",
+    "babel-loader": "^8.1.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

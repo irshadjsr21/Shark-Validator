@@ -28,11 +28,11 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run build && lint-staged && npm run test"
+      "pre-commit": "lint-staged && npm run build && npm run test"
     }
   },
   "lint-staged": {
-    "*.js": "eslint --fix"
+    "*.ts": "tslint --fix"
   },
   "repository": {
     "type": "git",
