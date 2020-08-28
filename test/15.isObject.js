@@ -1,17 +1,20 @@
 const assert = require("assert");
-const { Validator, isString, toLowerCase, isObject } = require("../lib");
+const { Validator, isString, toLowerCase, isObject, isRequired } = require("../lib");
 
 const addressSchema = new Validator({
   city: [isString(), toLowerCase()],
 });
 
 const userSchema = new Validator({
-  name: [isString(), toLowerCase()],
+  name: [isString(), isRequired(), toLowerCase()],
   address: {
-    rules: isObject({
-      schema: addressSchema,
-      message: "%name% must be an object.",
-    }),
+    rules: [
+      isRequired(),
+      isObject({
+        schema: addressSchema,
+        message: "%name% must be an object.",
+      }),
+    ],
     label: "Address",
   },
 });
@@ -60,7 +63,7 @@ describe("15. isObject", () => {
 
       it("Should return error", () => {
         assert.equal(typeof result, "object");
-        assert.notEqual(result, null);
+        assert.notEqual(result, undefined);
       });
 
       it("Should return error if name is not present", () => {
@@ -70,11 +73,11 @@ describe("15. isObject", () => {
         assert.equal(typeof errorArray[0], "object");
         assert.equal(typeof errorArray[1], "object");
 
-        assert.equal(errorArray[0].validator, "isString");
+        assert.equal(errorArray[0].validator, "isRequired");
         assert.equal(errorArray[0].value, undefined);
         assert.deepEqual(errorArray[0].path, ["user", "name"]);
 
-        assert.equal(errorArray[1].validator, "isObject");
+        assert.equal(errorArray[1].validator, "isRequired");
         assert.equal(errorArray[1].value, undefined);
         assert.deepEqual(errorArray[1].path, ["user", "address"]);
       });

@@ -62,6 +62,10 @@ class IsString extends Rule {
 
     const { label } = options;
 
+    if (value === undefined || value === null) {
+      return { value, error: undefined };
+    }
+
     if (typeof value !== "string") {
       const data = {
         name: label,

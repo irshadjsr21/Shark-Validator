@@ -16,7 +16,7 @@ const schema = new Validator({
  * @test {isString}
  */
 describe("01. isString", () => {
-  describe("With null, undefined, object and array", () => {
+  describe("With null, undefined, number, object and array", () => {
     let result;
     before(() => {
       const data = schema.validate({
@@ -24,34 +24,24 @@ describe("01. isString", () => {
         username: undefined,
         email: {},
         password: [],
-        confirmPassword: null,
+        confirmPassword: 1,
       });
       result = data.errors;
     });
 
     it("Should return error", () => {
       assert.equal(typeof result, "object");
-      assert.notEqual(result, null);
+      assert.notEqual(result, undefined);
     });
 
-    it("Should return error on null", () => {
+    it("Should not return error on null", () => {
       const errorArray = result.name;
-      assert.equal(Array.isArray(errorArray), true);
-      assert.equal(errorArray.length, 1);
-      assert.equal(typeof errorArray[0], "object");
-      assert.equal(errorArray[0].validator, "isString");
-      assert.equal(errorArray[0].value, null);
-      assert.deepEqual(errorArray[0].path, ["name"]);
+      assert.equal(errorArray, undefined);
     });
 
-    it("Should return error on undefined", () => {
+    it("Should not return error on undefined", () => {
       const errorArray = result.username;
-      assert.equal(Array.isArray(errorArray), true);
-      assert.equal(errorArray.length, 1);
-      assert.equal(typeof errorArray[0], "object");
-      assert.equal(errorArray[0].validator, "isString");
-      assert.equal(errorArray[0].value, undefined);
-      assert.deepEqual(errorArray[0].path, ["username"]);
+      assert.equal(errorArray, undefined);
     });
 
     it("Should return error on object", () => {
@@ -61,7 +51,7 @@ describe("01. isString", () => {
       assert.equal(typeof errorArray[0], "object");
       assert.equal(errorArray[0].validator, "isString");
       assert.deepEqual(errorArray[0].value, {});
-      assert.deepEqual(errorArray[0].path, ["email"]);
+      assert.equal(errorArray[0].path, "email");
     });
 
     it("Should return error on array", () => {
@@ -71,18 +61,18 @@ describe("01. isString", () => {
       assert.equal(typeof errorArray[0], "object");
       assert.equal(errorArray[0].validator, "isString");
       assert.deepEqual(errorArray[0].value, []);
-      assert.deepEqual(errorArray[0].path, ["password"]);
+      assert.equal(errorArray[0].path, "password");
     });
 
-    it("Should return custom message on error", () => {
+    it("Should return error on number & custom message", () => {
       const errorArray = result.confirmPassword;
       assert.equal(Array.isArray(errorArray), true);
       assert.equal(errorArray.length, 1);
       assert.equal(typeof errorArray[0], "object");
       assert.equal(errorArray[0].validator, "isString");
-      assert.equal(errorArray[0].value, null);
+      assert.equal(errorArray[0].value, 1);
       assert.equal(errorArray[0].error, "Confirm password should be a string.");
-      assert.deepEqual(errorArray[0].path, ["confirmPassword"]);
+      assert.equal(errorArray[0].path, "confirmPassword");
     });
   });
 
@@ -100,7 +90,7 @@ describe("01. isString", () => {
     });
 
     it("Should not return error", () => {
-      assert.equal(result, undefined);
+      assert.equal(result, null);
     });
   });
 });

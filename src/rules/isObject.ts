@@ -88,6 +88,10 @@ class IsObject extends Rule {
       showNestedError = options.showNestedError;
     }
 
+    if (value === undefined || value === null) {
+      return { value, error: undefined };
+    }
+
     const data = {
       name: label,
     };

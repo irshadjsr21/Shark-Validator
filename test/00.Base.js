@@ -1,5 +1,11 @@
 const assert = require("assert");
-const { isRequired, isString, Validator } = require("../lib");
+const {
+  isRequired,
+  isString,
+  isLen,
+  isAlphaNum,
+  Validator,
+} = require("../lib");
 
 /**
  * @test {Validator}
@@ -12,33 +18,33 @@ describe("00. Base for all Rules", () => {
       const schema = new Validator(
         {
           name: [isString(), isRequired()],
-          username: isString(),
+          username: [isString(), isLen({ min: 2 }), isAlphaNum(), isRequired()],
         },
         { returnEarly: true },
       );
       const data = schema.validate({
         name: null,
-        username: undefined,
+        username: "#",
       });
       result = data.errors;
     });
 
     it("Should return error", () => {
       assert.equal(typeof result, "object");
-      assert.notEqual(result, null);
+      assert.notEqual(result, undefined);
     });
 
     it("Should return error on null", () => {
       const errorArray = result.name;
       assert.equal(Array.isArray(errorArray), true);
-      assert.equal(errorArray.length, 2);
+      assert.equal(errorArray.length, 1);
       assert.equal(typeof errorArray[0], "object");
-      assert.equal(errorArray[0].validator, "isString");
+      assert.equal(errorArray[0].validator, "isRequired");
       assert.equal(errorArray[0].value, null);
       assert.deepEqual(errorArray[0].path, ["name"]);
     });
 
-    it("Should not return error on undefined", () => {
+    it("Should not return error on invalid string", () => {
       const errorArray = result.username;
       assert.equal(errorArray, undefined);
     });
@@ -50,41 +56,46 @@ describe("00. Base for all Rules", () => {
       const schema = new Validator(
         {
           name: [isString(), isRequired()],
-          username: [isString()],
+          username: [isString(), isLen({ min: 2 }), isAlphaNum(), isRequired()],
         },
         { returnEarly: false },
       );
 
       const data = schema.validate({
         name: null,
-        username: undefined,
+        username: "#",
       });
       result = data.errors;
     });
 
     it("Should return error", () => {
       assert.equal(typeof result, "object");
-      assert.notEqual(result, null);
+      assert.notEqual(result, undefined);
     });
 
     it("Should return error on null", () => {
       const errorArray = result.name;
       assert.equal(Array.isArray(errorArray), true);
-      assert.equal(errorArray.length, 2);
+      assert.equal(errorArray.length, 1);
       assert.equal(typeof errorArray[0], "object");
-      assert.equal(errorArray[0].validator, "isString");
+      assert.equal(errorArray[0].validator, "isRequired");
       assert.equal(errorArray[0].value, null);
       assert.deepEqual(errorArray[0].path, ["name"]);
     });
 
-    it("Should return error on undefined", () => {
+    it("Should return error on invalid string", () => {
       const errorArray = result.username;
       assert.equal(Array.isArray(errorArray), true);
-      assert.equal(errorArray.length, 1);
+      assert.equal(errorArray.length, 2);
       assert.equal(typeof errorArray[0], "object");
-      assert.equal(errorArray[0].validator, "isString");
-      assert.equal(errorArray[0].value, undefined);
+      assert.equal(errorArray[0].validator, "isLen");
+      assert.equal(errorArray[0].value, "#");
       assert.deepEqual(errorArray[0].path, ["username"]);
+
+      assert.equal(typeof errorArray[1], "object");
+      assert.equal(errorArray[1].validator, "isAlphaNum");
+      assert.equal(errorArray[1].value, "#");
+      assert.deepEqual(errorArray[1].path, ["username"]);
     });
   });
 
@@ -94,21 +105,21 @@ describe("00. Base for all Rules", () => {
       const schema = new Validator(
         {
           name: [isString(), isRequired()],
-          username: [isString()],
+          username: [isString(), isLen({ min: 2 }), isAlphaNum(), isRequired()],
         },
         { returnEarly: true, returnRuleSetEarly: true },
       );
 
       const data = schema.validate({
         name: null,
-        username: undefined,
+        username: "#",
       });
       result = data.errors;
     });
 
     it("Should return error", () => {
       assert.equal(typeof result, "object");
-      assert.notEqual(result, null);
+      assert.notEqual(result, undefined);
     });
 
     it("Should return error on null", () => {
@@ -116,12 +127,12 @@ describe("00. Base for all Rules", () => {
       assert.equal(Array.isArray(errorArray), true);
       assert.equal(errorArray.length, 1);
       assert.equal(typeof errorArray[0], "object");
-      assert.equal(errorArray[0].validator, "isString");
+      assert.equal(errorArray[0].validator, "isRequired");
       assert.equal(errorArray[0].value, null);
       assert.deepEqual(errorArray[0].path, ["name"]);
     });
 
-    it("Should not return error on undefined", () => {
+    it("Should not return error on invalid string", () => {
       const errorArray = result.username;
       assert.equal(errorArray, undefined);
     });
@@ -133,14 +144,14 @@ describe("00. Base for all Rules", () => {
       const schema = new Validator(
         {
           name: [isString(), isRequired()],
-          username: [isString()],
+          username: [isString(), isLen({ min: 2 }), isAlphaNum(), isRequired()],
         },
         { returnEarly: false, returnRuleSetEarly: true },
       );
 
       const data = schema.validate({
         name: null,
-        username: undefined,
+        username: "#",
       });
       result = data.errors;
     });
@@ -155,18 +166,18 @@ describe("00. Base for all Rules", () => {
       assert.equal(Array.isArray(errorArray), true);
       assert.equal(errorArray.length, 1);
       assert.equal(typeof errorArray[0], "object");
-      assert.equal(errorArray[0].validator, "isString");
+      assert.equal(errorArray[0].validator, "isRequired");
       assert.equal(errorArray[0].value, null);
       assert.deepEqual(errorArray[0].path, ["name"]);
     });
 
-    it("Should return error on undefined", () => {
+    it("Should return error on invalid string", () => {
       const errorArray = result.username;
       assert.equal(Array.isArray(errorArray), true);
       assert.equal(errorArray.length, 1);
       assert.equal(typeof errorArray[0], "object");
-      assert.equal(errorArray[0].validator, "isString");
-      assert.equal(errorArray[0].value, undefined);
+      assert.equal(errorArray[0].validator, "isLen");
+      assert.equal(errorArray[0].value, "#");
       assert.deepEqual(errorArray[0].path, ["username"]);
     });
   });

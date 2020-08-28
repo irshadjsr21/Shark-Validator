@@ -62,11 +62,14 @@ class ToInt extends Rule {
 
     const { label } = options;
 
+    if (value === undefined || value === null) {
+      return { value, error: undefined };
+    }
+
     const data = {
       name: label,
     };
 
-    // eslint-disable-next-line no-restricted-globals
     if (isNaN(value)) {
       return {
         value,

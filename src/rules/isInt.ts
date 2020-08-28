@@ -85,13 +85,16 @@ class IsInt extends Rule {
 
     const { label } = options;
 
+    if (value === undefined || value === null) {
+      return { value, error: undefined };
+    }
+
     const data = {
       name: label,
       max: this.max !== undefined ? this.max.toString() : "undefined",
       min: this.min !== undefined ? this.min.toString() : "undefined",
     };
 
-    // eslint-disable-next-line no-restricted-globals
     if (isNaN(value)) {
       return {
         value,

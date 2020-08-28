@@ -124,6 +124,10 @@ export class IsArray extends Rule {
       showNestedError = options.showNestedError;
     }
 
+    if (value === undefined || value === null) {
+      return { value, error: undefined };
+    }
+
     const data = {
       name: label,
       max: this.max !== undefined ? this.max.toString() : "undefined",

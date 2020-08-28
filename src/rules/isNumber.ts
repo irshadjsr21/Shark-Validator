@@ -79,6 +79,10 @@ class IsNumber extends Rule {
       throw new TypeError("`options.label` should be a string.");
     }
 
+    if (value === undefined || value === null) {
+      return { value, error: undefined };
+    }
+
     const { label } = options;
 
     const data = {
@@ -87,7 +91,6 @@ class IsNumber extends Rule {
       min: this.min !== undefined ? this.min.toString() : "undefined",
     };
 
-    // eslint-disable-next-line no-restricted-globals
     if (isNaN(value)) {
       return {
         value,

@@ -75,6 +75,10 @@ class IsIn extends Rule {
 
     const { label } = options;
 
+    if (value === undefined || value === null) {
+      return { value, error: undefined };
+    }
+
     const data = {
       name: label,
       in: this.in.join(", "),
