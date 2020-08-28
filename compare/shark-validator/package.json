@@ -8,7 +8,7 @@
     "dev:build": "webpack --mode development"
   },
   "dependencies": {
-    "shark-validator": "^1.4.0"
+    "shark-validator": "^1.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
