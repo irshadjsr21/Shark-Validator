@@ -9,7 +9,6 @@
     "build:cjs": "tsc -p tsconfig.cjs.json",
     "build:es": "tsc -p tsconfig.es.json",
     "build:docs": "typedoc",
-    "build:es-docs": "./node_modules/.bin/esdoc",
     "build:js": "npm run build:es && npm run build:cjs",
     "build": "npm run build:js && npm run build:docs",
     "lint": "tslint src/**/* src/* --fix",
