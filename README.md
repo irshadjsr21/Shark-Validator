@@ -164,6 +164,14 @@ The `errors` object contains the following data:
 
 ## More fetures
 
+- [Custom label](#custom-label)
+- [Return early](#return-early)
+- [Custom error message](#custom-error-message)
+- [Custom validation](#custom-validation)
+- [Validating objects](#validating-objects)
+- [Validating arrays](#validating-arrays)
+- [Validating array of objects](#validating-array-of-objects)
+
 ### Custom label
 
 You can provide a custom name to a particular key which can be displayed on the error message if the test for that key fails.
@@ -199,7 +207,7 @@ If you want to stop the check if one error is found, then you can pass in an add
 
 If set to true, then the functionality of the two parameters will be:
 
-- `returnEarly`: Stops validating when other keys when one or more errors are found for a particular key.
+- `returnEarly`: Stops validating of other keys when one or more errors are found in a key.
 - `returnRuleSetEarly`: Stops further validation of a particular key if an error is found on the same key.
 
 You can use a combination of both the parameters to acheive different funtionalities.
@@ -285,6 +293,52 @@ Then the returned error will use our custom message.
   ...
 }
 ```
+
+### Custom validation
+
+You can also set your custom validation rules with `isCustom` rule.
+
+You just need to pass `check` function which takes the `value` and other `options` as a parameter and returns the error string if an error is to be thrown otherwise it should return `false` or `undefined`.
+
+##### Example
+
+Below is an example to show how we can add a custom validation for `confirmPassword` to check if it is equal to the `password` field.
+
+```js
+const schema = new Validator({
+  password: isString(),
+  confirmPassword: isCustom({
+    check: (value, { allValues }) => {
+      if (value !== allValues.password) {
+        return "Confirm password should be equal to password.";
+      }
+    },
+  }),
+});
+```
+
+If the schema is tested with the following values:
+
+```js
+schema.validate({ password: "123456", confirmPassword: "12345" });
+```
+
+Then the errors object will be:
+
+```json
+{
+  "confirmPassword": [
+    {
+      "error": "Confirm password should be equal to password.",
+      "validator": "isCustom",
+      "value": "12345",
+      "path": ["confirmPassword"]
+    }
+  ]
+}
+```
+
+You can read more about `isCustom` in the [API Documentation](#reference-and-api-documentation).
 
 ### Validating objects
 
