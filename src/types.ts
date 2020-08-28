@@ -205,11 +205,7 @@ export interface IToIntOptions extends IRuleOptions {}
 export interface IToNumberOptions extends IRuleOptions {}
 
 export interface IIsCustomOptions extends IRuleOptions {
-  /* @describe Function to check if the value should be allowed.
-   * Returns the `string` error if any, otherwise returns `false` or `undefined`.
-   *
-   * @param value The value to be checked.
-   * @param options Options for validate.
-   */
+  /* tslint:disable:max-line-length */
+  /** Function to check if the value should be allowed. Returns the `string` error if any, otherwise returns `false` or `undefined`. */
   check(value: any, options?: IRuleValidateOptions): undefined | false | string;
 }
