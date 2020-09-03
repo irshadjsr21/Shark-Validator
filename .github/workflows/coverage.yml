@@ -1,0 +1,32 @@
+name: Test Coveralls
+
+on:
+  push:
+    branches: [ master, development, release ]
+  pull_request:
+    branches: [ master, development, release ]
+
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+
+    - uses: actions/checkout@v1
+
+    - name: Use Node.js 10.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 10.x
+
+    - name: npm install, npm run coveralls 
+      run: |
+        npm install
+        npm run coveralls
+
+    - name: Coveralls
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        path-to-lcov: ./lcov.info

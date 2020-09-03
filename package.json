@@ -14,10 +14,12 @@
     "lint": "tslint src/**/* src/* --fix",
     "test": "mocha",
     "coverage": "nyc --reporter=html --reporter=text npm run test ",
+    "coveralls": "touch lcov.info && nyc --reporter=text-lcov npm run test >> ./lcov.info",
     "dev:test": "npm run build:js && npm run test",
     "format": "prettier --write src/**/* src/* test/*"
   },
   "devDependencies": {
+    "coveralls": "^3.1.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.4",
     "mocha": "^7.1.1",
