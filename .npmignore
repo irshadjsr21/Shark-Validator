@@ -7,3 +7,7 @@ tsconfig.es.json
 tsconfig.cjs.json
 tslint.json
 .github
+.nyc_output
+coverage
+.coveralls.yml
+lcov.info

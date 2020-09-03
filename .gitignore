@@ -2,3 +2,7 @@ node_modules
 es
 lib
 docs
+.nyc_output
+coverage
+.coveralls.yml
+lcov.info
