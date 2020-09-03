@@ -23,6 +23,7 @@ jobs:
     - name: npm install, npm run coveralls 
       run: |
         npm install
+        npm run build
         npm run coveralls
 
     - name: Coveralls
