@@ -1,6 +1,6 @@
 # Shark-Validator
 
-![Node.js CI](https://github.com/irshadjsr21/Shark-Validator/workflows/Node.js%20CI/badge.svg?branch=master) [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/) [![Coverage Status](https://coveralls.io/repos/github/irshadjsr21/Shark-Validator/badge.svg?branch=development)](https://coveralls.io/github/irshadjsr21/Shark-Validator?branch=development)
+![Node.js CI](https://github.com/irshadjsr21/Shark-Validator/workflows/Node.js%20CI/badge.svg?branch=master) [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/) [![Coverage Status](https://coveralls.io/repos/github/irshadjsr21/Shark-Validator/badge.svg?branch=master)](https://coveralls.io/github/irshadjsr21/Shark-Validator?branch=master)
 
 ## Overview
 
